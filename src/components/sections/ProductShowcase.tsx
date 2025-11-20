@@ -33,7 +33,7 @@ const ProductShowcase = () => {
                 </p>
               </div>
               
-              <div className="space-y-3 mb-8">
+              <div className="space-y-3 mb-8 h-48">
                 <div className="flex items-center space-x-2 text-sm">
                   <CheckCircle className="h-4 w-4 text-accent" />
                   <span>Guest Experience Management</span>
@@ -81,7 +81,7 @@ const ProductShowcase = () => {
                 </p>
               </div>
               
-              <div className="space-y-3 mb-8">
+              <div className="space-y-3 mb-8 h-40">
                 <div className="flex items-center space-x-2 text-sm">
                   <CheckCircle className="h-4 w-4 text-accent" />
                   <span>Smart Booking Management</span>

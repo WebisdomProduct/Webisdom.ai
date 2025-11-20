@@ -3,7 +3,19 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Hotel, Heart, Building2, TrendingUp, Users, Shield, Zap, BarChart3, Clock, CheckCircle, ArrowRight } from "lucide-react";
+import {
+  Hotel,
+  Heart,
+  Building2,
+  TrendingUp,
+  Users,
+  Shield,
+  Zap,
+  BarChart3,
+  Clock,
+  CheckCircle,
+  ArrowRight,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Industries = () => {
@@ -13,97 +25,171 @@ const Industries = () => {
       title: "Hospitality",
       icon: Hotel,
       gradient: "from-blue-500 to-purple-600",
-      description: "Revolutionary AI solutions for hotels, resorts, and hospitality businesses to enhance guest experience and operational efficiency.",
+      description:
+        "Revolutionary AI solutions for hotels, resorts, and hospitality businesses to enhance guest experience and operational efficiency.",
       challenges: [
         "Manual check-in/check-out processes",
         "Inefficient room management",
         "Poor guest experience tracking",
         "Revenue optimization difficulties",
-        "Staff scheduling complexities"
+        "Staff scheduling complexities",
       ],
       solutions: [
         "AI-powered guest experience management",
         "Automated room allocation and pricing",
         "Predictive maintenance systems",
         "Smart concierge services",
-        "Revenue optimization algorithms"
+        "Revenue optimization algorithms",
       ],
       benefits: [
         "40% reduction in operational costs",
         "60% faster check-in/check-out",
         "35% increase in guest satisfaction",
-        "25% improvement in revenue per room"
+        "25% improvement in revenue per room",
       ],
       caseStudy: {
         title: "Luxury Resort Chain",
-        result: "Implemented AI Chieftain across 50+ properties, resulting in $2M annual savings and 45% increase in guest satisfaction scores."
+        result:
+          "Implemented AI Chieftain across 50+ properties, resulting in $2M annual savings and 45% increase in guest satisfaction scores.",
       },
-      products: ["AI Chieftain", "Hotel Management System"]
+      products: ["AI Chieftain", "Hotel Management System"],
     },
     {
       id: "healthcare",
       title: "Healthcare",
       icon: Heart,
       gradient: "from-green-500 to-blue-600",
-      description: "Advanced AI solutions for healthcare providers to improve patient outcomes, streamline operations, and enhance medical decision-making.",
+      description:
+        "Advanced AI solutions for healthcare providers to improve patient outcomes, streamline operations, and enhance medical decision-making.",
       challenges: [
         "Patient data management complexity",
         "Appointment scheduling inefficiencies",
         "Medical record digitization",
         "Resource allocation optimization",
-        "Compliance and regulatory requirements"
+        "Compliance and regulatory requirements",
       ],
       solutions: [
         "AI-driven patient care optimization",
         "Predictive health analytics",
         "Automated appointment scheduling",
         "Medical imaging analysis",
-        "Treatment recommendation systems"
+        "Treatment recommendation systems",
       ],
       benefits: [
         "50% reduction in administrative tasks",
         "30% improvement in patient care efficiency",
         "25% faster diagnosis and treatment",
-        "90% accuracy in predictive health alerts"
+        "90% accuracy in predictive health alerts",
       ],
       caseStudy: {
         title: "Multi-specialty Hospital Network",
-        result: "AI implementation reduced patient wait times by 40% and improved diagnostic accuracy by 35% across 15 facilities."
+        result:
+          "AI implementation reduced patient wait times by 40% and improved diagnostic accuracy by 35% across 15 facilities.",
       },
-      products: ["Healthcare AI Platform", "Patient Management System"]
+      products: ["Healthcare AI Platform", "Patient Management System"],
     },
     {
       id: "fintech",
       title: "Fintech",
       icon: Building2,
       gradient: "from-orange-500 to-red-600",
-      description: "Cutting-edge AI solutions for financial institutions to enhance security, automate processes, and improve customer experience.",
+      description:
+        "Cutting-edge AI solutions for financial institutions to enhance security, automate processes, and improve customer experience.",
       challenges: [
         "Fraud detection and prevention",
         "Risk assessment automation",
         "Customer onboarding complexity",
         "Regulatory compliance management",
-        "Real-time transaction processing"
+        "Real-time transaction processing",
       ],
       solutions: [
         "AI-powered fraud detection systems",
         "Automated risk assessment tools",
         "Intelligent customer onboarding",
         "Compliance monitoring automation",
-        "Predictive financial analytics"
+        "Predictive financial analytics",
       ],
       benefits: [
         "95% fraud detection accuracy",
         "70% faster customer onboarding",
         "60% reduction in compliance costs",
-        "40% improvement in risk assessment"
+        "40% improvement in risk assessment",
       ],
       caseStudy: {
         title: "Digital Banking Platform",
-        result: "AI fraud detection system prevented $15M in potential losses while reducing false positives by 80%."
+        result:
+          "AI fraud detection system prevented $15M in potential losses while reducing false positives by 80%.",
       },
-      products: ["Financial AI Suite", "Risk Management Platform"]
-    }
+      products: ["Financial AI Suite", "Risk Management Platform"],
+    },
+    {
+      id: "revenue",
+      title: "Revenue Management",
+      icon: BarChart3,
+      gradient: "from-green-500 to-teal-600",
+      description:
+        "AI-driven revenue optimization solutions to maximize profitability and demand forecasting for businesses.",
+      challenges: [
+        "Inaccurate demand forecasting",
+        "Static pricing strategies",
+        "Unoptimized inventory allocation",
+        "Lack of competitor insights",
+        "Manual revenue reporting",
+      ],
+      solutions: [
+        "AI-powered dynamic pricing engine",
+        "Real-time demand forecasting",
+        "Automated inventory optimization",
+        "Competitor analytics monitor",
+        "AI-based revenue reporting dashboard",
+      ],
+      benefits: [
+        "30% increase in revenue growth",
+        "50% improvement in pricing accuracy",
+        "40% faster forecasting analytics",
+        "20% reduced revenue leakage",
+      ],
+      caseStudy: {
+        title: "Global Hotel Group",
+        result:
+          "Implemented AI Revenue System across 80 hotels, increasing annual revenue by 22% and improving forecast accuracy by 45%.",
+      },
+      products: ["AI Revenue Management System", "Dynamic Pricing Engine"],
+    },
+    {
+      id: "coworking",
+      title: "Coworking Spaces",
+      icon: Building2,
+      gradient: "from-orange-500 to-red-600",
+      description:
+        "AI-powered coworking management solutions for booking automation, occupancy optimization, and member experience enhancement.",
+      challenges: [
+        "Unpredictable space utilization",
+        "Manual desk and room bookings",
+        "Difficulty managing member plans",
+        "Inefficient visitor management",
+        "Limited insights on occupancy trends",
+      ],
+      solutions: [
+        "Smart desk and room booking automation",
+        "AI-based occupancy optimization",
+        "Automated membership & billing management",
+        "AI visitor registration system",
+        "Predictive analytics for space usage",
+      ],
+      benefits: [
+        "50% improvement in space utilization",
+        "70% faster member onboarding",
+        "30% reduction in administrative work",
+        "25% increase in member satisfaction",
+      ],
+      caseStudy: {
+        title: "National Coworking Network",
+        result:
+          "Deployed AI Workspace Manager across 20 hubs, boosting utilization by 40% and reducing administrative workload by 35%.",
+      },
+      products: ["AI Workspace Manager", "Coworking Automation System"],
+    },
   ];
 
   return (
@@ -118,7 +204,8 @@ const Industries = () => {
                 Industries We <span className="text-gradient">Serve</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Transforming businesses across key industries with tailored AI solutions that drive innovation and growth.
+                Transforming businesses across key industries with tailored AI
+                solutions that drive innovation and growth.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Badge variant="secondary" className="px-4 py-2">
@@ -148,10 +235,14 @@ const Industries = () => {
                   <div key={industry.id} className="relative">
                     {/* Industry Header */}
                     <div className="text-center mb-16">
-                      <div className={`w-20 h-20 bg-gradient-to-r ${industry.gradient} rounded-full flex items-center justify-center mx-auto mb-6`}>
+                      <div
+                        className={`w-20 h-20 bg-gradient-to-r ${industry.gradient} rounded-full flex items-center justify-center mx-auto mb-6`}
+                      >
                         <IconComponent className="w-10 h-10 text-white" />
                       </div>
-                      <h2 className="text-4xl font-bold mb-4">{industry.title}</h2>
+                      <h2 className="text-4xl font-bold mb-4">
+                        {industry.title}
+                      </h2>
                       <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                         {industry.description}
                       </p>
@@ -171,9 +262,14 @@ const Industries = () => {
                           <CardContent className="p-0">
                             <ul className="space-y-3">
                               {industry.challenges.map((challenge, i) => (
-                                <li key={i} className="flex items-start space-x-3">
+                                <li
+                                  key={i}
+                                  className="flex items-start space-x-3"
+                                >
                                   <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                                  <span className="text-muted-foreground">{challenge}</span>
+                                  <span className="text-muted-foreground">
+                                    {challenge}
+                                  </span>
                                 </li>
                               ))}
                             </ul>
@@ -190,7 +286,10 @@ const Industries = () => {
                           <CardContent className="p-0">
                             <ul className="space-y-3">
                               {industry.solutions.map((solution, i) => (
-                                <li key={i} className="flex items-start space-x-3">
+                                <li
+                                  key={i}
+                                  className="flex items-start space-x-3"
+                                >
                                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                                   <span>{solution}</span>
                                 </li>
@@ -212,7 +311,10 @@ const Industries = () => {
                           <CardContent className="p-0">
                             <ul className="space-y-4">
                               {industry.benefits.map((benefit, i) => (
-                                <li key={i} className="flex items-center space-x-3">
+                                <li
+                                  key={i}
+                                  className="flex items-center space-x-3"
+                                >
                                   <div className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
                                     <TrendingUp className="w-4 h-4 text-accent" />
                                   </div>
@@ -223,14 +325,18 @@ const Industries = () => {
                           </CardContent>
                         </Card>
 
-                        <Card className={`p-8 bg-gradient-to-br ${industry.gradient} text-white`}>
+                        <Card
+                          className={`p-8 bg-gradient-to-br ${industry.gradient} text-white`}
+                        >
                           <CardHeader className="p-0 mb-6">
                             <CardTitle className="text-xl">
                               Success Story: {industry.caseStudy.title}
                             </CardTitle>
                           </CardHeader>
                           <CardContent className="p-0">
-                            <p className="opacity-90 mb-6">{industry.caseStudy.result}</p>
+                            <p className="opacity-90 mb-6">
+                              {industry.caseStudy.result}
+                            </p>
                             <Button variant="secondary" size="sm" asChild>
                               <a href="/products#case-studies">
                                 Read Full Case Study
@@ -245,10 +351,16 @@ const Industries = () => {
                     {/* Products for Industry */}
                     <Card className="p-8 bg-muted/50">
                       <div className="text-center">
-                        <h3 className="text-2xl font-bold mb-4">Our {industry.title} Solutions</h3>
+                        <h3 className="text-2xl font-bold mb-4">
+                          Our {industry.title} Solutions
+                        </h3>
                         <div className="flex flex-wrap justify-center gap-4 mb-6">
                           {industry.products.map((product, i) => (
-                            <Badge key={i} variant="default" className="px-4 py-2">
+                            <Badge
+                              key={i}
+                              variant="default"
+                              className="px-4 py-2"
+                            >
                               {product}
                             </Badge>
                           ))}
@@ -274,9 +386,12 @@ const Industries = () => {
         <section className="py-24 bg-muted/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold mb-6">Why Industry Leaders Choose Us</h2>
+              <h2 className="text-3xl font-bold mb-6">
+                Why Industry Leaders Choose Us
+              </h2>
               <p className="text-muted-foreground text-lg">
-                We combine deep industry expertise with cutting-edge AI technology to deliver solutions that truly transform businesses.
+                We combine deep industry expertise with cutting-edge AI
+                technology to deliver solutions that truly transform businesses.
               </p>
             </div>
 
@@ -287,7 +402,8 @@ const Industries = () => {
                 </div>
                 <h3 className="font-bold mb-2">Industry Expertise</h3>
                 <p className="text-sm text-muted-foreground">
-                  Deep understanding of sector-specific challenges and requirements.
+                  Deep understanding of sector-specific challenges and
+                  requirements.
                 </p>
               </Card>
 
@@ -317,7 +433,8 @@ const Industries = () => {
                 </div>
                 <h3 className="font-bold mb-2">Measurable ROI</h3>
                 <p className="text-sm text-muted-foreground">
-                  Proven track record of delivering significant returns on investment.
+                  Proven track record of delivering significant returns on
+                  investment.
                 </p>
               </Card>
             </div>
@@ -327,15 +444,23 @@ const Industries = () => {
         {/* CTA Section */}
         <section className="py-24 bg-gradient-to-r from-primary to-accent text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Industry?</h2>
+            <h2 className="text-3xl font-bold mb-6">
+              Ready to Transform Your Industry?
+            </h2>
             <p className="text-xl mb-8 opacity-90">
-              Join the leaders in your industry who are already leveraging AI to drive innovation and growth.
+              Join the leaders in your industry who are already leveraging AI to
+              drive innovation and growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>
                 <Link to="/contact">Schedule Consultation</Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary" asChild>
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-transparent border-white text-white hover:bg-white hover:text-primary"
+                asChild
+              >
                 <Link to="/services">View Our Services</Link>
               </Button>
             </div>

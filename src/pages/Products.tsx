@@ -5,6 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from "react-router-dom";
+
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, ChevronUp } from "lucide-react";
+
 import {
   ExternalLink,
   Zap,
@@ -29,12 +33,12 @@ const Products = () => {
       subtitle: "Hotel Management Revolution",
       description:
         "Complete AI-powered hotel management system that transforms guest experience and operational efficiency.",
-      url: "",
-      demoVideo: "", // you will add
-      demoDocument: "", // you will add
+      url: "https://ai-chieftain.webisdomtech.com",
+      demoVideo: "",
+      demoDocument: "",
       category: "Hospitality AI",
       status: "Live Platform",
-      image: "/lovable-uploads/2ca69ba8-ceb5-425d-92d5-52e9066faf81.png",
+      image: "https://images.unsplash.com/photo-1535223289827-42f1e9919769", // AI + Hotel management tech
       features: [
         "Smart Room Management",
         "Guest Experience AI",
@@ -63,12 +67,12 @@ const Products = () => {
       subtitle: "Property Management System for Hotels",
       description:
         "Smart, AI-powered PMS that automates daily hotel operations with real-time analytics.",
-      url: "",
+      url: "https://ai-chieftain.webisdomtech.com",
       demoVideo: "",
       demoDocument: "",
       category: "Hospitality AI",
       status: "Demo",
-      image: "/placeholder/pms.png",
+      image: "https://images.unsplash.com/photo-1551434678-e076c223a692", // dashboard / system UI
       features: [
         "Reservation Automation",
         "Room Status AI",
@@ -85,60 +89,17 @@ const Products = () => {
     },
 
     {
-      id: "ai-chieftain-ilora",
-      title: "AI Chieftain (Ilora)",
-      subtitle: "Ilora-specific Hospitality Automation",
-      description:
-        "A customized version of AI Chieftain built for Ilora brand hotels.",
-      url: "",
-      demoVideo: "",
-      demoDocument: "",
-      category: "Hospitality AI",
-      status: "Production Ready",
-      image: "/placeholder/ilora-chieftain.png",
-      features: [
-        "Brand-specific Automation",
-        "Guest Profiling",
-        "Smart Housekeeping",
-        "Revenue Intelligence",
-      ],
-      technologies: ["AI", "Hotel Automation"],
-      benefits: ["Better brand personalization", "Higher guest engagement"],
-    },
-
-    {
-      id: "ai-pms-ilora",
-      title: "AI PMS (Ilora)",
-      subtitle: "Customized PMS System for Ilora Hotels",
-      description: "A full PMS system tailored for Ilora hotel operations.",
-      url: "https://ai-chieftain.webisdomtech.com",
-      demoVideo: "",
-      demoDocument: "",
-      category: "PMS Solution",
-      status: "Demo",
-      image: "/placeholder/ilora-pms.png",
-      features: [
-        "Room Management",
-        "Staff Assignment",
-        "Automated Billing",
-        "Reporting",
-      ],
-      technologies: ["Cloud PMS", "Automation"],
-      benefits: ["Streamlined hotel operations"],
-    },
-
-    {
       id: "rms",
       title: "AI Revenue Management System",
       subtitle: "Smart Revenue Optimization",
       description:
         "Powerful AI system that predicts pricing to maximize hotel revenue.",
-      url: "",
+      url: "https://ai-chieftain.webisdomtech.com",
       demoVideo: "",
       demoDocument: "",
       category: "Revenue AI",
       status: "Demo",
-      image: "/placeholder/rms.png",
+      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296", // analytics / charts / forecasting
       features: [
         "Dynamic Pricing",
         "Demand Forecasting",
@@ -157,9 +118,9 @@ const Products = () => {
       url: "https://ai-chieftain.webisdomtech.com",
       demoVideo: "",
       demoDocument: "",
-      category: "Food & Beverage AI",
+      category: "Hospitality AI",
       status: "Demo",
-      image: "/placeholder/restaurant-ai.png",
+      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836", // restaurant + workflow image
       features: [
         "Menu Recommendations",
         "Booking Automation",
@@ -179,9 +140,9 @@ const Products = () => {
       url: "https://ai-chieftain.webisdomtech.com",
       demoVideo: "",
       demoDocument: "",
-      category: "AI Avatars",
+      category: "Finance AI",
       status: "Live Demo",
-      image: "/placeholder/avatar.png",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71", // futuristic AI face / avatar look
       features: ["Lifelike Avatar", "Voice AI", "Interactive Responses"],
       technologies: ["Deep Learning", "Face AI"],
       benefits: ["Brand growth", "24/7 availability"],
@@ -198,7 +159,7 @@ const Products = () => {
       demoDocument: "",
       category: "Coworking Automation",
       status: "Demo",
-      image: "/placeholder/coworking.png",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978", // coworking environment + tech
       features: [
         "Tour Booking Automation",
         "Billing AI",
@@ -219,7 +180,7 @@ const Products = () => {
       demoDocument: "",
       category: "Finance AI",
       status: "Demo",
-      image: "/placeholder/loan.png",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71", // fintech tech dashboard
       features: ["Document AI", "KYC Automation", "Credit Evaluation"],
       technologies: ["OCR", "AI Risk Scoring"],
       benefits: ["Faster approvals", "Reduced manual processing"],
@@ -234,14 +195,26 @@ const Products = () => {
       url: "https://ai-chieftain.webisdomtech.com",
       demoVideo: "",
       demoDocument: "",
-      category: "Compliance AI",
+      category: "Finance AI",
       status: "Demo",
-      image: "/placeholder/compliance.png",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71", // cybersecurity + compliance tech
       features: ["Policy Tracking", "Audit Automation", "Compliance Alerts"],
       technologies: ["AI Automation"],
       benefits: ["Zero compliance risk", "Real-time monitoring"],
     },
   ];
+
+  const [open, setOpen] = useState({
+    state: false,
+    product: null,
+  });
+
+  const handleDownArrowClick = (product) => {
+    setOpen({
+      state: open.product?.id === product.id ? !open.state : true,
+      product,
+    });
+  };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -279,127 +252,175 @@ const Products = () => {
         </section>
 
         {/* Products & Case Studies Tabs */}
-        <section className="py-24">
+        <section className="py-10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <Tabs defaultValue="products" className="w-full">
-              <TabsList className="grid w-full max-w-md mx-auto mb-12 grid-cols-2">
+              <TabsList className="grid w-full max-w-md mx-auto mb-8 grid-cols-2">
                 <TabsTrigger value="products">Products</TabsTrigger>
                 <TabsTrigger value="case-studies">Case Studies</TabsTrigger>
               </TabsList>
 
               <TabsContent value="products" className="space-y-16">
-                {products.map((product, index) => (
-                  <div
-                    key={product.id}
-                    className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                      index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-                    }`}
-                  >
-                    {/* Product Image */}
-                    <div
-                      className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}
-                    >
-                      <Card className="overflow-hidden">
-                        <div className="aspect-video relative bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                          {product.id === "ai-chieftain" ? (
-                            <Hotel className="w-24 h-24 text-primary/60" />
-                          ) : (
-                            <BarChart3 className="w-24 h-24 text-primary/60" />
-                          )}
-                          <div className="absolute top-4 right-4">
-                            <Badge variant="default">{product.status}</Badge>
+                <div className="w-full px-4 py-8 space-y-12">
+                  {Object.entries(
+                    products.reduce((acc, product) => {
+                      // Group products by category
+                      if (!acc[product.category]) acc[product.category] = [];
+                      acc[product.category].push(product);
+                      return acc;
+                    }, {} as Record<string, typeof products>)
+                  ).map(([category, categoryProducts]) => (
+                    <div key={category} className="space-y-4">
+                      <h2 className="text-xl font-bold text-gray-800">
+                        {category}
+                      </h2>
+                      <div
+                        className="flex gap-6 overflow-x-auto snap-x snap-mandatory p-3"
+                        style={{
+                          scrollbarWidth: "none",
+                          msOverflowStyle: "none",
+                        }}
+                      >
+                        {categoryProducts.map((product) => (
+                          <div
+                            key={product.id}
+                            className="flex-none w-72 group bg-white/80  backdrop-blur-md border border-gray-200 rounded-2xl p-5 relative snap-start shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 cursor-pointer"
+                            onClick={() => handleDownArrowClick(product)}
+                          >
+                            <div className="h-40 w-full mb-4 rounded-xl overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center relative group">
+                              <img
+                                src={product.image}
+                                alt={product.title}
+                                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                              />
+                              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
+                            </div>
+                            <h2 className="text-lg font-bold text-gray-800 mb-1">
+                              {product.title}
+                            </h2>
+                            <h3 className="text-sm text-gray-500 mb-4 h-20">
+                              {product.subtitle}
+                            </h3>
+
+                            <div className="bottom-4 child1 group-hover:animate-bounce duration-700 left-1/2  text-2xl text-gray-600 cursor-pointer  duration-300">
+                              {open.state && open.product?.id === product.id ? (
+                                <ChevronUp size={30} />
+                              ) : (
+                                <ChevronDown />
+                              )}
+                            </div>
                           </div>
-                        </div>
-                      </Card>
-                    </div>
-
-                    {/* Product Details */}
-                    <div
-                      className={`space-y-6 ${
-                        index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
-                      }`}
-                    >
-                      <div>
-                        <Badge variant="outline" className="mb-4">
-                          {product.category}
-                        </Badge>
-                        <h2 className="text-3xl font-bold mb-3">
-                          {product.title}
-                        </h2>
-                        <h3 className="text-xl text-primary mb-4">
-                          {product.subtitle}
-                        </h3>
-                        <p className="text-muted-foreground text-lg">
-                          {product.description}
-                        </p>
+                        ))}
                       </div>
 
-                      {/* Key Features */}
-                      <div>
-                        <h4 className="font-semibold mb-3">Key Features</h4>
-                        <div className="grid grid-cols-2 gap-2">
-                          {product.features.map((feature, i) => (
-                            <div
-                              key={i}
-                              className="flex items-center space-x-2"
+                      {/* AnimatePresence Panel for the opened product in this row */}
+                      <AnimatePresence>
+                        {open.state &&
+                          open.product &&
+                          categoryProducts.some(
+                            (p) => p.id === open.product?.id
+                          ) && (
+                            <motion.div
+                              key={open.product.id}
+                              className="mt-6 bg-white p-6 shadow-lg w-full rounded-none md:rounded-xl"
+                              initial={{ opacity: 0, y: -100 }}
+                              animate={{ opacity: 1, y: 10 }}
+                              exit={{ opacity: 0, y: -100 }}
+                              transition={{ duration: 0.3 }}
+                              onDoubleClick={() =>
+                                setOpen({ state: false, product: null })
+                              }
                             >
-                              <div className="w-2 h-2 bg-primary rounded-full"></div>
-                              <span className="text-sm">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+                              <div className="flex flex-col md:flex-row gap-6">
+                                <div className="flex flex-col w-full md:w-1/3 justify-center">
+                                  <img
+                                    src={open.product.image}
+                                    alt={open.product.title}
+                                    className="w-full h-64 object-cover rounded-lg"
+                                  />
+                                </div>
+                                <div className="flex-1 space-y-4">
+                                  <div>
+                                    <Badge variant="outline" className="mb-2">
+                                      {open.product.status}
+                                    </Badge>
+                                    <h2 className="text-2xl font-bold">
+                                      {open.product.title}
+                                    </h2>
+                                    <h3 className="text-lg text-primary">
+                                      {open.product.subtitle}
+                                    </h3>
+                                    <p className="text-gray-600 mt-2">
+                                      {open.product.description}
+                                    </p>
+                                  </div>
 
-                      {/* Benefits */}
-                      <div>
-                        <h4 className="font-semibold mb-3">Proven Results</h4>
-                        <div className="space-y-2">
-                          {product.benefits.map((benefit, i) => (
-                            <div
-                              key={i}
-                              className="flex items-center space-x-2"
-                            >
-                              <BarChart3 className="w-4 h-4 text-accent" />
-                              <span className="text-sm font-medium">
-                                {benefit}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+                                  <div className="space-y-2">
+                                    <div>
+                                      <h4 className="font-semibold">
+                                        Features:
+                                      </h4>
+                                      <div className="flex flex-wrap gap-2 mt-1">
+                                        {open.product.features.map((f) => (
+                                          <Badge key={f} variant="secondary">
+                                            {f}
+                                          </Badge>
+                                        ))}
+                                      </div>
+                                    </div>
+                                    <div>
+                                      <h4 className="font-semibold">
+                                        Technologies:
+                                      </h4>
+                                      <div className="flex flex-wrap gap-2 mt-1">
+                                        {open.product.technologies.map((t) => (
+                                          <Badge key={t} variant="secondary">
+                                            {t}
+                                          </Badge>
+                                        ))}
+                                      </div>
+                                    </div>
+                                    <div>
+                                      <h4 className="font-semibold">
+                                        Benefits:
+                                      </h4>
+                                      <div className="flex flex-wrap gap-2 mt-1">
+                                        {open.product.benefits.map((b) => (
+                                          <Badge key={b} variant="secondary">
+                                            {b}
+                                          </Badge>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  </div>
 
-                      {/* Technologies */}
-                      <div>
-                        <h4 className="font-semibold mb-3">Technologies</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {product.technologies.map((tech, i) => (
-                            <Badge key={i} variant="secondary">
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
+                                  {/* Buttons */}
+                                  <div className="flex gap-4 mt-4 flex-wrap">
+                                    <Button asChild>
+                                      <Link
+                                        to={`/products/${open.product.id}`}
+                                        state={{ product: open.product }}
+                                      >
+                                        Explore Platform
+                                        <ExternalLink className="ml-2 w-4 h-4" />
+                                      </Link>
+                                    </Button>
+                                    <Button variant="outline" asChild>
+                                      <a href="/contact">Request Demo</a>
+                                    </Button>
+                                  </div>
+                                </div>
+                              </div>
 
-                      {/* CTA Buttons */}
-                      <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                        <Link
-                          to={`/products/${product.id}`}
-                          state={{ product }} 
-                        >
-                          <Button asChild>
-                            <a>
-                              Explore Platform
-                              <ExternalLink className="ml-2 w-4 h-4" />
-                            </a>
-                          </Button>
-                        </Link>
-                        <Button variant="outline" asChild>
-                          <a href="/contact">Request Demo</a>
-                        </Button>
-                      </div>
+                              <p className="mt-4 text-sm text-gray-400">
+                                *Double click anywhere on this panel to close
+                              </p>
+                            </motion.div>
+                          )}
+                      </AnimatePresence>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </TabsContent>
 
               <TabsContent value="case-studies">

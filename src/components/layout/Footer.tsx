@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Twitter, Mail, MapPin , Phone } from "lucide-react";
+import { Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -12,9 +12,9 @@ const Footer = () => {
               <img
                 src="/lovable-uploads/261cb841-1550-43b8-927d-f30d8e8fb3c7.png"
                 alt="Webisdom AI Solutions"
-                className="h-16 sm:h-20 w-auto brightness-0 invert"
+                className="h-16 sm:h-20 w-30 brightness-0 invert"
               />
-              <span className="text-lg font-bold">Webisdom AI</span>
+              {/* <span className="text-lg font-bold">Webisdom AI</span> */}
             </div>
             <p className="text-primary-foreground/80 text-sm">
               Building domain-specific AI solutions that deliver measurable
@@ -131,13 +131,17 @@ const Footer = () => {
                 <Mail size={16} className="mt-0.5 text-primary-foreground/80" />
                 <div className="flex flex-col gap-1">
                   <a
-                    href="mailto:contact@webisdom.ai"
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@webisdom.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     contact@webisdom.ai
                   </a>
                   <a
-                    href="mailto:atharv.kumar@webisdom.ai"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=atharv.kumar@webisdom.ai
+"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     atharv.kumar@webisdom.ai
@@ -145,9 +149,10 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-start space-x-2">
-
-
-                <Phone size={16} className="mt-0.5 text-primary-foreground/80" />
+                <Phone
+                  size={16}
+                  className="mt-0.5 text-primary-foreground/80"
+                />
                 <span className="text-primary-foreground/80 text-sm">
                   Phone: +91 9569394675
                 </span>

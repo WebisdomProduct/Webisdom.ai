@@ -5,6 +5,8 @@ import ProductShowcase from "@/components/sections/ProductShowcase";
 import IndustriesSection from "@/components/sections/IndustriesSection";
 import AIAuditSection from "@/components/sections/AIAuditSection";
 import NewsletterSection from "@/components/sections/NewsletterSection";
+import ProcessSection from "@/components/sections/ProcessSection";
+import FeaturesSection from "@/components/sections/FeaturesSection";
 
 const Home = () => {
   return (
@@ -16,6 +18,9 @@ const Home = () => {
         <IndustriesSection />
         <AIAuditSection />
         <NewsletterSection />
+        <FeaturesSection />
+        <ProcessSection />
+        
       </main>
       <Footer />
     </div>

@@ -15,6 +15,7 @@ import NotFound from "./pages/NotFound";
 import ProductDetail from "./pages/ProductDetailsPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 
+
 const queryClient = new QueryClient();
 
 // Component to handle scroll to top on route change
@@ -38,6 +39,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/products" element={<Products />} />
+
           <Route  path="/products/:id" element={<ProductDetailsPage/>}/>
           <Route path="/services" element={<Services />} />
           <Route path="/industries" element={<Industries />} />

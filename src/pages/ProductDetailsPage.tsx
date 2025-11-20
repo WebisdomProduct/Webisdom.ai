@@ -12,6 +12,9 @@ const ProductDetail = () => {
   const { product } = location.state || {};
   const [playVideo, setPlayVideo] = useState(false);
 
+  console.log(product)
+  console.log(product.url);
+
   if (!product) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-4">

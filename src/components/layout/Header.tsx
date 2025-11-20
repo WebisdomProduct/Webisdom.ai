@@ -27,13 +27,15 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <img 
-              src="/lovable-uploads/261cb841-1550-43b8-927d-f30d8e8fb3c7.png" 
-              alt="Webisdom AI Solutions" 
-              className="h-8 w-auto"
+          <Link to="/" className="flex items-center  space-x-4">
+            <img
+              src="/lovable-uploads/261cb841-1550-43b8-927d-f30d8e8fb3c7.png"
+              alt="Webisdom AI Solutions"
+              className="h-10 w-auto"
             />
-            <span className="text-xl font-bold text-foreground">Webisdom AI</span>
+            <span className="text-xl font-bold text-foreground max-sm:opacity-0">
+              Webisdom AI
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -116,8 +118,14 @@ const Header = () => {
         )}
       </div>
 
-      <DemoRequestDialog open={isDemoDialogOpen} onOpenChange={setIsDemoDialogOpen} />
-      <AuditRequestDialog open={isAuditDialogOpen} onOpenChange={setIsAuditDialogOpen} />
+      <DemoRequestDialog
+        open={isDemoDialogOpen}
+        onOpenChange={setIsDemoDialogOpen}
+      />
+      <AuditRequestDialog
+        open={isAuditDialogOpen}
+        onOpenChange={setIsAuditDialogOpen}
+      />
     </header>
   );
 };
