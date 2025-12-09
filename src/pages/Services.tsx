@@ -20,11 +20,76 @@ import {
 import { AuditRequestDialog } from "@/components/forms/AuditRequestDialog";
 import { DemoRequestDialog } from "@/components/forms/DemoRequestDialog";
 import { Navigate, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const Services = () => {
   const [isAuditDialogOpen, setIsAuditDialogOpen] = useState(false);
   const [isDemoDialogOpen, setIsDemoDialogOpen] = useState(false);
   const navigate = useNavigate();
+  // src/data/blogs.js
+  const blogs = [
+    {
+      id: 1,
+      category: "AI Strategy",
+      categoryColor: "bg-primary/10 text-primary",
+      title: "How AI is Transforming Global Enterprise Workflows",
+      description:
+        "The New Backbone of Business Artificial Intelligence (AI) is rapidly evolving from a futuristic concept into the absolute backbone of global enterprises. In today's hyper-connected and data-driven marketplace, AI is no longer just an optional competitive advantage; it has become a fundamental infrastructure requirement. Companies that fail to integrate these systems risk falling behind, while those that embrace them are setting new standards for efficiency. Beyond Basic Automation: A Fundamental Redesign Traditionally, automation was limited to handling simple, repetitive tasks—like data entry or basic calculations. However, what we are witnessing today is far more profound. AI is not just automating tasks; it is fundamentally redesigning how modern teams work. It acts as an intelligent layer that sits on top of existing workflows, allowing human employees to shift their focus from mundane execution to high-level strategy and creative problem-solving. Key Pillars of AI Integration Modern organizations now rely on AI to drive four critical areas of business: Predictive Analytics: Instead of reacting to historical data, companies use AI to forecast future trends, demand spikes, and potential risks with incredible accuracy. Intelligent Decision-Making: AI removes the guesswork from management. Leaders can now make decisions based on real-time data insights rather than intuition alone. Workflow Orchestration: Complex processes that involve multiple departments are now streamlined by AI agents that ensure smooth handovers and communication. Resource Optimization: AI ensures that time, money, and manpower are allocated exactly where they are needed most, reducing waste significantly. Real-World Impact Across Departments The impact of this transformation is visible across every vertical of an enterprise: Supply Chain: Through advanced forecasting, AI predicts disruptions before they occur, allowing businesses to adjust inventory and logistics proactively. Finance: Automated financial reporting has moved beyond simple spreadsheets, offering real-time compliance checks and error-free auditing. Human Resources (HR): In HR, AI-driven screening tools help recruiters identify the best talent faster by analyzing skills and culture fit without human bias. Customer Experience: Real-time customer insights allow businesses to offer hyper-personalized experiences that were previously impossible to scale.",
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+    },
+
+    {
+      id: 2,
+      category: "NLP",
+      categoryColor: "bg-accent/10 text-accent",
+      title: "Revolution of NLP-Powered Automation",
+      description:
+        "Natural Language Processing (NLP) is evolving into one of the most influential technologies in enterprise automation. Gone are the days when chatbots only understood specific keywords or rigid commands. Today’s NLP systems can comprehend context, tone, sentiment, and even domain-specific jargon. This brings a level of human-like intelligence to digital interactions that was previously unimaginable, allowing machines to 'read between the lines' and understand not just what a user says, but what they actually mean. Bridging the Gap Between Humans and Machines Businesses are leveraging NLP to transform how they handle data and communication. It is no longer just about processing text; it is about understanding intent to drive action. Key applications include: Automated Customer Support: Intelligent agents can now handle complex queries with empathy, resolving issues 24/7 without human intervention, and routing only the most critical cases to humans. Knowledge Extraction: Advanced NLP engines scan thousands of unstructured documents—contracts, invoices, and reports—to extract critical data points in seconds, saving thousands of manual hours. Global Collaboration: Real-time neural translation tools break down language barriers, allowing international teams to collaborate seamlessly on internal communications and documents. The Technologies Driving the Change This blog highlights the breakthroughs shaping modern NLP, particularly the rise of Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG). While LLMs provide the creative reasoning and conversational fluency, RAG ensures that the AI's answers are grounded in your company's specific data. This combination eliminates errors (often called 'hallucinations') and ensures that every automated response is accurate, compliant, and reliable. Why This Matters for Enterprises The impact is transformative: faster workflows, significantly reduced operational load, and vastly improved customer experiences. By adopting these Contextual Chat Agents, organizations can scale their automation efforts without losing the personal touch that customers value. The future of automation speaks your language—literally.",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    },
+
+    {
+      id: 3,
+      category: "Computer Vision",
+      categoryColor: "bg-blue-100 text-blue-600",
+      title: "Computer Vision is Changing Automation Forever",
+      description:
+        "Computer Vision is enabling machines to interpret the world visually with unprecedented accuracy, and industries are transforming because of it. Unlike standard cameras that simply record footage, Computer Vision systems 'understand' what they see. By mimicking the complexity of the human visual system and augmenting it with machine speed, these systems can analyze vast amounts of visual data in milliseconds, identifying patterns and anomalies that the human eye might miss.Transforming Key Industries The application of this technology is reshaping the global economy across several verticals: Manufacturing & Industry 4.0: Factories are deploying AI-driven quality inspection systems that detect microscopic defects instantly. This ensures zero-defect production lines and reduces waste significantly. Retail Evolution: Retailers are moving beyond simple surveillance. They now use vision analytics for customer behavior tracking (heatmaps) and frictionless, automated checkouts, eliminating long queues and enhancing the shopping experience. Healthcare: Medical institutions rely on AI for 'second opinions.'' Algorithms analyze X-rays, MRIs, and CT scans to detect early signs of diseases like tumors or fractures, leading to faster diagnosis and improved patient care. Powering Smart Cities and Mobility Computer Vision is the 'eyes' behind the autonomous revolution. It powers self-driving vehicles, allowing them to navigate complex traffic, recognize pedestrians, and read road signs in real-time. Beyond cars, it enables smart city surveillance for traffic management, drone monitoring for agriculture and safety, and immersive AR/VR experiences that blend digital information with the physical world. The Technological Edge: Real-Time and On-Device This blog dives into the latest advancements driving this shift—specifically Real-Time Object Detection and Edge Vision Models. By processing visual data locally on the device (Edge AI) rather than sending it to the cloud, businesses can achieve near-zero latency. Combined with spatial analytics, Computer Vision is not just watching the world; it is actively helping to build a safer, smarter, and more efficient future.",
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
+    },
+
+    {
+      id: 4,
+      category: "Generative AI",
+      categoryColor: "bg-purple-100 text-purple-600",
+      title: "From Chatbots to Creation: The Evolution of Generative AI",
+      description:
+        "Generative AI has moved far beyond simple chatbots and is now acting as a powerful engine for enterprise creativity and innovation. While traditional AI analyzes existing data, Generative AI creates new data—whether it's writing code, designing marketing visuals, or drafting legal contracts. This capability is fundamentally changing the 'Creator Economy' within businesses. From Concept to Reality Faster: Product teams are using GenAI to rapid-prototype designs, reducing the time-to-market from months to weeks. Marketing departments leverage these models to generate hyper-personalized content at scale, ensuring that every customer interaction feels unique. Coding and Development: In the software world, AI-powered coding assistants are writing boilerplate code, debugging errors, and documenting systems, allowing developers to focus on complex architecture rather than syntax. The Future of Human-AI Collaboration: This blog explores how Generative AI is not replacing human creativity but amplifying it. By handling the heavy lifting of drafting and iterating, GenAI frees up human professionals to focus on strategy, emotional connection, and final quality assurance, marking a new era of hybrid workforce productivity.",
+      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485",
+    },
+
+    {
+      id: 5,
+      category: "Predictive Analytics",
+      categoryColor: "bg-green-100 text-green-600",
+      title: "From Hindsight to Foresight: The Power of Predictive Analytics",
+      description:
+        "In the past, businesses relied on 'Descriptive Analytics' to understand what happened yesterday. Today, 'Predictive Analytics' tells them what will happen tomorrow. By utilizing historical data, statistical algorithms, and machine learning techniques, organizations can now predict future outcomes with remarkable precision. Shifting from Reactive to Proactive: The true power of predictive analytics lies in its ability to turn an organization from reactive to proactive. Instead of fixing a machine after it breaks, predictive maintenance models alert engineers days in advance about potential failures, saving millions in downtime. Customer Retention and Growth: In the sales sector, predictive models analyze customer behavior patterns to identify 'churn risks'—customers who are likely to leave—allowing teams to intervene with targeted offers before it's too late. Financial Forecasting: CFOs are using these tools to simulate various market scenarios, helping them optimize cash flow and investment strategies amidst economic uncertainty. This blog dives deep into how data is no longer just a record of the past, but a map to the future.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+    },
+
+    {
+      id: 6,
+      category: "AI Ethics & Security",
+      categoryColor: "bg-red-100 text-red-600",
+      title: "The Trust Factor: Navigating AI Ethics and Data Privacy",
+      description:
+        "As AI becomes deeply integrated into business operations, the question changes from 'Can we build it?' to 'Should we build it, and is it safe?' The rise of powerful AI systems has brought critical challenges regarding data privacy, algorithmic bias, and security. Building Responsible AI: For global enterprises, adopting AI is not just about performance; it is about compliance and trust. 'Explainable AI' (XAI) is becoming a standard requirement, ensuring that AI decisions—such as loan approvals or hiring recommendations—are transparent and understandable, rather than coming from a 'black box.' Data Sovereignty and Security: With cyber threats becoming more sophisticated, AI-driven security systems are the new defense line, detecting anomalies and breaches faster than any human analyst. However, businesses must also ensure that their internal data used to train models remains secure and does not leak into public domains. This blog discusses the framework for Ethical AI governance and how companies can innovate without compromising on security or values.",
+      image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
+    },
+  ];
+
   const auditProcess = [
     {
       icon: Search,
@@ -85,10 +150,27 @@ const Services = () => {
     },
   ];
 
+  const [searchParams] = useSearchParams();
+  const section = searchParams.get("section");
+
+  useEffect(() => {
+    if (section) {
+      const element = document.getElementById(section);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 200);
+      }
+    }
+  }, [section]);
+  const handleNavigation = (id, industry: any) => {
+    navigate(`/industries/${id}`, { state: { industry } });
+  };
+
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-16">
+      <main className="pt-16" id="ai-solutions">
         {/* Hero Section */}
         <section className="py-24 bg-gradient-to-br from-primary/10 to-accent/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,7 +187,7 @@ const Services = () => {
         </section>
 
         {/* AI Audit Service */}
-        <section className="py-24">
+        <section className="py-24" id="ai-audit">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <Card className="card-gradient hover:shadow-strong transition-all duration-500">
@@ -231,7 +313,7 @@ const Services = () => {
         </section>
 
         {/* AI Lab Solutions */}
-        <section className="py-24">
+        <section className="py-24" id="ai-lab-solutions">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-6">
@@ -308,7 +390,7 @@ const Services = () => {
         </section>
 
         {/* Blog Section */}
-        <section className="py-24 bg-secondary/20 cursor-pointer">
+        <section className="py-24 bg-secondary/20 cursor-pointer" id="blog">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -322,70 +404,36 @@ const Services = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-              {/* Blog 1 */}
-              <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                <img
-                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
-                  className="h-56 w-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="p-6 space-y-3">
-                  <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">
-                    AI Strategy
-                  </span>
-                  <h3 className="text-xl font-bold">
-                    How AI is Transforming Global Enterprise Workflows
-                  </h3>
-                  <p className="text-muted-foreground">
-                    A deep look at automation, optimization, and intelligent
-                    decision systems reshaping enterprise operations.
-                  </p>
+              {blogs.map((blog) => (
+                <div
+                  key={blog.id}
+                  className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                  onClick={() =>
+                    navigate("/blog-detail", {
+                      state: { blogs, currentId: blog.id },
+                    })
+                  }
+                >
+                  <img
+                    src={blog.image}
+                    className="h-56 w-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="p-6 space-y-3">
+                    <span
+                      className={`text-xs px-3 py-1 rounded-full ${blog.categoryColor}`}
+                    >
+                      {blog.category}
+                    </span>
+                    <h3 className="text-xl font-bold">{blog.title}</h3>
+                    <p className="text-muted-foreground">{blog.description.slice(0 , 100)+"..."}</p>
+                  </div>
                 </div>
-              </div>
-
-              {/* Blog 2 */}
-              <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                <img
-                  src="https://images.unsplash.com/photo-1518770660439-4636190af475"
-                  className="h-56 w-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="p-6 space-y-3">
-                  <span className="text-xs bg-accent/10 text-accent px-3 py-1 rounded-full">
-                    NLP
-                  </span>
-                  <h3 className="text-xl font-bold">
-                    Revolution of NLP-Powered Automation
-                  </h3>
-                  <p className="text-muted-foreground">
-                    A new generation of NLP systems is enabling intelligent
-                    conversations, fast operations, and smart insights.
-                  </p>
-                </div>
-              </div>
-
-              {/* Blog 3 */}
-              <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                <img
-                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b"
-                  className="h-56 w-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="p-6 space-y-3">
-                  <span className="text-xs bg-blue-100 text-blue-600 px-3 py-1 rounded-full">
-                    Computer Vision
-                  </span>
-                  <h3 className="text-xl font-bold">
-                    Computer Vision is Changing Automation Forever
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Industries are adopting automated inspection, object
-                    tracking, and AI-powered detection at massive scale.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
         {/* Case Studies Section */}
-        <section className="py-28 bg-white">
+        <section className="py-28 bg-white" id="case-studies">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold">
@@ -439,7 +487,10 @@ const Services = () => {
               </div>
             </div>
             <div className="flex justify-center mt-10">
-              <button onClick={()=>navigate('/products')} className="px-6 py-3 text-lg border-2 border-blue-500 text-blue-600 rounded-xl hover:bg-blue-500 hover:text-white transition-all duration-300">
+              <button
+                onClick={() => navigate("/products")}
+                className="px-6 py-3 text-lg border-2 border-blue-500 text-blue-600 rounded-xl hover:bg-blue-500 hover:text-white transition-all duration-300"
+              >
                 Know More
               </button>
             </div>

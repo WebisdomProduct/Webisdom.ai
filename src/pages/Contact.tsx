@@ -266,6 +266,7 @@ const Contact = () => {
                           <h4 className="font-semibold mb-1">Email</h4>
                           <p className="text-muted-foreground">contact@webisdom.ai</p>
                           <p className="text-muted-foreground">atharv.kumar@webisdom.ai</p>
+                          <p className="text-muted-foreground">Atharv.kumar@webisdom.com</p>
                         </div>
                       </div>
 
@@ -330,7 +331,7 @@ const Contact = () => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Button className="flex-1" asChild>
-                        <a href="mailto:contact@webisdom.ai">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@webisdom.ai" target="_blank">
                           Email Us Directly
                         </a>
                       </Button>

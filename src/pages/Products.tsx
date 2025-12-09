@@ -1,425 +1,272 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import { useState } from "react";
+import { Link } from "react-router-dom"; 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Link } from "react-router-dom";
-
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ChevronUp } from "lucide-react";
-
-import {
-  ExternalLink,
-  Zap,
-  Shield,
-  BarChart3,
-  Users,
-  Calendar,
-  MessageSquare,
-  Brain,
-  Hotel,
-  Utensils,
+import { 
+  ChevronRight, ChevronLeft, Sparkles, Github, Code2, Terminal, 
+  ExternalLink, CheckCircle, Zap, Brain, Shield, Users, ArrowRight, ChevronDown 
 } from "lucide-react";
-import CaseStudies from "@/components/sections/CaseStudies";
-import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import { DemoRequestDialog } from "@/components/forms/DemoRequestDialog";
+import CaseStudies from "@/components/sections/CaseStudies";
 
-const Products = () => {
-  const products = [
-    {
-      id: "ai-chieftain",
-      title: "AI Chieftain",
-      subtitle: "Hotel Management Revolution",
-      description:
-        "Complete AI-powered hotel management system that transforms guest experience and operational efficiency.",
-      url: "https://ai-chieftain.webisdomtech.com",
-      demoVideo: "",
-      demoDocument: "",
-      category: "Hospitality AI",
-      status: "Live Platform",
-      image: "https://images.unsplash.com/photo-1535223289827-42f1e9919769", // AI + Hotel management tech
-      features: [
-        "Smart Room Management",
-        "Guest Experience AI",
-        "Revenue Optimization",
-        "Predictive Analytics",
-        "Automated Check-in/out",
-        "Real-time Reporting",
-      ],
-      technologies: [
-        "Machine Learning",
-        "Natural Language Processing",
-        "IoT Integration",
-        "Cloud Computing",
-      ],
-      benefits: [
-        "30% increase in operational efficiency",
-        "25% improvement in guest satisfaction",
-        "40% reduction in manual tasks",
-        "Real-time insights and analytics",
-      ],
-    },
+// IMPORT DATA
+import { products } from "@/data/productsData"; 
 
+// ==========================================
+// COMPONENT: ProductTour
+// ==========================================
+const ProductTour = () => {
+  const steps = [
     {
-      id: "ai-pms",
-      title: "AI PMS",
-      subtitle: "Property Management System for Hotels",
-      description:
-        "Smart, AI-powered PMS that automates daily hotel operations with real-time analytics.",
-      url: "https://ai-chieftain.webisdomtech.com",
-      demoVideo: "",
-      demoDocument: "",
-      category: "Hospitality AI",
-      status: "Demo",
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692", // dashboard / system UI
-      features: [
-        "Reservation Automation",
-        "Room Status AI",
-        "Payment & Billing AI",
-        "Forecasting & Reporting",
-        "Multi-location Management",
-      ],
-      technologies: ["AI Automation", "Cloud PMS", "Predictive Analytics"],
-      benefits: [
-        "Reduced workload for staff",
-        "Faster check-in/check-out",
-        "Better forecasting accuracy",
-      ],
+      title: "Executive Dashboard",
+      description: "Get a bird's eye view of all your AI operations. Monitor performance metrics, revenue growth, and system health in real-time.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71" 
     },
-
     {
-      id: "rms",
-      title: "AI Revenue Management System",
-      subtitle: "Smart Revenue Optimization",
-      description:
-        "Powerful AI system that predicts pricing to maximize hotel revenue.",
-      url: "https://ai-chieftain.webisdomtech.com",
-      demoVideo: "",
-      demoDocument: "",
-      category: "Revenue AI",
-      status: "Demo",
-      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296", // analytics / charts / forecasting
-      features: [
-        "Dynamic Pricing",
-        "Demand Forecasting",
-        "Market Intelligence",
-      ],
-      technologies: ["Predictive AI", "Data Analytics"],
-      benefits: ["Increase RevPAR", "Optimize pricing 24/7"],
+      title: "Smart Workflow Automation",
+      description: "Automate repetitive tasks with drag-and-drop AI agents. Connect your CRM, Email, and ERP systems seamlessly.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f"
     },
-
     {
-      id: "restaurant-agent",
-      title: "Restaurant AI Agent",
-      subtitle: "AI Assistant for Restaurants",
-      description:
-        "AI agent that automates table reservations, menu suggestions, customer support, and feedback handling.",
-      url: "https://ai-chieftain.webisdomtech.com",
-      demoVideo: "",
-      demoDocument: "",
-      category: "Hospitality AI",
-      status: "Demo",
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836", // restaurant + workflow image
-      features: [
-        "Menu Recommendations",
-        "Booking Automation",
-        "Customer Chat",
-        "Feedback Analysis",
-      ],
-      technologies: ["AI Chat", "Voice AI"],
-      benefits: ["Faster service", "Reduced manpower costs"],
+      title: "Predictive Analytics",
+      description: "Forecast future trends with 95% accuracy. Use historical data to make informed decisions about inventory and staffing.",
+      image: "https://images.unsplash.com/photo-1551434678-e076c223a692"
     },
-
     {
-      id: "ferozee-avatar",
-      title: "AI Avatar for Ferozee Azeez",
-      subtitle: "Personalized AI Avatar",
-      description:
-        "An AI-driven multimedia avatar designed for interactive storytelling, brand communication, and automation.",
-      url: "https://ai-chieftain.webisdomtech.com",
-      demoVideo: "",
-      demoDocument: "",
-      category: "Finance AI",
-      status: "Live Demo",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71", // futuristic AI face / avatar look
-      features: ["Lifelike Avatar", "Voice AI", "Interactive Responses"],
-      technologies: ["Deep Learning", "Face AI"],
-      benefits: ["Brand growth", "24/7 availability"],
-    },
-
-    {
-      id: "coworking-agent",
-      title: "AI Agent for Coworking Spaces",
-      subtitle: "Smart Automation for Coworking Centers",
-      description:
-        "AI assistant for operations, member support, tour booking, and billing automation.",
-      url: "https://ai-chieftain.webisdomtech.com",
-      demoVideo: "",
-      demoDocument: "",
-      category: "Coworking Automation",
-      status: "Demo",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978", // coworking environment + tech
-      features: [
-        "Tour Booking Automation",
-        "Billing AI",
-        "Space Utilization AI",
-      ],
-      technologies: ["AI Chatbots", "Automation"],
-      benefits: ["Better occupancy", "Improved member experience"],
-    },
-
-    {
-      id: "loan-agent",
-      title: "Loan Processing AI Agent",
-      subtitle: "Automated Loan Evaluation",
-      description:
-        "AI that analyzes documents, verifies user data, and evaluates loan eligibility instantly.",
-      url: "https://ai-chieftain.webisdomtech.com",
-      demoVideo: "",
-      demoDocument: "",
-      category: "Finance AI",
-      status: "Demo",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71", // fintech tech dashboard
-      features: ["Document AI", "KYC Automation", "Credit Evaluation"],
-      technologies: ["OCR", "AI Risk Scoring"],
-      benefits: ["Faster approvals", "Reduced manual processing"],
-    },
-
-    {
-      id: "compliance-agent",
-      title: "Compliance AI Agent",
-      subtitle: "Automated Compliance Monitoring",
-      description:
-        "AI that tracks compliance tasks, audits, updates, and document workflows.",
-      url: "https://ai-chieftain.webisdomtech.com",
-      demoVideo: "",
-      demoDocument: "",
-      category: "Finance AI",
-      status: "Demo",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71", // cybersecurity + compliance tech
-      features: ["Policy Tracking", "Audit Automation", "Compliance Alerts"],
-      technologies: ["AI Automation"],
-      benefits: ["Zero compliance risk", "Real-time monitoring"],
-    },
+      title: "Budget & Compliance Control",
+      description: "Ensure contract compliance and gain full control over rates, limits, and budget definitions automatically.",
+      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c"
+    }
   ];
 
-  const [open, setOpen] = useState({
-    state: false,
-    product: null,
-  });
+  const [currentStep, setCurrentStep] = useState(0);
 
-  const handleDownArrowClick = (product) => {
-    setOpen({
-      state: open.product?.id === product.id ? !open.state : true,
-      product,
-    });
-  };
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const nextStep = () => setCurrentStep((prev) => (prev + 1) % steps.length);
+  const prevStep = () => setCurrentStep((prev) => (prev - 1 + steps.length) % steps.length);
 
   return (
-    <div className="min-h-screen">
+    <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden mb-20">
+      <div className="bg-black text-white p-6 md:p-8 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold mb-2">Product Tour — Enterprise AI Suite</h2>
+        <p className="text-gray-400 text-lg">
+          Exceed client expectations with projects that are on time and on budget.
+        </p>
+      </div>
+      
+      <div className="flex flex-col lg:flex-row h-[500px] lg:h-[600px]">
+        <div className="w-full lg:w-2/3 bg-gray-100 relative overflow-hidden">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentStep}
+              src={steps[currentStep].image}
+              alt={steps[currentStep].title}
+              className="w-full h-full object-cover object-center"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
+            />
+          </AnimatePresence>
+          <div className="absolute inset-0 flex justify-between items-center px-4 pointer-events-none">
+            <Button variant="secondary" size="icon" className="pointer-events-auto rounded-full bg-white/80 hover:bg-white shadow-lg" onClick={prevStep}>
+              <ChevronLeft className="h-6 w-6 text-black" />
+            </Button>
+            <Button variant="secondary" size="icon" className="pointer-events-auto rounded-full bg-white/80 hover:bg-white shadow-lg" onClick={nextStep}>
+              <ChevronRight className="h-6 w-6 text-black" />
+            </Button>
+          </div>
+        </div>
+        <div className="w-full lg:w-1/3 p-8 lg:p-12 flex flex-col justify-center bg-white">
+          <div className="mb-6">
+            <span className="text-sm font-bold text-gray-400 uppercase tracking-widest">
+              Step {currentStep + 1} / {steps.length}
+            </span>
+          </div>
+          <h3 className="text-3xl font-bold text-gray-900 mb-4 leading-tight">
+            {steps[currentStep].title}
+          </h3>
+          <p className="text-lg text-gray-600 leading-relaxed mb-8">
+            {steps[currentStep].description}
+          </p>
+          <div className="flex gap-2">
+             {steps.map((_, idx) => (
+               <div 
+                 key={idx} 
+                 onClick={() => setCurrentStep(idx)}
+                 className={`h-2 rounded-full cursor-pointer transition-all duration-300 ${idx === currentStep ? 'w-8 bg-black' : 'w-2 bg-gray-300'}`}
+               />
+             ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ==========================================
+// MAIN COMPONENT: PRODUCTS
+// ==========================================
+const Products = () => {
+  const [filter, setFilter] = useState("All");
+  const [openProduct, setOpenProduct] = useState(null); 
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+
+  // Unique Categories nikalo
+  const categories = ["All", ...new Set(products.map(p => p.category))];
+
+  // 🔥 FILTER LOGIC (Jo select kiya wahi dikhega)
+  const displayedCategories = filter === "All" 
+    ? [...new Set(products.map(p => p.category))] // Show all categories
+    : [filter]; // Show selected category only
+
+  return (
+    <div className="min-h-screen bg-gray-50/50">
       <Header />
-      <main className="pt-16">
+      <main className="pt-20">
+        
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-br from-primary/10 to-accent/10">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                AI-Powered <span className="text-gradient">Products</span>
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Discover our cutting-edge AI solutions designed to transform
-                your business operations and drive unprecedented growth.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Badge variant="secondary" className="px-4 py-2">
-                  <Brain className="w-4 h-4 mr-2" />
-                  AI-Powered
-                </Badge>
-                <Badge variant="secondary" className="px-4 py-2">
-                  <Shield className="w-4 h-4 mr-2" />
-                  Enterprise Ready
-                </Badge>
-                <Badge variant="secondary" className="px-4 py-2">
-                  <Zap className="w-4 h-4 mr-2" />
-                  Real-time Analytics
-                </Badge>
-              </div>
+        <section className="relative py-24 overflow-hidden bg-white">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+          <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
+            <Badge variant="secondary" className="mb-6 px-4 py-2 text-sm bg-primary/10 text-primary border-primary/20">
+              <Sparkles className="w-4 h-4 mr-2" /> Enterprise AI Solutions
+            </Badge>
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight text-gray-900">
+              AI-Powered <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">Product Suite</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed">
+              Exceed client expectations with projects that are on time and on budget.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button size="lg" className="h-12 px-8 text-lg rounded-full" onClick={() => setIsModalOpen(true)}>
+                Book a Demo <ChevronRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button size="lg" variant="outline" className="h-12 px-8 text-lg rounded-full" asChild>
+                <a href="#product-tour">Take a Tour</a>
+              </Button>
             </div>
           </div>
         </section>
 
-        {/* Products & Case Studies Tabs */}
-        <section className="py-10">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* MAIN CONTENT */}
+        <section className="py-16" id="product-tour">
+          <div className="container mx-auto px-4">
+            
             <Tabs defaultValue="products" className="w-full">
-              <TabsList className="grid w-full max-w-md mx-auto mb-8 grid-cols-2">
-                <TabsTrigger value="products">Products</TabsTrigger>
-                <TabsTrigger value="case-studies">Case Studies</TabsTrigger>
+              <TabsList className="grid w-full max-w-md mx-auto mb-16 p-1 bg-gray-200/50 rounded-full">
+                <TabsTrigger value="products" className="rounded-full py-2.5">Our Products</TabsTrigger>
+                <TabsTrigger value="case-studies" className="rounded-full py-2.5">Case Studies</TabsTrigger>
               </TabsList>
 
-              <TabsContent value="products" className="space-y-16">
-                <div className="w-full px-4 py-8 space-y-12">
-                  {Object.entries(
-                    products.reduce((acc, product) => {
-                      // Group products by category
-                      if (!acc[product.category]) acc[product.category] = [];
-                      acc[product.category].push(product);
-                      return acc;
-                    }, {} as Record<string, typeof products>)
-                  ).map(([category, categoryProducts]) => (
-                    <div key={category} className="space-y-4">
-                      <h2 className="text-xl font-bold text-gray-800">
-                        {category}
-                      </h2>
-                      <div
-                        className="flex gap-6 overflow-x-auto snap-x snap-mandatory p-3"
-                        style={{
-                          scrollbarWidth: "none",
-                          msOverflowStyle: "none",
-                        }}
-                      >
-                        {categoryProducts.map((product) => (
-                          <div
-                            key={product.id}
-                            className="flex-none w-72 group bg-white/80  backdrop-blur-md border border-gray-200 rounded-2xl p-5 relative snap-start shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 cursor-pointer"
-                            onClick={() => handleDownArrowClick(product)}
-                          >
-                            <div className="h-40 w-full mb-4 rounded-xl overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center relative group">
-                              <img
-                                src={product.image}
-                                alt={product.title}
-                                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                              />
-                              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
-                            </div>
-                            <h2 className="text-lg font-bold text-gray-800 mb-1">
-                              {product.title}
-                            </h2>
-                            <h3 className="text-sm text-gray-500 mb-4 h-20">
-                              {product.subtitle}
-                            </h3>
+              <TabsContent value="products" className="space-y-16 focus-visible:outline-none">
+                
+                {/* 1. PRODUCT TOUR */}
+                <ProductTour />
 
-                            <div className="bottom-4 child1 group-hover:animate-bounce duration-700 left-1/2  text-2xl text-gray-600 cursor-pointer  duration-300">
-                              {open.state && open.product?.id === product.id ? (
-                                <ChevronUp size={30} />
-                              ) : (
-                                <ChevronDown />
-                              )}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* AnimatePresence Panel for the opened product in this row */}
-                      <AnimatePresence>
-                        {open.state &&
-                          open.product &&
-                          categoryProducts.some(
-                            (p) => p.id === open.product?.id
-                          ) && (
-                            <motion.div
-                              key={open.product.id}
-                              className="mt-6 bg-white p-6 shadow-lg w-full rounded-none md:rounded-xl"
-                              initial={{ opacity: 0, y: -100 }}
-                              animate={{ opacity: 1, y: 10 }}
-                              exit={{ opacity: 0, y: -100 }}
-                              transition={{ duration: 0.3 }}
-                              onDoubleClick={() =>
-                                setOpen({ state: false, product: null })
-                              }
-                            >
-                              <div className="flex flex-col md:flex-row gap-6">
-                                <div className="flex flex-col w-full md:w-1/3 justify-center">
-                                  <img
-                                    src={open.product.image}
-                                    alt={open.product.title}
-                                    className="w-full h-64 object-cover rounded-lg"
-                                  />
-                                </div>
-                                <div className="flex-1 space-y-4">
-                                  <div>
-                                    <Badge variant="outline" className="mb-2">
-                                      {open.product.status}
-                                    </Badge>
-                                    <h2 className="text-2xl font-bold">
-                                      {open.product.title}
-                                    </h2>
-                                    <h3 className="text-lg text-primary">
-                                      {open.product.subtitle}
-                                    </h3>
-                                    <p className="text-gray-600 mt-2">
-                                      {open.product.description}
-                                    </p>
-                                  </div>
-
-                                  <div className="space-y-2">
-                                    <div>
-                                      <h4 className="font-semibold">
-                                        Features:
-                                      </h4>
-                                      <div className="flex flex-wrap gap-2 mt-1">
-                                        {open.product.features.map((f) => (
-                                          <Badge key={f} variant="secondary">
-                                            {f}
-                                          </Badge>
-                                        ))}
-                                      </div>
-                                    </div>
-                                    <div>
-                                      <h4 className="font-semibold">
-                                        Technologies:
-                                      </h4>
-                                      <div className="flex flex-wrap gap-2 mt-1">
-                                        {open.product.technologies.map((t) => (
-                                          <Badge key={t} variant="secondary">
-                                            {t}
-                                          </Badge>
-                                        ))}
-                                      </div>
-                                    </div>
-                                    <div>
-                                      <h4 className="font-semibold">
-                                        Benefits:
-                                      </h4>
-                                      <div className="flex flex-wrap gap-2 mt-1">
-                                        {open.product.benefits.map((b) => (
-                                          <Badge key={b} variant="secondary">
-                                            {b}
-                                          </Badge>
-                                        ))}
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  {/* Buttons */}
-                                  <div className="flex gap-4 mt-4 flex-wrap">
-                                    <Button asChild>
-                                      <Link
-                                        to={`/products/${open.product.id}`}
-                                        state={{ product: open.product }}
-                                      >
-                                        Explore Platform
-                                        <ExternalLink className="ml-2 w-4 h-4" />
-                                      </Link>
-                                    </Button>
-                                    <Button variant="outline" asChild>
-                                      <a href="/contact">Request Demo</a>
-                                    </Button>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <p className="mt-4 text-sm text-gray-400">
-                                *Double click anywhere on this panel to close
-                              </p>
-                            </motion.div>
-                          )}
-                      </AnimatePresence>
+                {/* 🔥 NEW: DROPDOWN FILTER SECTION */}
+                <div className="flex flex-col md:flex-row justify-between items-end md:items-center gap-4 border-b border-gray-200 pb-6">
+                  <div>
+                    <h2 className="text-3xl font-bold text-gray-900">Explore Solutions</h2>
+                    <p className="text-gray-500 mt-1">Browse our complete catalog of {products.length} AI agents.</p>
+                  </div>
+                  
+                  {/* Dropdown UI */}
+                  <div className="relative w-full md:w-64">
+                    <select
+                      value={filter}
+                      onChange={(e) => setFilter(e.target.value)}
+                      className="w-full appearance-none bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block p-3 pr-10 shadow-sm cursor-pointer"
+                    >
+                      {categories.map((cat, idx) => (
+                        <option key={idx} value={cat}>
+                          {cat === "All" ? "All Categories" : cat}
+                        </option>
+                      ))}
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
+                      <ChevronDown className="h-4 w-4" />
                     </div>
-                  ))}
+                  </div>
+                </div>
+
+                {/* 2. PRODUCT GRID (Filtered) */}
+                <div className="space-y-24 min-h-[500px]">
+                  {displayedCategories.map((category) => {
+                    // Filter products for this category
+                    const categoryProducts = products.filter(p => p.category === category);
+                    
+                    if (categoryProducts.length === 0) return null;
+
+                    return (
+                      <div key={category} className="space-y-8 animate-in fade-in duration-700">
+                        <div className="flex items-center gap-4">
+                          <div className="h-8 w-1 bg-primary rounded-full"></div>
+                          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">{category}</h2>
+                          <Badge variant="secondary" className="ml-2">{categoryProducts.length}</Badge>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                          {categoryProducts.map((product) => (
+                            <Card 
+                              key={product.id}
+                              className="group cursor-pointer hover:shadow-2xl transition-all duration-500 border-gray-200/60 overflow-hidden bg-white h-full hover:-translate-y-2"
+                            >
+                              {/* Link Wrapper */}
+                              <Link to={`/products/${product.id}`} className="block h-full">
+                                  {/* Image Area */}
+                                  <div className="relative h-56 overflow-hidden">
+                                    <img
+                                      src={product.image}
+                                      alt={product.title}
+                                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                                    <Badge className="absolute top-4 right-4 bg-white/90 text-black backdrop-blur-md border-0">
+                                      {product.status}
+                                    </Badge>
+                                    <div className="absolute bottom-4 left-4 text-white">
+                                      <h3 className="text-xl font-bold mb-1">{product.title}</h3>
+                                      <p className="text-sm text-gray-200 line-clamp-1">{product.subtitle}</p>
+                                    </div>
+                                  </div>
+
+                                  <CardContent className="p-6">
+                                    <p className="text-gray-600 mb-6 text-sm leading-relaxed line-clamp-3">
+                                      {product.description}
+                                    </p>
+                                    
+                                    <div className="flex flex-wrap gap-2 mb-6">
+                                      {product.features.slice(0, 2).map((f, i) => (
+                                        <span key={i} className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">
+                                          {f}
+                                        </span>
+                                      ))}
+                                    </div>
+
+                                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                                      <span className="text-sm font-semibold text-primary flex items-center group-hover:translate-x-1 transition-transform">
+                                        View Details <ChevronRight className="ml-1 w-4 h-4" />
+                                      </span>
+                                    </div>
+                                  </CardContent>
+                              </Link>
+                            </Card>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </TabsContent>
 
@@ -430,90 +277,26 @@ const Products = () => {
           </div>
         </section>
 
-        {/* Why Choose Our Products */}
-        <section className="py-24 bg-muted/50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold mb-6">
-                Why Choose Our AI Products?
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                Our products are built with cutting-edge AI technology and deep
-                industry expertise to deliver measurable results.
-              </p>
-            </div>
+        {/* DIALOG POPUP FOR QUICK PREVIEW (If needed in future) */}
+        {/* Currently handling navigation via Link to /products/:id */}
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="text-center p-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Brain className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">
-                  Advanced AI Technology
-                </h3>
-                <p className="text-muted-foreground">
-                  Built with state-of-the-art machine learning algorithms and
-                  neural networks for superior performance.
-                </p>
-              </Card>
-
-              <Card className="text-center p-8">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Users className="w-8 h-8 text-accent" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">Industry Expertise</h3>
-                <p className="text-muted-foreground">
-                  Developed by industry experts with deep understanding of
-                  business processes and challenges.
-                </p>
-              </Card>
-
-              <Card className="text-center p-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Shield className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">Enterprise Security</h3>
-                <p className="text-muted-foreground">
-                  Bank-grade security with compliance to international standards
-                  and data protection regulations.
-                </p>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-r from-primary to-accent text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Join hundreds of companies already using our AI solutions to drive
-              growth and efficiency.
+        {/* FOOTER CTA */}
+        <section className="py-24 bg-black text-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent"></div>
+          <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
+            <h2 className="text-4xl font-bold mb-6">Ready to scale your enterprise?</h2>
+            <p className="text-xl text-gray-400 mb-10">
+              Join industry leaders who are using our AI agents to reduce costs and drive innovation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center cursor-pointer">
-              <Button
-                size="lg"
-                variant="secondary"
-                asChild
-                onClick={() => setIsModalOpen(!isModalOpen)}
-              >
-                <a>Schedule a Demo</a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-transparent border-white text-white hover:bg-white hover:text-primary"
-                asChild
-              >
-                <a href="/contact">Contact Sales</a>
+            <div className="flex justify-center gap-4">
+              <Button size="lg" className="bg-white text-black hover:bg-gray-100 rounded-full h-14 px-10 text-lg" onClick={() => setIsModalOpen(true)}>
+                Start Free Pilot
               </Button>
             </div>
           </div>
         </section>
-      </main>
 
+      </main>
       <DemoRequestDialog open={isModalOpen} onOpenChange={setIsModalOpen} />
       <Footer />
     </div>

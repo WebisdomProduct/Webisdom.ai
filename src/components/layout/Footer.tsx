@@ -12,7 +12,7 @@ const Footer = () => {
               <img
                 src="/lovable-uploads/261cb841-1550-43b8-927d-f30d8e8fb3c7.png"
                 alt="Webisdom AI Solutions"
-                className="h-16 sm:h-20 w-30 brightness-0 invert"
+                className="h-20 sm:h-20 w-56 brightness-0 invert"
               />
               {/* <span className="text-lg font-bold">Webisdom AI</span> */}
             </div>
@@ -85,6 +85,22 @@ const Footer = () => {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/products"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Products
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/industries"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Industries
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -99,7 +115,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
-                  Hotel AI Chieftain
+                  AI Chieftain
                 </a>
               </li>
               <li>
@@ -111,15 +127,55 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <span className="text-primary-foreground/60">
-                  Fintech Solutions (Coming Soon)
-                </span>
+               <Link
+                  to="/services"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                 Fintech
+                </Link>
               </li>
               <li>
-                <span className="text-primary-foreground/60">
-                  Healthcare Solutions (Coming Soon)
-                </span>
+                 <Link
+                  to="/industries?section=hospitality"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                 Hospitality solutions
+                </Link>
               </li>
+              <li>
+                 <Link
+                  to="/industries?section=revenue"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                 Renenue solutions
+                </Link>
+              </li>
+              <li>
+                 <Link
+                  to="/industries?section=healthcare"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                 Healthcare solutions
+                </Link>
+              </li>
+              <li>
+                 <Link
+                  to="/industries?section=fintech"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                Fintech solutions
+                </Link>
+              </li>
+              <li>
+                 <Link
+                  to="/industries?section=coworking"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                 Coworking solutions
+                </Link>
+              </li>
+              
+            
             </ul>
           </div>
 
@@ -145,6 +201,15 @@ const Footer = () => {
                     className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     atharv.kumar@webisdom.ai
+                  </a>
+                   <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=Atharv.kumar@webisdom.com
+"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  >
+                   Atharv.kumar@webisdom.com
                   </a>
                 </div>
               </div>
