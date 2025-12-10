@@ -23,6 +23,7 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (formData.name && formData.email && formData.message) {
       setIsSubmitting(true);
       
@@ -31,9 +32,9 @@ const Contact = () => {
         const dateStr = now.toISOString().split('T')[0];
         const timeStr = now.toTimeString().split(' ')[0];
 
-        // Insert contact form data into form_submissions (public)
+        // 1. Keep Database Entry (Ye data ko Supabase table me save karega)
         const confirmationId = `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
-        const { data: insertData, error: insertError } = await supabase
+        const { error: insertError } = await supabase
           .from('form_submissions')
           .insert([
             {
@@ -43,38 +44,44 @@ const Contact = () => {
               email: formData.email,
               message: `Service: ${formData.service}\nMessage: ${formData.message}\nDate: ${dateStr} ${timeStr}`,
             }
-          ])
-          .select();
+          ]);
 
         if (insertError) {
           console.error('Database insert error:', insertError);
-          throw insertError;
+          // Database error hone par bhi hum email bhej sakte hain, isliye throw nahi kar rahe
         }
 
-        console.log('Form submitted successfully to database:', insertData);
-
-        // Call edge function to send email
+        // 2. SMTP Email Sending (Ye apke Node.js server ko request bhejega)
         try {
-          const { data: emailData, error: emailError } = await supabase.functions.invoke('send-contact-email', {
-            body: {
+          const response = await fetch("http://localhost:5000/api/send-email", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
               name: formData.name,
               email: formData.email,
               company: formData.company,
-              service: formData.service,
-              message: formData.message
-            }
+              message: formData.message,
+              type: formData.service, // Service ko 'type' banakar bhej rahe hain
+              phone: "Not provided in form" // Kyunki form me phone field nahi hai
+            }),
           });
 
-          if (emailError) {
-            console.error('Email sending error:', emailError);
+          const data = await response.json();
+
+          if (data.success) {
+            console.log("Email sent successfully via SMTP!");
           } else {
-            console.log('Email sent successfully:', emailData);
+            console.error("Failed to send email via SMTP:", data);
+            throw new Error("Failed to send email");
           }
         } catch (emailErr) {
-          console.error('Email function error:', emailErr);
-          // Don't throw - form is already saved
+          console.error('SMTP connection error:', emailErr);
+          throw new Error("Server connection failed. Make sure server.js is running.");
         }
 
+        // Success State
         setIsSubmitted(true);
         setFormData({
           name: "",
@@ -88,11 +95,12 @@ const Contact = () => {
           title: "Message sent successfully!",
           description: "We'll get back to you within 24 hours.",
         });
+
       } catch (error: any) {
         console.error('Error submitting form:', error);
         toast({
           title: "Error sending message",
-          description: error?.message || "Please try again or contact us directly.",
+          description: error?.message || "Please ensure your backend server is running on port 5000.",
           variant: "destructive"
         });
       } finally {
@@ -271,8 +279,8 @@ const Contact = () => {
                       </div>
 
                       <div className="flex items-start space-x-4">
-                        <div className="bg-primary/10 p-3 rounded-lg">
-                          <Mail className="h-6 w-6 text-primary" />
+                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                          <Phone className="h-6 w-6 text-primary" />
                         </div>
                         <div>
                           <h4 className="font-semibold mb-1">Phone</h4>
@@ -287,16 +295,6 @@ const Contact = () => {
                         <div>
                           <h4 className="font-semibold mb-1">Location</h4>
                           <p className="text-muted-foreground">First Floor, 8/78, Dentedge, Janpath, Connaught Place, New Delhi, Delhi, 110001</p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                          <Phone className="h-6 w-6 text-primary" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold mb-1">Response Time</h4>
-                          <p className="text-muted-foreground">Within 24 hours</p>
                         </div>
                       </div>
                     </div>

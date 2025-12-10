@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { supabase } from "@/integrations/supabase/client"; // Aapka supabase client
-import { useToast } from "@/hooks/use-toast"; // Aapka toast hook
+import { supabase } from "@/integrations/supabase/client"; 
+import { useToast } from "@/hooks/use-toast"; 
 import { ChevronDown } from "lucide-react"; 
 
 // Products Data Import
@@ -45,22 +45,51 @@ export const DemoRequestDialog = ({ open, onOpenChange, productName }: DemoReque
     setIsSubmitting(true);
 
     try {
-      // 🔥 FIX: Product Name ko Message ke saath jod rahe hain
-      // Taaki database mein naya column na banana pade.
+      // 1. Prepare Message
       const finalMessage = `Interested Product: ${formData.product || "General"}\n\nUser Message: ${formData.message || ""}`;
 
+      // 2. Save to Supabase Database
       const { error } = await supabase.from("demo_requests").insert([
         {
           name: formData.name,
           email: formData.email,
           company: formData.company || null,
           phone: formData.phone || null,
-          message: finalMessage, // ✅ Product info yahan bhej diya
+          message: finalMessage, 
         },
       ]);
 
       if (error) throw error;
 
+      // 3. Send Email via SMTP (Backend)
+      try {
+        const response = await fetch("http://localhost:5000/api/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            company: formData.company,
+            phone: formData.phone,
+            message: finalMessage, // Product name is included inside message
+            type: "Demo Request"   // Subject line ke liye
+          }),
+        });
+
+        const data = await response.json();
+        if (data.success) {
+          console.log("Demo Request Email sent successfully!");
+        } else {
+          console.error("Failed to send email:", data);
+        }
+      } catch (emailErr) {
+        console.error("SMTP Server Error:", emailErr);
+        // Hum error throw nahi kar rahe taaki user ko Success message dikhe (kyunki DB me save ho gaya hai)
+      }
+
+      // 4. Success Feedback
       toast({
         title: "Demo Request Submitted!",
         description: `We'll get back to you shortly regarding ${formData.product}.`,
@@ -84,10 +113,10 @@ export const DemoRequestDialog = ({ open, onOpenChange, productName }: DemoReque
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[550px] max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-[550px] max-h-[90vh] overflow-y-auto bg-white">
         <DialogHeader className="pb-4 border-b border-border">
-          <DialogTitle className="text-2xl font-bold text-gradient">Request a Demo</DialogTitle>
-          <DialogDescription className="text-base text-muted-foreground">
+          <DialogTitle className="text-2xl font-bold text-slate-900">Request a Demo</DialogTitle>
+          <DialogDescription className="text-base text-gray-500">
             Select a product and fill out your details. We'll schedule a personalized demo for you.
           </DialogDescription>
         </DialogHeader>
@@ -181,7 +210,7 @@ export const DemoRequestDialog = ({ open, onOpenChange, productName }: DemoReque
           </div>
 
           <div className="pt-2">
-            <Button type="submit" className="w-full h-12 text-base font-semibold" disabled={isSubmitting}>
+            <Button type="submit" className="w-full h-12 text-base font-semibold bg-blue-600 hover:bg-blue-700 text-white" disabled={isSubmitting}>
               {isSubmitting ? "Submitting..." : "Submit Demo Request"}
             </Button>
           </div>
