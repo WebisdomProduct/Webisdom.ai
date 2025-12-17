@@ -17,11 +17,11 @@ const transporter = nodemailer.createTransport({
   auth: {
     // Yahan wo email dalein jiske App Password se email bheja jayega
     // Agar aap chahte hain ki email bhi aapki hi ID se jaye, to yahan apni ID likhein
-    user: "paragdubey19@gmail.com", 
+    user: "atharvkumar43@gmail.com", 
     
     // Yahan wo 16-digit App Password dalein jo aapne Google Account se banaya hai
     // (Ye aapka normal Gmail password nahi hai)
-    pass: "dgvn jiti aobz nhvb", 
+    pass: "teim rbez bjrr thiq", 
   },
 });
 
@@ -32,7 +32,7 @@ app.post('/api/send-email', async (req, res) => {
     from: email, // Form bharne wale ka email (sirf dikhane ke liye)
     
     // 2. Email Kis Par Aana Chahiye (Receiver) -> Yahan aapki ID aayegi
-    to: "paragdubey19@gmail.com", 
+    to: "atharvkumar43@gmail.com", 
     
     subject: `New Lead: ${type} from ${name}`,
     html: `
@@ -48,7 +48,7 @@ app.post('/api/send-email', async (req, res) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    console.log("Email sent successfully to paragdubey19@gmail.com");
+    console.log("Email sent successfully to atharvkumar43@gmail.com");
     res.status(200).json({ success: true, message: "Email sent!" });
   } catch (error) {
     console.error("Error sending email:", error);
