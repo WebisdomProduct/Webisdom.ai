@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://webisdom.ai/webisdom-ai-sitemap.xml

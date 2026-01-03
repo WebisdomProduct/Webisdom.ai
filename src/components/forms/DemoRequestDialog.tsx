@@ -63,7 +63,7 @@ export const DemoRequestDialog = ({ open, onOpenChange, productName }: DemoReque
 
       // 3. Send Email via SMTP (Backend)
       try {
-        const response = await fetch("http://localhost:5000/api/send-email", {
+        const response = await fetch("https://email-backend-snowy-five.vercel.app/api/send-email", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

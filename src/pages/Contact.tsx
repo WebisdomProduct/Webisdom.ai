@@ -53,7 +53,7 @@ const Contact = () => {
 
         // 2. SMTP Email Sending (Ye apke Node.js server ko request bhejega)
         try {
-          const response = await fetch("http://localhost:5000/api/send-email", {
+          const response = await fetch("https://email-backend-snowy-five.vercel.app/api/send-email", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

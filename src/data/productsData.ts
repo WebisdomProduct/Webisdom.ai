@@ -7,410 +7,801 @@ export const products = [
   // ==========================================
   // 1. HOSPITALITY AI
   // ==========================================
+
   {
     id: "ai-chieftain",
     title: "AI Chieftain",
-    subtitle: "Total Hotel Management",
-    description: "Complete AI-powered hotel management system that transforms guest experience and operational efficiency.",
-    longDescription: "AI Chieftain is the central nervous system for modern hospitality. \n\nIt goes beyond basic management to predict guest needs before they arrive, optimize room inventory in real-time, and orchestrate housekeeping staff with algorithmic precision. \n\nFrom contactless check-ins to personalized room settings via IoT, it ensures a 5-star experience while cutting operational overheads significantly.",
+    subtitle: "Enterprise-Grade Autonomous Hotel Ecosystem",
+    description: "A monolithic, cloud-native hospitality operating system that leverages deep learning and IoT orchestration to automate end-to-end hotel logistics.",
+    longDescription: "AI Chieftain represents the zenith of hospitality technology, functioning not merely as a management tool but as the central autonomic nervous system for enterprise-grade properties. Built upon a microservices architecture, it decouples the traditional monolith of hotel operations into scalable, independent modules—housekeeping, concierge, inventory, and energy management—all orchestrated by a central AI core.\n\nAt its heart lies a proprietary Predictive Intent Engine (PIE) built on TensorFlow, which aggregates petabytes of historical guest data, local event APIs, and weather patterns to forecast guest needs with 94% accuracy before a request is even voiced. This allows for hyper-personalized experiences, such as pre-adjusting room climate via IoT protocols (MQTT/CoAP) based on the guest's known preferences from previous stays across global properties.\n\nThe platform supports a headless commerce structure, allowing for seamless API-first integrations with third-party vendors, from robotic butler services to automated valet systems. By utilizing edge computing nodes within the property, AI Chieftain processes sensitive biometric data for contactless check-ins locally, ensuring GDPR/CCPA compliance while reducing latency to microseconds. It transforms the physical hotel into a responsive, digital entity that self-optimizes for energy consumption, staff allocation, and revenue maximization in real-time.",
     industry: "hospitality",
-    service: "ai-solutions",
+    service: "enterprise-ai-solutions",
     url: "https://ai-chieftain.webisdomtech.com",
-    category: "Hospitality AI",
-    status: "Live Platform",
+    category: "Hospitality AI Infrastructure",
+    status: "Live Platform (Enterprise)",
     image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6",
-    features: ["Smart Room Allocation", "Guest Sentiment Analysis", "Automated Concierge", "IoT Room Control"],
-    technologies: ["Machine Learning", "NLP", "IoT", "React"],
-    benefits: ["30% Operational Cost Cut", "5-Star Guest Experience", "Zero Booking Errors"],
-    useCases: ["Luxury Resorts", "Business Hotels"],
-    stats: ["30% Lower OpEx", "4.8/5 Avg Rating"],
-    integrations: ["Oracle Opera", "Salesforce"],
-    testimonials: [{ name: "Sarah J.", role: "GM, Marriott", quote: "A game changer for our operations.", avatar: "https://randomuser.me/api/portraits/women/44.jpg" }],
+    features: [
+      "Autonomous Room Allocation with Fuzzy Logic",
+      "Real-time Sentiment Analysis via NLP Transformers",
+      "IoT Mesh Network Orchestration (Zigbee/Z-Wave)",
+      "Predictive Maintenance for HVAC & Utilities",
+      "Biometric & Geofenced Contactless Check-in",
+      "Robotic Process Automation (RPA) for Auditing"
+    ],
+    technologies: ["Deep Learning (CNNs/RNNs)", "GraphQL APIs", "Edge Computing", "MQTT/CoAP", "React Native", "Kubernetes"],
+    benefits: ["38% Reduction in OpEx via Automation", "Sub-second Latency in Guest Requests", "99.99% Uptime SLA", "Carbon Footprint Reduction via Smart Energy"],
+    useCases: ["Luxury Mega-Resorts", "Global Hotel Chains", "Smart Cities Hospitality"],
+    stats: ["30% Lower OpEx", "4.8/5 Avg Rating", "200ms Response Time"],
+    integrations: ["Oracle Opera OWS", "Salesforce HEDA", "SAP HANA", "Lutron IoT"],
+    testimonials: [
+      {
+        name: "Sarah J.",
+        role: "Global VP of Operations, Marriott International",
+        quote: "The scalability of AI Chieftain's microservices architecture allowed us to deploy complex IoT automations across 40 properties in under a quarter.",
+        avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+      }
+    ],
     faqs: [
-      { q: "Does it integrate with Oracle Opera?", a: "Yes, we have a native 2-way integration with Opera PMS, ensuring seamless data flow between front desk and AI agents." },
-      { q: "Is training provided for staff?", a: "Absolutely. We provide a comprehensive 2-week onsite training program along with 24/7 video support." },
-      { q: "Can it handle multi-language guests?", a: "Yes! Our Guest Experience AI supports over 30 languages instantly, allowing international guests to communicate in their native tongue." },
-      { q: "What hardware is required?", a: "AI Chieftain is cloud-based. You only need standard tablets or PCs for staff; no expensive on-premise servers are needed." }
+      {
+        q: "How does the system handle API rate limits with legacy PMS like Oracle Opera?",
+        a: "We utilize an intelligent middleware layer with leaky bucket algorithms to throttle requests and cache non-critical data (Redis), ensuring we never hit the API limits of legacy OWS interfaces while maintaining data consistency."
+      },
+      {
+        q: "What is the security protocol for biometric data storage?",
+        a: "All biometric data is tokenized using SHA-256 hashing and stored in isolated cold storage buckets. We employ Zero Trust Architecture (ZTA) where no device or user is trusted by default, requiring mutual TLS (mTLS) for all internal communications."
+      },
+      {
+        q: "Can the NLP engine handle dialectal nuances in real-time?",
+        a: "Yes. Our conversational AI is built on a Transformer-based Large Language Model (LLM) fine-tuned on hospitality-specific datasets, capable of distinguishing between 30+ languages and regional dialects with intent classification accuracy exceeding 98%."
+      },
+      {
+        q: "Does the IoT module support legacy hardware?",
+        a: "AI Chieftain includes a hardware-agnostic bridge that translates proprietary protocols (like Modbus or BACnet) into standardized JSON payloads, allowing modern AI control over legacy HVAC and lighting systems."
+      }
     ]
   },
   {
     id: "ai-pms",
     title: "AI PMS",
-    subtitle: "Next-Gen Property Management",
-    description: "Smart, AI-powered PMS that automates daily hotel operations with real-time analytics.",
-    longDescription: "A next-generation Property Management System that leverages predictive analytics to forecast occupancy and automate pricing. \n\nIt unifies reservations, billing, housekeeping, and channel management into a single, intuitive dashboard that learns from your property's history to suggest better operational decisions.",
+    subtitle: "Next-Gen Cognitive Property Management",
+    description: "A SaaS-based, algorithmic Property Management System utilizing stochastic modeling for dynamic revenue management and automated front-desk operations.",
+    longDescription: "The AI PMS redefines the traditional Property Management System by shifting from a system of record to a system of intelligence. Unlike static legacy databases, this solution leverages high-velocity data ingestion pipelines to feed a continuous learning engine. It unifies the fragmented hospitality tech stack—CRS, CRM, POS, and Channel Managers—into a single, coherence data lake.\n\nThe core differentiator is the Dynamic Pricing Engine, which employs stochastic modeling and regression analysis to process market signals (competitor rates, flight search volume, local event APIs) in real-time. This allows the system to adjust Room Rate configurations dynamically up to 50 times a day, maximizing RevPAR (Revenue Per Available Room) with algorithmic precision.\n\nFunctionally, it automates the mundane: 'Night Audit' processes are replaced by continuous, real-time ledger balancing scripts. Front desk operations are streamlined via a Progressive Web App (PWA) interface that allows staff to manage check-ins from any device. The backend is built on a serverless architecture (AWS Lambda/Azure Functions), ensuring infinite scalability during high-traffic booking windows without the need for manual server provisioning.",
     industry: "hospitality",
-    service: "custom-model",
+    service: "saas-platform",
     url: "https://ai-chieftain.webisdomtech.com",
-    category: "Hospitality AI",
-    status: "Demo",
+    category: "Algorithmic Revenue Management",
+    status: "Beta / Demo",
     image: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c",
-    features: ["Dynamic Pricing Engine", "Channel Manager Sync", "Self Check-in Kiosk"],
-    technologies: ["Cloud Computing", "Predictive Analytics"],
-    benefits: ["Increase RevPAR", "Automate Front Desk"],
-    useCases: ["Chain Hotels", "Hostels"],
-    stats: ["50% Faster Check-in", "20% Higher RevPAR"],
-    integrations: ["Stripe", "Expedia"],
-    testimonials: [{ name: "David C.", role: "Ops Manager", quote: "Finally a PMS that makes sense.", avatar: "https://randomuser.me/api/portraits/men/45.jpg" }],
+    features: [
+      "Algorithmic Dynamic Pricing (Bayesian Models)",
+      "2-Way XML Channel Manager Sync",
+      "Headless Booking Engine API",
+      "Automated PCI-DSS Compliant Payment Routing",
+      "Self-Healing Database Clusters",
+      "Real-time Occupancy Heatmaps"
+    ],
+    technologies: ["Serverless Compute", "Python (Pandas/Scikit-learn)", "Node.js", "PostgreSQL", "WebSocket"],
+    benefits: ["22% Increase in RevPAR", "Zero Downtime Deployments", "Automated OTA Parity Management"],
+    useCases: ["Boutique Chains", "High-Volume Hostels", "Serviced Apartments"],
+    stats: ["50% Faster Check-in", "20% Higher RevPAR", "99.9% Sync Accuracy"],
+    integrations: ["Stripe Connect", "Expedia EPS", "Booking.com Connectivity Partner", "Xero"],
+    testimonials: [
+      {
+        name: "David C.",
+        role: "Director of Revenue, Hilton Franchise",
+        quote: "The predictive analytics module replaced our entire Excel-based forecasting workflow. The regression models for seasonal pricing are frighteningly accurate.",
+        avatar: "https://randomuser.me/api/portraits/men/45.jpg"
+      }
+    ],
     faqs: [
-      { q: "Does it support multi-property management?", a: "Yes, our dashboard allows you to manage unlimited properties from a single login." },
-      { q: "Is it mobile friendly?", a: "Yes, we have a dedicated mobile app for managers to track occupancy and revenue on the go." },
-      { q: "How does the dynamic pricing work?", a: "It analyzes local events, competitor rates, and historical demand to adjust your room rates automatically in real-time." },
-      { q: "Is data backup automated?", a: "Yes, data is backed up to the cloud every hour with bank-grade encryption." }
+      {
+        q: "How does the system handle concurrency during flash sales?",
+        a: "We utilize optimistic locking mechanisms on our database rows and an event-driven architecture (Kafka) to queue booking requests, ensuring zero overbookings even when thousands of requests hit the availability endpoint simultaneously."
+      },
+      {
+        q: "Is the data compliant with EU data sovereignty laws?",
+        a: "Yes. We offer region-locked database instances. A customer in the EU will have their data pinned to our Frankfurt or Dublin availability zones to strictly adhere to GDPR data residency requirements."
+      },
+      {
+        q: "What is the latency for channel manager updates?",
+        a: "Our XML integration pushes inventory updates to OTAs (like Booking.com and Expedia) via webhooks in under 5 seconds, virtually eliminating the risk of double bookings caused by sync lag."
+      },
+      {
+        q: "Do you support multi-tenancy for management groups?",
+        a: "Absolutely. The architecture is natively multi-tenant, allowing a single root admin to manage granular RBAC (Role-Based Access Control) policies across unlimited child properties with consolidated financial reporting."
+      }
     ]
   },
   {
     id: "restaurant-agent",
     title: "Restaurant AI Agent",
-    subtitle: "Voice & Chat Automation",
-    description: "AI agent that automates table reservations, menu suggestions, and customer support.",
-    longDescription: "This voice and text-enabled AI agent acts as your best front-of-house staff member. \n\nIt handles peak-hour phone calls, takes complex orders with modifiers, manages table reservations, and even answers FAQs about allergens or parking, ensuring you never miss a revenue opportunity due to a busy line.",
-    industry: "hospitality",
-    service: "nlp-chatbot",
+    subtitle: "Conversational Voice & NLP Automation",
+    description: "A low-latency, conversational AI agent capable of handling high-concurrency voice interactions for complex order taking and table management.",
+    longDescription: "The Restaurant AI Agent is a sophisticated application of Conversational AI designed to handle the chaotic acoustic environment of food service. It utilizes a multi-stage pipeline comprising Automatic Speech Recognition (ASR), Natural Language Understanding (NLU), and Text-to-Speech (TTS) synthesis to deliver a human-like phone experience.\n\nThe ASR module is fortified with Digital Signal Processing (DSP) for noise cancellation, allowing the agent to accurately parse speech even when the caller is in a noisy environment. The NLU layer utilizes Contextual Slot Filling to handle non-linear conversations—managing complex order modifiers (e.g., 'extra spicy', 'sauce on the side'), dietary restrictions, and upsell logic dynamically.\n\nBeyond simple ordering, the agent integrates via WebSocket APIs directly into the restaurant's Point of Sale (POS) and Table Management System (TMS). It performs real-time database queries to check ingredient availability or table slots, ensuring it never confirms an order that cannot be fulfilled. The system supports SIP trunking for high-fidelity voice transfer and can scale to handle hundreds of concurrent calls during peak dinner service without a single dropped packet.",
+    industry: "food-tech",
+    service: "nlp-voice-automation",
     url: "https://ai-chieftain.webisdomtech.com",
-    category: "Hospitality AI",
-    status: "Demo",
+    category: "Conversational AI / IVR",
+    status: "Demo / Pilot",
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
-    features: ["Voice Ordering", "Multi-language Support", "Table Management"],
-    technologies: ["Conversational AI", "Twilio"],
-    benefits: ["Never Miss a Call", "Faster Order Taking"],
-    useCases: ["Fine Dining", "Cloud Kitchens"],
-    stats: ["Zero Missed Calls", "15% Higher Ticket Size"],
-    integrations: ["OpenTable", "UberEats"],
-    testimonials: [{ name: "Marco P.", role: "Owner", quote: "It handles reservations while I focus on food.", avatar: "https://randomuser.me/api/portraits/men/22.jpg" }],
+    features: [
+      "Real-time ASR with Acoustic Echo Cancellation",
+      "Context-Aware NLU for Complex Modifiers",
+      "Direct POS Injection via APIs",
+      "Dynamic Upselling Logic Engine",
+      "Sentiment-Adaptive Voice Tone",
+      "Omnichannel Handoff (Voice to SMS)"
+    ],
+    technologies: ["BERT/Transformer Models", "Twilio Programmable Voice", "WebSockets", "Redis", "Google Dialogflow CX"],
+    benefits: ["100% Call Answer Rate", "15% Higher Ticket Size via AI Upselling", "Elimination of 'Hold' Times"],
+    useCases: ["Fine Dining Reservations", "High-Volume Cloud Kitchens", "QSR Drive-Thrus"],
+    stats: ["Zero Missed Calls", "15% Higher Ticket Size", "<5% Fallback Rate"],
+    integrations: ["Toast POS API", "OpenTable", "UberEats Webhooks", "Square"],
+    testimonials: [
+      {
+        name: "Marco P.",
+        role: "Owner, Trattoria Milano",
+        quote: "The AI handles peak Friday night traffic better than my best host. It seamlessly injects orders into our Toast POS, complete with kitchen modifiers.",
+        avatar: "https://randomuser.me/api/portraits/men/22.jpg"
+      }
+    ],
     faqs: [
-      { q: "Does it understand accents?", a: "Yes, our NLP model is trained on diverse accents and dialects to ensure high accuracy." },
-      { q: "Can it handle complex orders?", a: "Absolutely. It understands modifiers like 'no onions', 'extra cheese', and allergy alerts." },
-      { q: "What if the AI gets stuck?", a: "If the AI cannot understand a request after two tries, it gracefully forwards the call to a human staff member." },
-      { q: "Does it integrate with my POS?", a: "Yes, we integrate with major POS systems like Toast, Clover, and Square." }
+      {
+        q: "How does the NLP handle heavy accents or slurred speech?",
+        a: "Our model is trained on a diverse phoneme dataset encompassing extensive regional accents. We utilize a confidence threshold score; if confidence drops below 70%, the system triggers a polite clarification prompt or executes a seamless fallback to a human agent."
+      },
+      {
+        q: "Can it distinguish between 'Book a table' and 'Order for delivery'?",
+        a: "Yes. The Intent Classification layer is rigorously trained to disambiguate overlapping intents. It uses entity extraction to identify specific keywords (time, date, address vs. menu items) to route the conversation into the correct logic flow immediately."
+      },
+      {
+        q: "What is the latency between the customer speaking and the AI responding?",
+        a: "We have optimized the pipeline to achieve a Turn-Around Time (TAT) of under 800 milliseconds. We use streaming recognition (processing audio chunks in real-time) rather than waiting for the end of the sentence to begin processing."
+      },
+      {
+        q: "Does it support menu synchronization?",
+        a: "Yes. The agent runs a nightly cron job to sync with your POS menu database. If an item is marked '86' (out of stock) in the POS, the AI will immediately stop offering it and suggest alternatives during the call."
+      }
     ]
   },
-
   // ==========================================
   // 2. REVENUE AI
   // ==========================================
+
   {
     id: "rms",
     title: "AI Revenue System",
-    subtitle: "Smart Revenue Optimization",
-    description: "Predicts pricing to maximize hotel revenue using demand forecasting and competitor analysis.",
-    longDescription: "Our Revenue Management System (RMS) doesn't just react to the market; it anticipates it. \n\nBy analyzing competitor rates, local events, flight data, and historical booking curves, it adjusts room rates in real-time to ensure you are always priced perfectly to maximize Yield and RevPAR.",
-    industry: "revenue",
-    service: "ai-solutions",
+    subtitle: "Stochastic Revenue Optimization Engine",
+    description: "A hyper-intelligent yield management platform utilizing Bayesian inference and ensemble learning to maximize RevPAR through real-time elasticity modeling.",
+    longDescription: "This Revenue Management System (RMS) represents a paradigm shift from reactive pricing to predictive yield maximization. Built on a microservices architecture, it ingests multi-variate data streams—including competitor BAR (Best Available Rate), micro-weather patterns, flight manifest APIs, and historical booking curves—into a centralized Data Lakehouse.\n\nThe core intelligence engine utilizes Gradient Boosted Decision Trees (XGBoost) and Long Short-Term Memory (LSTM) neural networks to model price elasticity at a granular level. By calculating the precise probability of conversion at every price point, the system autonomously executes rate adjustments via 2-way XML connectivity to your PMS and Channel Managers. It supports complex inventory segmentation, allowing for distinct pricing strategies across corporate, wholesale, and transient buckets, ensuring that Average Daily Rate (ADR) is optimized without sacrificing Occupancy.\n\nThe system features a self-correcting feedback loop; every booking (or lack thereof) is fed back into the training dataset, allowing the model to refine its alpha-beta pruning strategies daily to reduce forecast error rates to under 2%.",
+    industry: "revenue-operations",
+    service: "predictive-analytics",
     url: "https://ai-chieftain.webisdomtech.com",
-    category: "Revenue AI",
-    status: "Demo",
+    category: "Algorithmic Yield Management",
+    status: "Demo / Pilot",
     image: "https://images.unsplash.com/photo-1556157382-97eda2d62296",
-    features: ["Dynamic Pricing", "Demand Forecasting", "Market Intelligence"],
-    technologies: ["Predictive AI", "Data Analytics"],
-    benefits: ["Increase RevPAR", "Optimize Pricing 24/7"],
-    useCases: ["Hotels", "Airlines"],
-    stats: ["15% Revenue Uplift", "98% Forecast Accuracy"],
-    integrations: ["SiteMinder", "RateGain"],
-    testimonials: [{ name: "Rajiv M.", role: "Revenue Mgr", quote: "Best pricing tool we've used.", avatar: "https://randomuser.me/api/portraits/men/32.jpg" }],
+    features: [
+      "Real-time Price Elasticity Modeling",
+      "Competitor Rate Shopping (15-min intervals)",
+      "Group Displacement Analysis",
+      "Overbooking Optimization Logic",
+      "Automated XML Rate Distribution",
+      "Wash/No-Show Probability Scoring"
+    ],
+    technologies: ["Python (Scikit-Learn)", "Apache Spark", "Time-Series Forecasting (ARIMA/Prophet)", "GraphQL", "Snowflake DB"],
+    benefits: ["18-25% Uplift in RevPAR", "Elimination of Rate Parity Errors", "Granular Market Segmentation Strategy", "Automated Inventory Controls"],
+    useCases: ["Global Hotel Chains", "Commercial Airlines", "Car Rental Fleets"],
+    stats: ["15% Revenue Uplift", "98% Forecast Accuracy", "<50ms Calculation Speed"],
+    integrations: ["SiteMinder Exchange", "RateGain", "SynXis CR", "Opera PMS"],
+    testimonials: [
+      {
+        name: "Rajiv M.",
+        role: "VP of Revenue Strategy, IHCL",
+        quote: "The forecasting module picked up on a demand anomaly two weeks before our manual team did. We capitalized on the surge and broke our monthly ADR record.",
+        avatar: "https://randomuser.me/api/portraits/men/32.jpg"
+      }
+    ],
     faqs: [
-      { q: "How often does it update rates?", a: "Our system scans the market and updates rates every 15 minutes to capture every opportunity." },
-      { q: "Can I set minimum and maximum prices?", a: "Yes, you have full control to set floor and ceiling prices to protect your brand value." },
-      { q: "What data sources does it use?", a: "It uses historical booking data, competitor rates, local event calendars, and flight search volume." },
-      { q: "Is it difficult to set up?", a: "No, we can connect to your existing PMS and start generating recommendations within 48 hours." }
+      {
+        q: "How does the system handle 'Black Swan' events where historical data is irrelevant?",
+        a: "The model employs an Anomaly Detection layer that switches from historical regression to short-term momentum trading algorithms when variance exceeds 3 sigma, allowing it to react to sudden market shocks instantly."
+      },
+      {
+        q: "Can I implement 'Hurdle Rates' for specific channels?",
+        a: "Yes. You can define Last Room Value (LRV) thresholds and hard hurdles, ensuring that low-yield OTA channels are automatically closed off during high-compression dates."
+      },
+      {
+        q: "What represents the data latency?",
+        a: "Our ETL pipelines run in near real-time. Competitor rate shops are cached via Redis clusters, ensuring the dashboard reflects market changes with less than 60 seconds of latency."
+      },
+      {
+        q: "Is the integration purely 1-way?",
+        a: "No, it is a full 2-way integration. We pull inventory/occupancy data from your PMS and push back calculated rate grid updates via SOAP/REST APIs."
+      }
     ]
   },
   {
     id: "price-surger",
     title: "Dynamic Price Surger",
-    subtitle: "Event-Based Pricing",
-    description: "Automatically adjusts pricing based on local events, weather, and competitor rates.",
-    longDescription: "Never leave money on the table during high-demand events. \n\nPrice Surger monitors local concerts, conferences, and even weather patterns to detect demand spikes instantly. It automatically implements surge pricing strategies to capture maximum value during peak windows.",
-    industry: "revenue",
-    service: "custom-model",
+    subtitle: "Geospatial Event-Driven Pricing",
+    description: "An event-horizon monitoring system that autonomously triggers surge pricing protocols based on geospatial demand signals and API triggers.",
+    longDescription: "The Dynamic Price Surger is designed to capture fleeting revenue opportunities generated by external anomalies. Unlike standard RMS tools that look at booking pace, the Surger looks continuously outward. It utilizes a geospatial scraping engine to monitor ticket sales on platforms like Ticketmaster, local weather APIs, and even flight delay databases to detect compression events before they hit the booking engine.\n\nThe logic is governed by a Rules Engine (Drools-based) that executes 'If-This-Then-That' (IFTTT) workflows. For example, 'IF Taylor Swift Concert Ticket Sales > 90% AND Rain Probability < 20%, THEN Increase ADR by 40%'. This logic is processed on Edge nodes to ensure zero latency implementation.\n\nDesigned for high-velocity environments like ride-sharing or event hospitality, the system utilizes Webhooks to instantly update pricing tables across all distributed channels. It effectively automates the 'greed' factor in revenue management, ensuring you never sell a premium asset at a discount during a demand spike.",
+    industry: "revenue-operations",
+    service: "event-stream-processing",
     url: "#",
-    category: "Revenue AI",
-    status: "Beta",
+    category: "High-Frequency Pricing",
+    status: "Beta Access",
     image: "https://images.unsplash.com/photo-1526304640158-296940ad3bd3",
-    features: ["Event Tracking", "Competitor Scraping", "Auto-Adjust"],
-    technologies: ["Python", "Scrapy"],
-    benefits: ["Capture demand spikes", "Maximize yield"],
-    useCases: ["Events", "Ride-sharing"],
-    stats: ["Capture 100% Spikes", "Instant ROI"],
-    integrations: ["Ticketmaster API"],
-    testimonials: [{ name: "Lisa T.", role: "Event Mgr", quote: "We sold out at peak price.", avatar: "https://randomuser.me/api/portraits/women/12.jpg" }],
+    features: [
+      "Hyper-local Event API Ingestion",
+      "Geospatial Demand Heatmapping",
+      "Weather-Triggered Pricing Rules",
+      "Surge Multiplier Logic",
+      "API-First Headless Architecture",
+      "Automated Fallback/Decay Pricing"
+    ],
+    technologies: ["Node.js", "Apache Kafka", "Geospatial Databases (PostGIS)", "Scrapy", "AWS Lambda"],
+    benefits: ["Capture 100% of Compression ROI", "Automated Reaction to Market Shocks", "Zero Manual Intervention Required"],
+    useCases: ["Event Ticketing", "Ride-Sharing Fleets", "Urban Hotels", "Logistics"],
+    stats: ["Capture 100% Spikes", "Instant ROI", "400% ROI on Peak Days"],
+    integrations: ["Ticketmaster Discovery API", "OpenWeatherMap", "Uber API", "Google Events"],
+    testimonials: [
+      {
+        name: "Lisa T.",
+        role: "Event Operations Director",
+        quote: "The system detected a conference announcement before it was even in the news and adjusted our rates. We sold out at 3x our normal rate.",
+        avatar: "https://randomuser.me/api/portraits/women/12.jpg"
+      }
+    ],
     faqs: [
-      { q: "Is the process fully automated?", a: "Yes, once you set the rules, the system automatically adjusts prices based on triggers." },
-      { q: "Does it track weather?", a: "Yes, it can adjust pricing for outdoor venues or travel based on weather forecasts." },
-      { q: "Can I override the system?", a: "Always. Manual override is available at any time if you need to take control." },
-      { q: "Which industries is this for?", a: "Ideal for hotels, ride-sharing fleets, event ticketing, and equipment rentals." }
+      {
+        q: "Does it support decay pricing (reverse surge)?",
+        a: "Yes. The algorithm can be configured to slash prices incrementally as an event start time approaches to clear expiring inventory (e.g., last-minute hotel rooms or perishables)."
+      },
+      {
+        q: "How accurate is the event tracking?",
+        a: "We aggregate data from 14 distinct global event APIs and cross-reference with social media sentiment velocity to confirm the scale of an event before triggering a surge."
+      },
+      {
+        q: "Can I set manual overrides?",
+        a: "Absolutely. A 'Kill Switch' is available in the admin panel to freeze rates instantly, and all automated rules adhere to pre-defined floor and ceiling price constraints."
+      },
+      {
+        q: "How does it handle API rate limits?",
+        a: "We utilize rotating IP proxies and exponential backoff strategies to scrape external data sources without getting blocked or throttled."
+      }
     ]
   },
   {
     id: "competitor-spy",
     title: "Competitor Spy AI",
-    subtitle: "Market Intelligence Bot",
-    description: "Real-time monitoring of competitor inventory and pricing strategies.",
-    longDescription: "Gain an unfair advantage with Competitor Spy AI. \n\nIt stealthily monitors your competitors' inventory levels, pricing changes, and promotional offers across the web. Get instant alerts when a competitor drops their price or runs out of stock, allowing you to react immediately.",
-    industry: "revenue",
-    service: "data-pipeline",
+    subtitle: "Competitive Intelligence Scraping Bot",
+    description: "A stealth-mode data pipeline that aggregates, parses, and analyzes competitor inventory structures and pricing strategies in real-time.",
+    longDescription: "Competitor Spy AI is an offensive market intelligence tool built on a robust web-scraping infrastructure. It utilizes a fleet of headless browsers (Puppeteer/Selenium) orchestrated via Kubernetes to navigate competitor booking engines, imitating human behavior to bypass anti-bot defenses (Cloudflare/Akamai).\n\nThe system extracts unstructured DOM elements—prices, sold-out badges, length-of-stay restrictions, and hidden inclusions—and parses them into structured JSON datasets. This data is fed into a visualization engine that renders price-positioning curves relative to your competitive set (Compset).\n\nBeyond simple price tracking, the AI analyzes 'Inventory Depletion Rates' to estimate your competitor's occupancy levels. If a competitor closes availability for a specific room type, the system alerts you immediately via Slack or Webhook, prompting you to yield up your own rates. It turns the opaque web into a transparent dataset.",
+    industry: "market-intelligence",
+    service: "etl-data-pipeline",
     url: "#",
-    category: "Revenue AI",
-    status: "Live Tool",
+    category: "Competitive Intelligence",
+    status: "Live Enterprise Tool",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-    features: ["Rate Parity Check", "Inventory Alerts", "Trend Analysis"],
-    technologies: ["Selenium", "Data Viz"],
-    benefits: ["Stay ahead of market", "Instant alerts"],
-    useCases: ["E-commerce", "Retail"],
-    stats: ["Monitor 100+ Competitors", "Real-time Alerts"],
-    integrations: ["Slack", "Excel"],
-    testimonials: [{ name: "Ken R.", role: "Sales Dir", quote: "I know my competitors' moves before they do.", avatar: "https://randomuser.me/api/portraits/men/55.jpg" }],
+    features: [
+      "Residential Proxy Network (Anti-Detect)",
+      "DOM Parsing & Unstructured Data ETL",
+      "Hidden Cost Calculation (Taxes/Fees)",
+      "Inventory Depletion Estimation",
+      "Real-time Parity Violation Alerts",
+      "Historical Trend Visualization"
+    ],
+    technologies: ["Selenium Grid", "Puppeteer", "Docker", "ElasticSearch", "Computer Vision (OCR)"],
+    benefits: ["Maintain Dominant Market Position", "Eliminate Undercutting", "Predict Competitor Strategy", "Automated Parity Enforcement"],
+    useCases: ["E-commerce Retail", "Hospitality", "SaaS Pricing Analysis"],
+    stats: ["Monitor 500+ URLs", "99.9% Uptime", "Zero IP Bans"],
+    integrations: ["Slack Webhooks", "Microsoft PowerBI", "Tableau", "Google Sheets API"],
+    testimonials: [
+      {
+        name: "Ken R.",
+        role: "Director of Sales",
+        quote: "I know when my competitor runs a flash sale before their marketing email even goes out. It gives us a massive tactical advantage.",
+        avatar: "https://randomuser.me/api/portraits/men/55.jpg"
+      }
+    ],
     faqs: [
-      { q: "Can I export the data?", a: "Yes, you can export reports to CSV, Excel, or directly to your BI dashboard via API." },
-      { q: "Is it legal to scrape competitors?", a: "Yes, we only aggregate publicly available data and respect robots.txt protocols." },
-      { q: "Does it detect hidden prices?", a: "It can detect prices added at checkout cart steps if configured." },
-      { q: "How many competitors can I track?", a: "Our enterprise plan supports tracking up to 500 competitors simultaneously." }
+      {
+        q: "How do you bypass CAPTCHAs and Bot Detection?",
+        a: "We utilize a rotating network of over 10 million residential IPs and AI-driven CAPTCHA solving services, ensuring our scrapers appear as legitimate organic traffic."
+      },
+      {
+        q: "Can it track prices inside a login wall?",
+        a: "Yes, provided you supply credentials. The bot can manage session cookies and JWT tokens to navigate behind authentication walls to scrape member-only pricing."
+      },
+      {
+        q: "Is the data exportable to my data warehouse?",
+        a: "Yes. We offer direct connectors to Snowflake, BigQuery, and AWS S3, allowing you to ingest the raw competitive data directly into your internal BI stack."
+      },
+      {
+        q: "Does it detect 'drip pricing'?",
+        a: "Yes. The bot traverses the full checkout flow up to the payment page to capture hidden resort fees, cleaning fees, and taxes that aren't visible on the search results page."
+      }
     ]
   },
 
   // ==========================================
-  // 3. FINANCE AI
+  // 3. FINANCE AI (FinTech)
   // ==========================================
   {
     id: "ferozee-avatar",
     title: "AI Avatar (Ferozee)",
-    subtitle: "Personalized AI Avatar",
-    description: "An AI-driven multimedia avatar designed for interactive storytelling and brand communication.",
-    longDescription: "Ferozee is a hyper-realistic AI avatar that serves as the face of your digital brand. \n\nCapable of real-time interaction, it can explain complex financial products, guide users through onboarding, or serve as a 24/7 virtual financial advisor with human-like empathy and expressions.",
+    subtitle: "Hyper-Realistic Conversational Interface",
+    description: "A multimodal AI avatar combining Generative Adversarial Networks (GANs) and LLMs to deliver empathetic, human-level customer interactions.",
+    longDescription: "Ferozee is a breakthrough in Human-Computer Interaction (HCI), rendering a photorealistic 3D avatar that communicates via voice and gesture in real-time. Built on WebGL and WebRTC standards, Ferozee runs directly in the browser without heavy plugin downloads.\n\nThe backend utilizes a complex pipeline: User audio is transcribed via ASR, processed by a Transformer-based LLM (like GPT-4 or bespoke financial models) to generate a response, and then synthesized into speech. Crucially, a 'Viseme Generation' neural network maps the phonemes of the speech to the 3D mesh geometry of the avatar's face, creating perfect lip-sync and facial micro-expressions (eyebrow raises, nods) that convey empathy.\n\nDesigned for FinTech, Ferozee can securely authenticate users, visualize portfolio data on-screen while explaining it, and guide users through complex KYC (Know Your Customer) flows, effectively replacing static FAQs with an interactive digital banker.",
     industry: "fintech",
-    service: "ai-solutions",
+    service: "generative-ai",
     url: "https://ai-chieftain.webisdomtech.com",
-    category: "Finance AI",
+    category: "Digital Human Interface",
     status: "Live Demo",
     image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04",
-    features: ["Lifelike Avatar", "Voice AI", "Interactive Responses"],
-    technologies: ["Deep Learning", "Face AI"],
-    benefits: ["Brand growth", "24/7 availability"],
-    useCases: ["Virtual Banking", "Customer Service"],
-    stats: ["4x Engagement", "Multi-language"],
-    integrations: ["Web SDK", "Mobile App"],
-    testimonials: [{ name: "Jenny K.", role: "CMO", quote: "Our customers love talking to Ferozee.", avatar: "https://randomuser.me/api/portraits/women/66.jpg" }],
+    features: [
+      "Real-time Lip Sync (Viseme Mapping)",
+      "Sentiment-Aware Facial Expressions",
+      "Low-Latency WebRTC Streaming",
+      "Multimodal Input (Voice/Text/Touch)",
+      "Contextual Memory Retention",
+      "Brand-Specific Avatar Customization"
+    ],
+    technologies: ["TensorFlow.js", "WebGL/Three.js", "WebRTC", "Wav2Lip GANs", "Azure Cognitive Services"],
+    benefits: ["400% Increase in User Engagement", "Humanizing Digital Banking", "24/7 Advisory Availability", "Reduced Customer Support Churn"],
+    useCases: ["Virtual Private Banking", "Insurance Claims Processing", "Elderly Care Companions"],
+    stats: ["4x Engagement", "200ms Latency", "30+ Languages"],
+    integrations: ["React Native SDK", "Flutter", "Salesforce CRM", "Twilio"],
+    testimonials: [
+      {
+        name: "Jenny K.",
+        role: "CMO, NeoBank",
+        quote: "Ferozee bridged the trust gap. Customers are far more likely to buy complex insurance products when 'someone' explains it to them face-to-face.",
+        avatar: "https://randomuser.me/api/portraits/women/66.jpg"
+      }
+    ],
     faqs: [
-      { q: "Is the interaction real-time?", a: "Yes, the latency is under 200ms, making the conversation feel natural." },
-      { q: "Can I customize the avatar's look?", a: "Yes, we can create a custom avatar based on your brand mascot or a real spokesperson." },
-      { q: "Does it work on mobile?", a: "It is fully optimized for web, iOS, and Android applications." },
-      { q: "What languages are supported?", a: "Currently supports English, Spanish, Hindi, and 20+ other major languages." }
+      {
+        q: "What is the bandwidth requirement for the end-user?",
+        a: "We utilize adaptive bitrate streaming. The avatar renders locally on the client's GPU (using WebGL) while only the voice and animation data stream, keeping bandwidth usage below 500kbps."
+      },
+      {
+        q: "Can the avatar hallucinate financial advice?",
+        a: "We implement 'Guardrails' and RAG (Retrieval-Augmented Generation) architecture. The AI is restricted to your specific knowledge base and cannot generate advice outside of approved compliance documents."
+      },
+      {
+        q: "Is it possible to clone a real CEO's face?",
+        a: "Yes. Using photogrammetry and voice cloning technology, we can create a digital twin of your CEO or brand ambassador to serve as the interface."
+      },
+      {
+        q: "How does it handle mobile devices?",
+        a: "The renderer is highly optimized for mobile GPUs (iOS Metal / Android Vulkan), ensuring 60fps performance on standard smartphones."
+      }
     ]
   },
   {
     id: "loan-agent",
     title: "Loan Processing AI",
-    subtitle: "Automated Loan Evaluation",
-    description: "AI that analyzes documents, verifies user data, and evaluates loan eligibility instantly.",
-    longDescription: "Slash loan approval times from days to minutes. \n\nThis AI agent ingests loan applications, parses supporting documents (pay stubs, tax returns) using OCR, performs background checks, and runs risk models to output a preliminary decision instantly, drastically reducing manual underwriting effort.",
+    subtitle: "Automated Underwriting & Risk Engine",
+    description: "An end-to-end loan origination AI that ingests documents, verifies identity, and computes credit risk scores in milliseconds using decision forests.",
+    longDescription: "This solution automates the friction-heavy loan origination process. It begins with an Intelligent Document Processing (IDP) layer that uses Computer Vision to capture and rectify images of ID cards, pay stubs, and tax returns. Optical Character Recognition (OCR) extracts key fields (SSN, Income, Address) with >99% accuracy.\n\nThe extracted data is cross-referenced against external bureaus (Experian/Equifax) and internal fraud databases. The core innovation is the Risk Engine: a Random Forest classifier trained on millions of historical loan outcomes. It analyzes thousands of data points—including non-traditional metrics like mobile metadata or transaction velocity—to generate a credit confidence score.\n\nThe system outputs a binary 'Approve/Reject' decision or routes borderline cases to human underwriters with highlighted risk factors, reducing the 'Time-to-Decision' from days to seconds.",
     industry: "fintech",
-    service: "ai-solutions",
+    service: "intelligent-automation",
     url: "https://ai-chieftain.webisdomtech.com",
-    category: "Finance AI",
-    status: "Demo",
+    category: "Credit Risk AI",
+    status: "Enterprise Demo",
     image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c",
-    features: ["Document AI", "KYC Automation", "Credit Evaluation"],
-    technologies: ["OCR", "AI Risk Scoring"],
-    benefits: ["Faster approvals", "Reduced risk"],
-    useCases: ["Mortgages", "Personal Loans"],
-    stats: ["90% Faster Decisions", "Zero Manual Entry"],
-    integrations: ["Experian", "Plaid"],
-    testimonials: [{ name: "Elena R.", role: "Risk Analyst", quote: "Unmatched OCR accuracy.", avatar: "https://randomuser.me/api/portraits/women/65.jpg" }],
+    features: [
+      "Multi-Format OCR (PDF/JPG/TIFF)",
+      "Liveness Detection for KYC",
+      "Synthetic Fraud Detection",
+      "Alternative Credit Scoring Models",
+      "Bank Statement Parsing (JSON Output)",
+      "Immutable Audit Logs via Blockchain"
+    ],
+    technologies: ["Tesseract OCR", "Google Vision API", "Python (Pandas)", "XGBoost", "Hyperledger Fabric (Audit)"],
+    benefits: ["90% Reduction in OpEx", "Sub-second Loan Approvals", "30% Reduction in Default Rates", "Standardized Risk Policy"],
+    useCases: ["Micro-Lending", "Mortgage Origination", "Buy Now Pay Later (BNPL)"],
+    stats: ["90% Faster Decisions", "Zero Manual Entry", "99.8% OCR Accuracy"],
+    integrations: ["Plaid (Bank Auth)", "Experian Connect", "DocuSign API", "Salesforce Financial Cloud"],
+    testimonials: [
+      {
+        name: "Elena R.",
+        role: "Chief Risk Officer",
+        quote: "The ability to parse unstructured tax returns and map them directly into our risk model has saved us thousands of man-hours per month.",
+        avatar: "https://randomuser.me/api/portraits/women/65.jpg"
+      }
+    ],
     faqs: [
-      { q: "Is the data secure?", a: "Yes, we use bank-grade AES-256 encryption and are SOC2 compliant." },
-      { q: "What documents can it read?", a: "It can parse bank statements, tax returns, pay stubs, and ID cards like passports." },
-      { q: "Does it check credit scores?", a: "Yes, it integrates with bureaus like Experian and Equifax for real-time checks." },
-      { q: "Can it flag fraud?", a: "Yes, it detects document tampering and inconsistencies using image forensics." }
+      {
+        q: "How do you handle document tampering (e.g., Photoshopped pay stubs)?",
+        a: "Our Image Forensics module analyzes metadata (EXIF), Error Level Analysis (ELA), and pixel-grid inconsistencies to flag documents that have been digitally altered."
+      },
+      {
+        q: "Is the decision logic explainable to regulators?",
+        a: "Yes. We use Explainable AI (XAI) frameworks (like SHAP values) to generate a 'Reason Code' for every decision, ensuring compliance with the Equal Credit Opportunity Act (ECOA)."
+      },
+      {
+        q: "Does it support bank statement analysis?",
+        a: "Yes. It categorizes line-item transactions to calculate true cash flow, debt-to-income ratio, and recurring obligations automatically."
+      },
+      {
+        q: "Is user data encrypted?",
+        a: "All PII (Personally Identifiable Information) is encrypted at rest using AES-256 and in transit via TLS 1.3. We perform regular penetration testing to ensure SOC2 Type II compliance."
+      }
     ]
   },
   {
     id: "compliance-agent",
     title: "Compliance AI Agent",
-    subtitle: "Automated Monitoring",
-    description: "AI that tracks compliance tasks, audits, updates, and document workflows.",
-    longDescription: "Navigate the complex landscape of financial regulations with ease. \n\nThis agent continuously monitors transactions and internal communications for potential violations of GDPR, AML, and KYC norms. It automatically generates audit trails and flags suspicious activities before they become liabilities.",
+    subtitle: "RegTech Automation & Monitoring",
+    description: "A continuous monitoring system utilizing Natural Language Understanding (NLU) to audit communications and transactions against evolving regulatory frameworks.",
+    longDescription: "The Compliance AI Agent acts as an automated 'second line of defense' for financial institutions. It ingests massive volumes of unstructured data—internal emails, Slack chats, and voice call transcripts—and analyzes them using NLP to detect indicators of Insider Trading, Bribery, or Money Laundering (AML).\n\nSimultaneously, the agent monitors regulatory feeds (SEC, FINRA, ESMA) to keep its rulebook up to date. It maps internal policy documents against these external regulations using a Knowledge Graph, identifying gaps in compliance coverage.\n\nFor transaction monitoring, it uses Unsupervised Learning to detect anomalies in payment flows that deviate from established user patterns, flagging potential structuring or sanctions violations in real-time. This proactive approach transforms compliance from a retrospective audit into a real-time shield.",
     industry: "fintech",
-    service: "ai-audit",
+    service: "regtech-solutions",
     url: "https://ai-chieftain.webisdomtech.com",
-    category: "Finance AI",
+    category: "Regulatory Compliance AI",
     status: "Demo",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7",
-    features: ["Policy Tracking", "Audit Automation", "Compliance Alerts"],
-    technologies: ["AI Automation"],
-    benefits: ["Zero compliance risk", "Real-time monitoring"],
-    useCases: ["Audit Prep", "RegTech"],
-    stats: ["100% Audit Trail", "Real-time Alerts"],
-    integrations: ["Internal DB", "Regulatory Portals"],
-    testimonials: [{ name: "James L.", role: "Compliance Officer", quote: "Essential for our audits.", avatar: "https://randomuser.me/api/portraits/men/11.jpg" }],
+    features: [
+      "NLP-based Surveillance of Comms",
+      "Real-time Sanctions Screening",
+      "Regulatory Change Management",
+      "Automated SAR (Suspicious Activity Report) Generation",
+      "Policy Knowledge Graph",
+      "Risk-Weighted Alerting"
+    ],
+    technologies: ["BERT (NLP Models)", "Graph Databases (Neo4j)", "Elastic Stack (ELK)", "Apache Flink"],
+    benefits: ["100% Audit Readiness", "Mitigation of Heavy Fines", "Reduction in False Positive Alerts", "Holistic Surveillance"],
+    useCases: ["Hedge Funds", "Crypto Exchanges", "NeoBanks"],
+    stats: ["100% Audit Trail", "Real-time Alerts", "60% Fewer False Positives"],
+    integrations: ["Smarsh", "Global Relay", "Refinitiv World-Check", "Internal SQL DBs"],
+    testimonials: [
+      {
+        name: "James L.",
+        role: "Chief Compliance Officer",
+        quote: "It processes more data in an hour than my team of 20 analysts could process in a week. The reduction in false positives is a game changer.",
+        avatar: "https://randomuser.me/api/portraits/men/11.jpg"
+      }
+    ],
     faqs: [
-      { q: "Does it support GDPR?", a: "Yes, it is fully compliant with GDPR, CCPA, and AML regulations." },
-      { q: "Does it generate reports?", a: "Yes, it auto-generates audit-ready PDF reports for regulators." },
-      { q: "How fast are the alerts?", a: "Suspicious transactions trigger alerts in near real-time (sub-second latency)." },
-      { q: "Can it monitor emails?", a: "Yes, it can scan internal communications for insider trading or compliance breaches." }
+      {
+        q: "How does it handle false positives in transaction monitoring?",
+        a: "The system uses feedback loops. When an analyst dismisses an alert, the model learns from this interaction, adjusting its weighting parameters to ignore similar benign patterns in the future."
+      },
+      {
+        q: "Can it monitor encrypted communication apps like WhatsApp?",
+        a: "Yes, provided the enterprise version of the app is used and archived. We ingest the archived logs to perform the same NLP analysis as we do on email."
+      },
+      {
+        q: "Is the audit trail immutable?",
+        a: "Yes. All flagged events and subsequent analyst actions are hashed and stored in a Write-Once-Read-Many (WORM) compliant storage format to satisfy regulatory evidence standards."
+      },
+      {
+        q: "Does it support multi-jurisdictional rules?",
+        a: "Yes. The Knowledge Graph segments rules by region, applying GDPR rules to EU customer data and CCPA rules to California data simultaneously."
+      }
     ]
   },
 
   // ==========================================
-  // 4. COWORKING AUTOMATION
+  // 4. COWORKING AUTOMATION (PropTech)
   // ==========================================
   {
     id: "coworking-agent",
-    title: "Coworking Agent",
-    subtitle: "Automation for Coworking",
-    description: "AI assistant for operations, member support, tour booking, and billing automation.",
-    longDescription: "The ultimate operating system for coworking spaces. \n\nIt handles everything from scheduling tours for prospective members to automating monthly invoicing and Wi-Fi provisioning. It even facilitates member networking by suggesting connections based on professional profiles.",
-    industry: "coworking",
-    service: "ai-solutions",
+    title: "Coworking OS Agent",
+    subtitle: "Autonomous Space Management",
+    description: "A unified operating system for flex-space, integrating IoT access control, CRM, and billing automation into a single AI-driven workflow.",
+    longDescription: "The Coworking Agent is the digital backbone of modern flexible workspaces. It abstracts the complexity of running a shared office by automating the entire member lifecycle. From the moment a lead books a tour via the chatbot, the system creates a CRM entry, schedules the visit, and follows up automatically.\n\nUpon signup, the agent triggers a 'Provisioning Workflow': it generates a digital contract via API, processes the deposit via Stripe, creates a Wi-Fi login (RADIUS server integration), and grants physical door access via smart lock APIs (Kisi/Salto)—all without human intervention.\n\nOperationally, it manages resource inventory (meeting rooms, projectors) using conflict-free scheduling algorithms. It generates consolidated invoices that include rent, print usage, and coffee bar purchases, sending them out on billing cycles and automatically retrying failed payments.",
+    industry: "proptech",
+    service: "space-as-a-service",
     url: "https://ai-chieftain.webisdomtech.com",
-    category: "Coworking Automation",
-    status: "Demo",
+    category: "Workspace Automation",
+    status: "Demo / Pilot",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c",
-    features: ["Tour Booking Automation", "Billing AI", "Space Utilization"],
-    technologies: ["AI Chatbots", "Automation"],
-    benefits: ["Better occupancy", "Streamlined ops"],
-    useCases: ["Shared Offices", "Meeting Rooms"],
-    stats: ["95% Auto-Invoicing", "Higher Retention"],
-    integrations: ["HubSpot", "Stripe"],
-    testimonials: [{ name: "Mike T.", role: "Community Mgr", quote: "Saves me 20 hours a week.", avatar: "https://randomuser.me/api/portraits/men/20.jpg" }],
+    features: [
+      "Automated Contract & Invoicing Workflow",
+      "IoT Door Access Provisioning",
+      "Meeting Room Conflict Resolution",
+      "Wi-Fi Credential Management",
+      "Lead-to-Member Auto-Conversion",
+      "White-labeled Member App"
+    ],
+    technologies: ["Node.js", "React Native", "MQTT (IoT)", "Stripe Connect", "PostgreSQL"],
+    benefits: ["Save 20+ Admin Hours/Week", "99% Revenue Collection Rate", "Seamless Member Onboarding", "Real-time Occupancy Data"],
+    useCases: ["Co-working Franchises", "University Innovation Hubs", "Shared Corporate Offices"],
+    stats: ["95% Auto-Invoicing", "Higher Retention", "Zero Double Bookings"],
+    integrations: ["HubSpot CRM", "Xero/Quickbooks", "Kisi / Salto Systems", "Google Calendar API"],
+    testimonials: [
+      {
+        name: "Mike T.",
+        role: "Community Manager, WeWork Competitor",
+        quote: "It handles everything from unlocking the front door to collecting the rent. I can finally focus on building the community instead of chasing invoices.",
+        avatar: "https://randomuser.me/api/portraits/men/20.jpg"
+      }
+    ],
     faqs: [
-      { q: "Does it sync with Google Calendar?", a: "Yes, meeting room bookings sync 2-way with Google Calendar and Outlook." },
-      { q: "Can it handle billing?", a: "It automates invoicing and payment collection via Stripe or GoCardless." },
-      { q: "Is there a member app?", a: "Yes, members get a white-labeled mobile app to book desks and report issues." },
-      { q: "Does it control door access?", a: "It integrates with systems like Kisi and Salto to grant access automatically upon payment." }
+      {
+        q: "What happens if a member stops paying?",
+        a: "The system automatically revokes their digital keys (IoT access) and Wi-Fi credentials after a configurable grace period, securing the physical space instantly."
+      },
+      {
+        q: "Can it handle credit system for meeting rooms?",
+        a: "Yes. Members are allocated monthly credits. The system deducts credits for bookings and automatically charges the credit card on file for any overage."
+      },
+      {
+        q: "Does it support multi-location access?",
+        a: "Yes. The 'Passport' feature allows members to access any location in your network, with the system handling cross-location billing and access rights seamlessly."
+      },
+      {
+        q: "Is the app customizable?",
+        a: "Fully. We offer a white-label solution where you can apply your brand colors, logo, and custom domain to the member portal and mobile app."
+      }
     ]
   },
   {
     id: "smart-desk",
     title: "Smart Desk Booker",
-    subtitle: "Inventory Management",
-    description: "Optimizes desk usage by auto-assigning spots based on team size and preferences.",
-    longDescription: "Maximize your square footage efficiency. \n\nSmart Desk Booker uses usage data to suggest optimal seating arrangements, manage hot-desking inventories dynamically, and ensure that teams sit together while individuals find quiet zones, improving overall member satisfaction.",
-    industry: "coworking",
-    service: "custom-model",
+    subtitle: "Algorithmic Hot-Desking Engine",
+    description: "An optimization engine that maximizes floor-plan efficiency using genetic algorithms to assign seating based on team synergy and density targets.",
+    longDescription: "Smart Desk Booker addresses the 'Hybrid Work' paradox: maintaining flexibility while ensuring collaboration. The system utilizes a constraint-satisfaction algorithm (similar to the Knapsack problem) to assign desks. It analyzes team hierarchies, project groups, and individual preferences (e.g., 'needs silence', 'needs dual monitor') to generate daily seating charts.\n\nIt integrates with IoT occupancy sensors (PIR/Thermal) placed under desks to verify actual usage versus booked usage. This data feeds a heatmap visualization engine, revealing 'dead zones' in your office or high-traffic bottlenecks.\n\nThe platform supports 'Neighborhood' configurations, ensuring that while individuals flex-desk, they remain within proximity of their squad. For admins, it offers predictive analytics on square footage requirements, helping companies downsize real estate based on actual data rather than headcount.",
+    industry: "proptech",
+    service: "resource-optimization",
     url: "#",
-    category: "Coworking Automation",
-    status: "Live",
+    category: "Hybrid Work Management",
+    status: "Live Production",
     image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174",
-    features: ["Hot Desk Algo", "Team Zoning", "Usage Heatmaps"],
-    technologies: ["Node.js", "React"],
-    benefits: ["Maximize space", "Flexible booking"],
-    useCases: ["Hybrid Offices", "Libraries"],
-    stats: ["20% More Capacity", "Fair Usage"],
-    integrations: ["Office 365"],
-    testimonials: [{ name: "Sarah L.", role: "HR", quote: "Great for hybrid work.", avatar: "https://randomuser.me/api/portraits/women/23.jpg" }],
+    features: [
+      "Dynamic Team Zoning (Neighborhoods)",
+      "Real-time Occupancy Heatmaps",
+      "Ghost Booking Detection",
+      "QR Code Check-in/out",
+      "Sanitization Workflow Triggers",
+      "Utilization Analytics Dashboard"
+    ],
+    technologies: ["D3.js (Visualization)", "Python (Optimization Libs)", "IoT Sensors (LoRaWAN)", "GraphQL"],
+    benefits: ["Increase Capacity by 20%", "Data-Driven Real Estate Decisions", "Improved Employee Collaboration", "Elimination of 'Squatting'"],
+    useCases: ["Hybrid Corporate HQs", "University Libraries", "Public Sector Offices"],
+    stats: ["20% More Capacity", "Fair Usage", "90% Booking Adherence"],
+    integrations: ["Microsoft Office 365", "Slack App", "Cisco Meraki", "VergeSense"],
+    testimonials: [
+      {
+        name: "Sarah L.",
+        role: "Head of People Ops",
+        quote: "We reduced our office footprint by 30% while actually increasing employee satisfaction because the AI ensures teams always sit together.",
+        avatar: "https://randomuser.me/api/portraits/women/23.jpg"
+      }
+    ],
     faqs: [
-      { q: "Is there a mobile app?", a: "Yes, available for iOS and Android." },
-      { q: "How does it know if a desk is occupied?", a: "It can use occupancy sensors or rely on check-in/check-out via the app." },
-      { q: "Can teams sit together?", a: "Yes, the algorithm prioritizes keeping team members in the same zone." },
-      { q: "Does it support permanent desks?", a: "Yes, you can designate zones for fixed desks and hot desks." }
+      {
+        q: "How does it prevent 'Ghost Bookings'?",
+        a: "If a user does not check in (via QR scan or sensor detection) within 30 minutes of the booking start time, the desk is automatically released back into the pool."
+      },
+      {
+        q: "Can I prioritize certain employees?",
+        a: "Yes. You can assign 'Fixed Desk' status to executives or special needs employees, while the rest of the workforce remains on a flexible 'Hot Desk' tier."
+      },
+      {
+        q: "Does it help with contact tracing?",
+        a: "Yes. In the event of a health incident, the system can generate a report of exactly who sat near whom and at what time, enabling targeted notifications."
+      },
+      {
+        q: "What hardware is required?",
+        a: "The software works standalone with QR codes. Optionally, for higher accuracy, we integrate with standard occupancy sensors from vendors like VergeSense or XY Sense."
+      }
     ]
   },
   {
     id: "community-bot",
     title: "Community Connector",
-    subtitle: "Member Engagement AI",
-    description: "Matches members with similar skills to foster networking.",
-    longDescription: "Turn your coworking space into a thriving community. \n\nThis bot analyzes member profiles and skills to suggest meaningful professional introductions ('You should meet X, they are also into React'). It also automates event announcements and gathers feedback to keep the vibe alive.",
-    industry: "coworking",
-    service: "nlp-chatbot",
+    subtitle: "AI Matchmaking & Engagement Bot",
+    description: "A graph-based social networking AI that analyzes member skills and interests to facilitate meaningful professional connections and event participation.",
+    longDescription: "The Community Connector transforms a coworking space from a rental business into a vibrant ecosystem. It utilizes Natural Language Processing (NLP) to parse member profiles, LinkedIn bios, and Slack introductions, converting them into high-dimensional Vector Embeddings.\n\nBy calculating the 'Cosine Similarity' between these vectors, the bot identifies non-obvious synergies. It proactively sends direct messages: 'Hi John, I noticed you are working on React Native. You should meet Alice in Office 302; she just deployed a React app for Fintech.'\n\nBeyond 1:1 matchmaking, the bot automates event management. It parses event descriptions and selectively invites members who have expressed interest in that topic, ensuring high relevance and attendance. It also acts as a 'Pulse' monitor, conducting micro-surveys to gauge community sentiment and flagging churn risks to community managers.",
+    industry: "proptech",
+    service: "nlp-matchmaking",
     url: "#",
-    category: "Coworking Automation",
-    status: "Beta",
+    category: "Community Engagement AI",
+    status: "Beta / Pilot",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c",
-    features: ["Skill Matching", "Event Auto-Invite", "Chat Integration"],
-    technologies: ["Graph DB", "NLP"],
-    benefits: ["Stronger community", "Member value"],
-    useCases: ["Networking", "Events"],
-    stats: ["Higher Attendance", "Member Loyalty"],
-    integrations: ["Slack", "Discord"],
-    testimonials: [{ name: "John D.", role: "Freelancer", quote: "Met my co-founder through this bot!", avatar: "https://randomuser.me/api/portraits/men/18.jpg" }],
+    features: [
+      "Vector-based Skill Matching",
+      "Automated Intro DMs",
+      "Interest-based Event Targeting",
+      "Sentiment Analysis of Community Chat",
+      "Churn Prediction Metrics",
+      "Gamified Member Leaderboards"
+    ],
+    technologies: ["OpenAI Embeddings", "Pinecone (Vector DB)", "Graph Neural Networks", "Discord/Slack API"],
+    benefits: ["Increase Member Stickiness/Retention", "Foster Organic Networking", "Automated Event Marketing", "Vibrant Community Culture"],
+    useCases: ["Tech Incubators", "Alumni Networks", "Membership Clubs"],
+    stats: ["30% Higher Event Attendance", "15% Lower Churn", "High NPS Scores"],
+    integrations: ["Slack", "Discord", "LinkedIn API", "Eventbrite"],
+    testimonials: [
+      {
+        name: "John D.",
+        role: "Startup Founder",
+        quote: "I didn't need to network. The bot literally introduced me to my co-founder because it knew we were both looking for the same tech stack.",
+        avatar: "https://randomuser.me/api/portraits/men/18.jpg"
+      }
+    ],
     faqs: [
-      { q: "How does it match members?", a: "It uses NLP to analyze member bios, skills, and industry tags to find synergies." },
-      { q: "Does it work on Slack?", a: "Yes, it lives as a bot inside your workspace Slack or Discord." },
-      { q: "Is it intrusive?", a: "No, members opt-in to introductions and can set their availability." },
-      { q: "Can it manage events?", a: "It can send invites, track RSVPs, and collect feedback automatically." }
+      {
+        q: "Is it intrusive to members?",
+        a: "Privacy is paramount. Members must opt-in to the 'Connector' program. The bot also checks calendar availability to ensure it doesn't interrupt deep work sessions."
+      },
+      {
+        q: "How does it handle data privacy?",
+        a: "All profile data is anonymized before vectorization. We do not store raw chat logs, only the derived interest tags and sentiment scores."
+      },
+      {
+        q: "Can it run across different platforms?",
+        a: "Yes. It acts as a bridge. A member on Discord can be matched with a member on the web portal, with the bot brokering the introduction via email if necessary."
+      },
+      {
+        q: "Does it learn over time?",
+        a: "Yes. It uses Reinforcement Learning. If two introduced members schedule a meeting, the bot reinforces the weights that led to that match, improving future accuracy."
+      }
     ]
   },
 
   // ==========================================
-  // 5. AUTONOMOUS AGENTS
+  // 5. AUTONOMOUS AGENTS (AGI & Agentic AI)
   // ==========================================
   {
     id: "dev-auto-gpt",
     title: "DevAutoGPT",
-    subtitle: "Autonomous Coding Agent",
-    description: "An AI agent capable of writing, debugging, and deploying its own code recursively.",
-    longDescription: "DevAutoGPT acts as a virtual senior developer. \n\nGiven a high-level prompt like 'Create a To-Do app in React', it breaks down the task, writes the code files, runs them, reads error logs, fixes bugs autonomously, and deploys the final application. It handles the entire SDLC loop without human intervention.",
-    industry: "tech",
-    service: "nlp-chatbot",
+    subtitle: "Recursive Autonomous Software Architect",
+    description: "A self-governing LLM agent capable of iterative code generation, Abstract Syntax Tree (AST) validation, and automated CI/CD deployment.",
+    longDescription: "DevAutoGPT simulates a Senior Full-Stack Engineer by utilizing a recursive feedback loop. When given a prompt, it doesn't just predict text; it instantiates a file system, writes code, attempts to compile/run it within a sandboxed Docker container, reads the `stderr` logs upon failure, and self-corrects the syntax or logic error.\n\n\n\nThe architecture is built on a 'Plan-Code-Debug' directed acyclic graph (DAG). It leverages LangChain to manage context windows effectively, ensuring it retains the memory of the entire project structure. It supports Test-Driven Development (TDD) by writing unit tests (Jest/PyTest) before implementing the logic, ensuring functional integrity. Once the code passes all tests, it can push commits to a GitHub repository and trigger a deployment pipeline on Vercel or AWS.",
+    industry: "software-development",
+    service: "agentic-automation",
     url: "https://github.com/Significant-Gravitas/AutoGPT",
-    category: "Autonomous Agents",
-    status: "Open Source",
+    category: "Autonomous Coding Agents",
+    status: "Open Source / Enterprise Beta",
     image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159",
-    features: ["Self-Healing Code", "Recursive Debugging", "Docker Integration"],
-    technologies: ["LangChain", "OpenAI API", "Docker"],
-    benefits: ["Automate Coding", "Bug Fixing"],
-    useCases: ["MVP Generation", "Refactoring"],
-    stats: ["10x Faster Coding", "Self-Correcting"],
-    integrations: ["GitHub", "VS Code"],
-    testimonials: [{ name: "Linus T.", role: "Dev", quote: "Wrote a CRUD app in minutes.", avatar: "https://randomuser.me/api/portraits/men/50.jpg" }],
+    features: [
+      "Recursive Self-Healing Debugging Loop",
+      "Sandboxed Execution Environment (Docker)",
+      "Automated Dependency Management",
+      "Test-Driven Development (TDD) Enforcement",
+      "AST (Abstract Syntax Tree) Parsing",
+      "Multi-File Project Structuring"
+    ],
+    technologies: ["GPT-4o", "LangChain", "Docker SDK", "Python AST", "Puppeteer (for UI testing)"],
+    benefits: ["Reduce MVP Development Time by 90%", "Eliminate Syntax Errors", "24/7 Coding Capability", "Automated Legacy Code Refactoring"],
+    useCases: ["Rapid Prototyping (MVP)", "Automated QA Testing", "Codebase Migration"],
+    stats: ["10x Faster Coding", "Self-Correcting", "Zero Hallucinated APIs"],
+    integrations: ["GitHub API", "VS Code Extension", "Jira", "Vercel"],
+    testimonials: [
+      {
+        name: "Linus T.",
+        role: "Principal Architect",
+        quote: "It didn't just write the code; it fixed the dependency conflicts in the package.json file that I missed.",
+        avatar: "https://randomuser.me/api/portraits/men/50.jpg"
+      }
+    ],
     faqs: [
-      { q: "What languages does it support?", a: "It supports Python, JavaScript/TypeScript, Go, Rust, and Java natively." },
-      { q: "Is the code secure?", a: "It runs in a sandboxed Docker container to prevent any system damage." },
-      { q: "Can it connect to APIs?", a: "Yes, it can read documentation and integrate with 3rd party APIs automatically." },
-      { q: "Do I need an OpenAI key?", a: "Yes, you need to provide your own API key for GPT-4 or Claude." }
+      {
+        q: "How does it handle infinite loops?",
+        a: "We implement a 'Watchdog Timer' and token-limit budgeting. If an agent exceeds its execution budget or recursion depth without a successful output, the supervisor agent terminates the process and requests human intervention."
+      },
+      {
+        q: "Is the generated code secure?",
+        a: "Yes. The agent runs in an isolated, ephemeral Docker container with no network access to your internal VPC unless explicitly allow-listed. All code is scanned by static analysis tools (SonarQube) before output."
+      },
+      {
+        q: "Can it understand existing legacy codebases?",
+        a: "Yes. Using RAG (Retrieval-Augmented Generation), we vector-embed your existing codebase, allowing the agent to query and understand your specific variable naming conventions and architectural patterns."
+      },
+      {
+        q: "What prevents it from hallucinating non-existent libraries?",
+        a: "The agent has a 'Verification Step' where it attempts to install the library via npm/pip. If the installation fails, it acknowledges the hallucination and searches for a valid alternative."
+      }
     ]
   },
   {
     id: "research-gpt",
     title: "ResearchGPT Auto",
-    subtitle: "Web Research Agent",
-    description: "Scours the web, reads papers, and generates comprehensive research reports.",
-    longDescription: "Your personal research assistant on steroids. \n\nResearchGPT navigates the internet, reads academic papers, news articles, and market reports, and synthesizes the information into a coherent, cited executive summary. It filters out noise and focuses on credible sources to give you the facts you need.",
-    industry: "tech",
-    service: "nlp-chatbot",
+    subtitle: "Deep-Web Semantic Research Agent",
+    description: "An autonomous crawler that aggregates, verifies, and synthesizes data from academic papers and the open web using Retrieval-Augmented Generation (RAG).",
+    longDescription: "ResearchGPT Auto transforms information gathering from a manual chore into an automated pipeline. It employs a fleet of headless browsers to scrape high-authority domains (arXiv, PubMed, Bloomberg), bypassing anti-bot measures to access deep-web content.\n\nThe core innovation is its 'Fact-Check Kernel'. Unlike standard LLMs that hallucinate, this agent cross-references every claim against three distinct sources before including it in the final report. It utilizes vector databases (Pinecone/Milvus) to store embeddings of read documents, allowing for semantic search capabilities—meaning it understands that 'revenue drop' and 'fiscal contraction' are related concepts. The output is a structured academic-grade report complete with IEEE or APA citations.",
+    industry: "market-intelligence",
+    service: "automated-research",
     url: "#",
-    category: "Autonomous Agents",
-    status: "Beta",
+    category: "Knowledge Discovery AI",
+    status: "Beta Access",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
-    features: ["Deep Web Search", "Citation Gen", "Summary Logic"],
-    technologies: ["Puppeteer", "GPT-4"],
-    benefits: ["Save research time", "Deep insights"],
-    useCases: ["Market Research", "Academic Review"],
-    stats: ["1000+ Pages/Min", "Unbiased"],
-    integrations: ["Google Scholar", "Notion"],
-    testimonials: [{ name: "Dr. A. Smith", role: "Researcher", quote: "My literature review took days, now hours.", avatar: "https://randomuser.me/api/portraits/women/30.jpg" }],
+    features: [
+      "Multi-Hop Reasoning",
+      "Vector-Based Semantic Search",
+      "Automated Citation Generation (BibTeX)",
+      "Hallucination Mitigation Protocol",
+      "PDF/OCR Parsing",
+      "Anti-Detect Scraping Network"
+    ],
+    technologies: ["LlamaIndex", "Puppeteer", "Pinecone Vector DB", "OpenAI GPT-4-Turbo", "OCR (Tesseract)"],
+    benefits: ["Cut Research Time by 95%", "Eliminate Confirmation Bias", "Access to Real-Time Web Data", "Traceable Source of Truth"],
+    useCases: ["Due Diligence Reports", "PhD Literature Reviews", "Competitive Landscape Analysis"],
+    stats: ["1000+ Pages/Min", "99% Factual Accuracy", "Zero Hallucinations"],
+    integrations: ["Google Scholar", "Notion API", "Mendeley", "Zotero"],
+    testimonials: [
+      {
+        name: "Dr. A. Smith",
+        role: "Chief Economist",
+        quote: "It synthesized a 50-page market analysis report with perfect citations in the time it took me to drink my coffee.",
+        avatar: "https://randomuser.me/api/portraits/women/30.jpg"
+      }
+    ],
     faqs: [
-      { q: "Does it cite sources?", a: "Yes, every claim is backed by a direct link to the source material." },
-      { q: "Can it read PDFs?", a: "Yes, it can parse PDFs, Word docs, and web pages." },
-      { q: "How accurate is it?", a: "It uses cross-verification to minimize hallucinations and ensures factual accuracy." },
-      { q: "Can it access paywalled sites?", a: "No, it respects paywalls and only accesses publicly available information." }
+      {
+        q: "How does it handle conflicting information?",
+        a: "The agent uses a 'Weighted Credibility Score'. Sources like .edu domains or peer-reviewed journals are weighted higher than blogs. It presents the conflict in the final report, noting the discrepancy."
+      },
+      {
+        q: "Can it bypass paywalls?",
+        a: "The agent strictly adheres to `robots.txt` and copyright laws. However, it can integrate with your institutional login credentials (e.g., JSTOR, Elsevier) to access paid content legally."
+      },
+      {
+        q: "Does it work with non-English sources?",
+        a: "Yes, it utilizes a translation layer to ingest documents in over 40 languages, synthesizing the findings into an English report (or your target language)."
+      },
+      {
+        q: "How fresh is the data?",
+        a: "Real-time. Unlike pre-trained models with a knowledge cutoff, this agent browses the live web to fetch the latest news and stock data."
+      }
     ]
   },
   {
     id: "task-master-agi",
     title: "TaskMaster AGI",
-    subtitle: "Personal Goal Agent",
-    description: "Breaks down complex goals into actionable sub-tasks and executes them.",
-    longDescription: "TaskMaster AGI takes a high-level objective (e.g., 'Plan a corporate retreat') and decomposes it into a tree of dependent tasks (Find venue, Book caterer, Send invites). \n\nIt then executes these tasks by interacting with various APIs and websites, managing the project from start to finish.",
-    industry: "tech",
-    service: "ai-solutions",
+    subtitle: "Goal-Oriented Executive Function Agent",
+    description: "A hierarchical task execution engine that decomposes high-level objectives into actionable sub-tasks and executes them via API orchestration.",
+    longDescription: "TaskMaster AGI functions as a digital project manager. It utilizes a recursive decomposition algorithm to break a vague goal (e.g., 'Plan a launch party') into a dependency tree of hundreds of atomic tasks (e.g., 'Scrape venues', 'Compare catering quotes', 'Send invites').\n\n\n\nIt features a 'Tool Usage' module that allows it to interact with the outside world. It can authenticate into your Google Calendar to schedule meetings, use the Gmail API to send inquiries to vendors, and use Stripe to process deposit payments—all while maintaining a stateful memory of the project's progress. It employs Reinforcement Learning from Human Feedback (RLHF) to learn your preferences over time.",
+    industry: "productivity",
+    service: "process-automation",
     url: "#",
-    category: "Autonomous Agents",
-    status: "Research",
+    category: "Agentic Process Automation (APA)",
+    status: "Research Preview",
     image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b",
-    features: ["Goal Decomposition", "Calendar Sync", "Vendor Outreach"],
-    technologies: ["BabyAGI", "Python"],
-    benefits: ["Achieve goals faster", "Automated planning"],
-    useCases: ["Project Mgmt", "Event Planning"],
-    stats: ["Complex Workflows", "Auto-Scheduling"],
-    integrations: ["Google Workspace", "Trello"],
-    testimonials: [{ name: "Tom H.", role: "PM", quote: "Like having a digital PA.", avatar: "https://randomuser.me/api/portraits/men/12.jpg" }],
+    features: [
+      "Hierarchical Goal Decomposition",
+      "Dependency Graph Management",
+      "API Tool Use & Authentication",
+      "Long-Term Episodic Memory",
+      "Human-in-the-Loop Approval workflows",
+      "Multi-Agent Orchestration"
+    ],
+    technologies: ["BabyAGI", "LangGraph", "Zapier NLA", "Redis (Memory)", "Python"],
+    benefits: ["Autonomous Project Execution", "Eliminate Executive Dysfunction", "Seamless App Interoperability", "Scalable Personal Assistance"],
+    useCases: ["Event Planning", "Complex Travel Itineraries", "Supply Chain Coordination"],
+    stats: ["Handle 50+ Step Workflows", "Auto-Scheduling", "24/7 Execution"],
+    integrations: ["Google Workspace", "Trello/Asana", "Slack", "Stripe"],
+    testimonials: [
+      {
+        name: "Tom H.",
+        role: "Product Manager",
+        quote: "It's not just a chatbot; it actually *does* the work. It booked the venue and the caterer while I slept.",
+        avatar: "https://randomuser.me/api/portraits/men/12.jpg"
+      }
+    ],
     faqs: [
-      { q: "Can it book flights?", a: "Yes, if granted API access or via browser automation tools." },
-      { q: "Does it learn from mistakes?", a: "Yes, it uses a feedback loop to improve its planning strategy over time." },
-      { q: "Is my data private?", a: "All data is stored locally on your device or your private cloud instance." },
-      { q: "Does it work with Google Calendar?", a: "Yes, it can schedule tasks and reminders directly on your calendar." }
+      {
+        q: "What if the agent gets stuck?",
+        a: "We implement a 'Max Retry' logic. If a task fails (e.g., a vendor doesn't reply), the agent can generate an alternative path (e.g., contact a different vendor) or escalate to the user for guidance."
+      },
+      {
+        q: "Is it safe to give it API keys?",
+        a: "Keys are stored in a secure vault (HashiCorp Vault). The agent uses them only for scoped requests, and you can set spending limits or requires-approval flags for sensitive actions like payments."
+      },
+      {
+        q: "Can it coordinate with other agents?",
+        a: "Yes. It supports multi-agent architecture. The 'Planner' agent can delegate specific sub-tasks to a 'Research' agent or a 'Coding' agent and aggregate their outputs."
+      },
+      {
+        q: "Does it have long-term memory?",
+        a: "Yes, it uses a vector store to remember your preferences (e.g., 'I prefer aisle seats', 'No meetings on Fridays') across different sessions and projects."
+      }
     ]
   },
 
@@ -420,1261 +811,1617 @@ export const products = [
   {
     id: "sql-agent-pro",
     title: "SQL Agent Pro",
-    subtitle: "Natural Language to SQL",
-    description: "Enterprise agent that connects to any database and answers business questions in plain English.",
-    longDescription: "Democratize data access across your organization. \n\nSQL Agent Pro allows non-technical staff (HR, Marketing, Sales) to ask questions like 'What was the churn rate last month?' and instantly translates it into complex SQL queries, executes them safely, and presents the results visually.",
-    industry: "tech",
-    service: "data-pipeline",
+    subtitle: "Natural Language to SQL Interface",
+    description: "An enterprise-grade semantic layer that translates natural language queries into optimized, dialect-specific SQL execution plans.",
+    longDescription: "SQL Agent Pro solves the 'last mile' problem of Business Intelligence. It sits between non-technical users and your Data Warehouse (Snowflake, BigQuery, Redshift). By mapping your database schema into a high-dimensional vector space, it understands not just table names, but the *business logic* and relationships between them (foreign keys, join paths).\n\n\n\nWhen a user asks, 'Show me churn rate by region,' the agent generates the appropriate AST (Abstract Syntax Tree) for the SQL query, optimizes it for performance (e.g., selecting partition keys), and validates it against a 'Safe Execution' policy to prevent injection attacks or costly `SELECT *` operations. It effectively turns every employee into a data analyst.",
+    industry: "business-intelligence",
+    service: "data-democratization",
     url: "https://github.com/vanna-ai/vanna",
-    category: "Data Engineering",
-    status: "Open Source",
+    category: "Generative BI",
+    status: "Enterprise Release",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
-    features: ["Text-to-SQL", "Schema Awareness", "Safe Execution"],
-    technologies: ["LlamaIndex", "PostgreSQL"],
-    benefits: ["Democratize data", "Instant answers"],
-    useCases: ["BI Dashboards", "Ad-hoc Reporting"],
-    stats: ["99% Accuracy", "Zero Syntax Errors"],
-    integrations: ["Snowflake", "BigQuery"],
-    testimonials: [{ name: "Emily W.", role: "Analyst", quote: "No more writing SQL manually.", avatar: "https://randomuser.me/api/portraits/women/55.jpg" }],
+    features: [
+      "Context-Aware SQL Generation",
+      "RAG-based Schema Training",
+      "Automated Visualization Selection",
+      "Role-Based Access Control (RBAC)",
+      "Query Cost Estimation",
+      "Dialect Agnostic (Postgres/Snowflake/T-SQL)"
+    ],
+    technologies: ["LlamaIndex", "SQLAlchemy", "Python Pandas", "Plotly", "Vector Embeddings"],
+    benefits: ["Eliminate Ad-Hoc Data Requests", "100% Query Syntax Accuracy", "Secure Data Access", "Instant Visual Insights"],
+    useCases: ["Self-Service Analytics", "Executive Dashboards", "Embedded Analytics"],
+    stats: ["99% SQL Accuracy", "Zero Syntax Errors", "<2s Response Time"],
+    integrations: ["Snowflake", "Google BigQuery", "AWS Redshift", "Slack Bot"],
+    testimonials: [
+      {
+        name: "Emily W.",
+        role: "Marketing Director",
+        quote: "I no longer have to wait 3 days for the data team to pull a list. I just ask the bot and get the CSV instantly.",
+        avatar: "https://randomuser.me/api/portraits/women/55.jpg"
+      }
+    ],
     faqs: [
-      { q: "Is it read-only?", a: "Yes, by default it is configured with read-only access to prevent accidental data modification." },
-      { q: "Which databases are supported?", a: "It supports PostgreSQL, MySQL, Snowflake, BigQuery, and SQL Server." },
-      { q: "Can it handle complex joins?", a: "Yes, it understands schema relationships and can construct queries with multiple joins." },
-      { q: "Is the data sent to the LLM?", a: "Only the schema (metadata) is sent; your actual row data remains private." }
+      {
+        q: "How do you prevent the AI from accessing sensitive data?",
+        a: "The AI only sees the *metadata* (schema definitions), not the actual row data. Furthermore, the database user utilized by the agent is restricted to Read-Only permissions on specific views."
+      },
+      {
+        q: "Can it handle complex joins?",
+        a: "Yes. During the training phase, we feed the model your Entity Relationship Diagram (ERD). It understands how to join 10+ tables to answer complex questions about customer lifetime value."
+      },
+      {
+        q: "What if the model generates bad SQL?",
+        a: "We have a 'Compiler Layer' that attempts to explain the SQL before execution. If the database engine returns a syntax error, the agent self-corrects based on the error message and retries."
+      },
+      {
+        q: "Does it support proprietary business metrics?",
+        a: "Yes. You can define 'Semantic Definitions' (e.g., what exactly constitutes 'churn' in your org) in the system prompt, so the AI calculates metrics consistently."
+      }
     ]
   },
   {
     id: "etl-pipeline-ai",
     title: "AutoETL Pipeline",
-    subtitle: "Data Cleaning Bot",
-    description: "Automatically detects messy data, cleans formats, and pipes it to your data warehouse.",
-    longDescription: "Stop spending hours fixing CSV formats. \n\nAutoETL uses AI to detect anomalies, standardize date formats, fills missing values, and maps schema changes automatically. It creates robust, self-healing data pipelines that ensure your warehouse is always fed with clean, reliable data.",
-    industry: "tech",
-    service: "data-pipeline",
+    subtitle: "Self-Healing Data Ingestion Engine",
+    description: "An AI-driven ETL framework that automates schema inference, data cleansing, and pipeline orchestration using anomaly detection.",
+    longDescription: "AutoETL removes the fragility from data engineering. Traditional pipelines break when upstream data formats change (Schema Drift). AutoETL utilizes a dynamic schema inference engine that detects new columns or type changes in the source data and automatically adapts the destination schema in the data warehouse without halting the pipeline.\n\nIt features an integrated 'Data Quality Firewall' that uses statistical analysis to detect anomalies (e.g., null spikes, negative values in price fields) and quarantines bad records to a 'Dead Letter Queue' while letting clean data pass through. This ensures your analytics dashboards never crash due to dirty data.",
+    industry: "data-engineering",
+    service: "data-ops",
     url: "#",
-    category: "Data Engineering",
+    category: "Automated Data Integration",
     status: "Live Tool",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-    features: ["Anomaly Detection", "Auto-Mapping", "Snowflake Sync"],
-    technologies: ["Python", "Airflow"],
-    benefits: ["Clean data", "Automated pipelines"],
-    useCases: ["Data Migration", "Log Aggregation"],
-    stats: ["Reduce ETL Time 80%", "Auto-Schema"],
-    integrations: ["Airflow", "Kafka"],
-    testimonials: [{ name: "Data Eng Lead", role: "Tech Corp", quote: "Saved weeks of engineering time.", avatar: "https://randomuser.me/api/portraits/men/29.jpg" }],
+    features: [
+      "Automated Schema Drift Handling",
+      "Statistical Anomaly Detection",
+      "PII Auto-Redaction",
+      "Backpressure Handling",
+      "Idempotent Replay Capability",
+      "Dead Letter Queue Management"
+    ],
+    technologies: ["Apache Airflow", "Apache Spark", "Kafka Connect", "dbt (Data Build Tool)", "Great Expectations"],
+    benefits: ["80% Reduction in Maintenance Time", "Guaranteed Data Quality", "Real-Time Ingestion", "Zero-Downtime Schema Migrations"],
+    useCases: ["Log Aggregation", "Marketing Data Unification", "IoT Telemetry Ingestion"],
+    stats: ["Reduce ETL Time 80%", "Auto-Schema", "99.99% Pipeline Uptime"],
+    integrations: ["Apache Kafka", "Snowpipe", "Databricks", "Fivetran"],
+    testimonials: [
+      {
+        name: "Mark S.",
+        role: "Data Engineering Lead",
+        quote: "The schema drift handling is magic. Marketing added three new fields to their CSVs, and the pipeline just adapted automatically.",
+        avatar: "https://randomuser.me/api/portraits/men/29.jpg"
+      }
+    ],
     faqs: [
-      { q: "Can it handle large datasets?", a: "Yes, it is built on Spark and can process Terabytes of data efficiently." },
-      { q: "Does it detect schema changes?", a: "Yes, it automatically adapts to upstream schema changes without breaking the pipeline." },
-      { q: "Can I schedule jobs?", a: "It integrates with Airflow and Cron for flexible scheduling." },
-      { q: "What if a job fails?", a: "It has built-in retry logic and sends instant alerts to Slack/Email." }
+      {
+        q: "How does it handle volume spikes?",
+        a: "The architecture is built on Kubernetes with Horizontal Pod Autoscaling (HPA). It automatically spins up more Spark workers when the Kafka lag threshold is breached."
+      },
+      {
+        q: "Is the data lineage trackable?",
+        a: "Yes. Every transformation is logged. We provide a DAG visualization showing exactly where data came from and what transformations were applied before it hit the warehouse."
+      },
+      {
+        q: "Can I write custom transformations?",
+        a: "Absolutely. While standard cleaning is automated, you can inject custom Python or SQL transformation blocks into the Airflow DAG."
+      },
+      {
+        q: "Does it support Change Data Capture (CDC)?",
+        a: "Yes, it integrates with Debezium to capture row-level changes from transactional databases (Postgres/MySQL) and stream them to the warehouse in real-time."
+      }
     ]
   },
   {
     id: "data-governance-bot",
     title: "Data Governance Bot",
-    subtitle: "PII Protection AI",
-    description: "Scans databases for sensitive info (PII) and automatically masks it for compliance.",
-    longDescription: "Ensure data privacy without slowing down development. \n\nThis bot scans your entire data estate to identify Personally Identifiable Information (PII) like emails, SSNs, and credit cards. It automatically applies masking or encryption policies, ensuring that developers and analysts work with safe, anonymized data.",
-    industry: "tech",
-    service: "ethical-ai",
+    subtitle: "Automated PII/PHI Compliance Guard",
+    description: "A background daemon that continuously scans data estates for sensitive information, enforcing masking policies and generating GDPR/CCPA compliance logs.",
+    longDescription: "Data Governance Bot is your automated Data Protection Officer (DPO). It crawls your databases, data lakes, and unstructured object stores (S3 buckets) using Named Entity Recognition (NER) models specifically trained to identify sensitive patterns—Social Security Numbers, Credit Cards, Email Addresses, and HIPAA-related codes.\n\nUpon detection, it applies 'Tag-Based Policies'. For example, if a column is tagged as 'High Sensitivity', the bot can automatically apply Format-Preserving Encryption (FPE) or dynamic masking logic, ensuring that developers seeing the data only see 'XXX-XX-1234'. It maintains an immutable audit log of who accessed what data and when, streamlining regulatory audits.",
+    industry: "cybersecurity",
+    service: "governance-risk-compliance",
     url: "#",
-    category: "Data Engineering",
-    status: "Enterprise",
+    category: "Data Privacy AI",
+    status: "Enterprise Gold",
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3",
-    features: ["GDPR Scan", "Auto-Masking", "Access Logs"],
-    technologies: ["Regex AI", "SQL"],
-    benefits: ["Data compliance", "Risk reduction"],
-    useCases: ["GDPR Compliance", "Test Data Mgmt"],
-    stats: ["100% PII Detection", "Auto-Redaction"],
-    integrations: ["Oracle DB", "MongoDB"],
-    testimonials: [{ name: "DPO", role: "Finance Firm", quote: "Peace of mind for data privacy.", avatar: "https://randomuser.me/api/portraits/women/19.jpg" }],
+    features: [
+      "AI-Powered PII/PHI Discovery",
+      "Dynamic Data Masking",
+      "Format-Preserving Encryption",
+      "Right-to-be-Forgotten Automation",
+      "Data Catalog Integration",
+      "Access Anomaly Detection"
+    ],
+    technologies: ["Regex & NLP Models", "Apache Ranger", "Snowflake Masking Policies", "HashiCorp Vault"],
+    benefits: ["Zero Compliance Fines", "Automated GDPR Requests", "Secure Test Data Generation", "Granular Access Control"],
+    useCases: ["GDPR/CCPA Compliance audits", "Safe Cloud Migration", "Dev/Test Environment Masking"],
+    stats: ["100% PII Detection", "Auto-Redaction", "Audit-Ready Reports"],
+    integrations: ["Oracle DB", "MongoDB", "AWS S3/Macie", "Collibra"],
+    testimonials: [
+      {
+        name: "Sarah J.",
+        role: "CISO",
+        quote: "It found unencrypted credit card numbers in a forgotten dev database from three years ago. Saved us from a potential breach.",
+        avatar: "https://randomuser.me/api/portraits/women/19.jpg"
+      }
+    ],
     faqs: [
-      { q: "Does it delete data?", a: "No, it masks or encrypts sensitive fields while keeping the record intact." },
-      { q: "Does it slow down the database?", a: "It runs on read replicas or during off-peak hours to minimize performance impact." },
-      { q: "Can it create synthetic data?", a: "Yes, it can generate realistic synthetic data for testing purposes." },
-      { q: "Is it customizable?", a: "You can define custom regex patterns to detect specific business data types." }
+      {
+        q: "Does it impact database performance?",
+        a: "We utilize 'sampling' scans and read from read-replicas during off-peak hours to ensure zero impact on production transaction processing (OLTP)."
+      },
+      {
+        q: "Can it handle unstructured data?",
+        a: "Yes. It uses OCR and NLP to scan PDF documents and images in S3 buckets to identify and tag sensitive information contained within files."
+      },
+      {
+        q: "How does it handle the 'Right to be Forgotten'?",
+        a: "It maintains a global index of PII. When a deletion request comes in, it orchestrates the deletion or anonymization of that user's data across all connected systems."
+      },
+      {
+        q: "Is the masking reversible?",
+        a: "We support both irreversible hashing (for analytics) and reversible tokenization (for authorized applications), managed via encryption keys."
+      }
     ]
   },
 
   // ==========================================
-  // 7. COMPUTER VISION
+  // 7. COMPUTER VISION (Edge & Cloud)
   // ==========================================
   {
     id: "vision-guard-edge",
     title: "VisionGuard Edge",
-    subtitle: "Real-time Object Detection",
-    description: "Ultra-fast YOLOv8 surveillance system optimized for Edge devices.",
-    longDescription: "Bring intelligence to your security cameras. \n\nVisionGuard Edge runs locally on edge devices (like Jetson Nano), detecting weapons, intruders, or safety violations in milliseconds without needing internet connectivity. It preserves privacy by processing video locally and sending only text alerts.",
-    industry: "manufacturing",
-    service: "computer-vision",
+    subtitle: "Real-Time Edge Inference Surveillance",
+    description: "A low-latency computer vision system optimized for Edge AI, capable of running complex object detection models locally on ARM-based hardware.",
+    longDescription: "VisionGuard Edge brings server-grade AI to the network edge. Unlike cloud-based systems that suffer from bandwidth latency, this solution runs quantized YOLOv8 models directly on devices like NVIDIA Jetson or Raspberry Pi.\n\n\n\nThe architecture utilizes TensorRT optimization to achieve high frame rates (FPS) on low-power hardware. It processes video streams locally to detect threats—weapons, unauthorized entry, or safety hazards. Because video never leaves the device (only metadata alerts are sent to the cloud), it inherently complies with strict privacy standards and functions even during internet outages. It utilizes MQTT for lightweight message transmission to the central command dashboard.",
+    industry: "physical-security",
+    service: "edge-computing",
     url: "https://github.com/ultralytics/ultralytics",
-    category: "Computer Vision",
-    status: "v8.0 Release",
+    category: "Edge AI Security",
+    status: "v8.0 Production",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
-    features: ["Weapon Detection", "Face Recognition", "License Plate Reader"],
-    technologies: ["YOLOv8", "OpenCV", "Edge Impulse"],
-    benefits: ["Enhanced security", "Real-time alerts"],
-    useCases: ["Smart Cities", "Factory Safety"],
-    stats: ["<10ms Latency", "99.9% Detection"],
-    integrations: ["RTSP Streams", "Telegram"],
-    testimonials: [{ name: "Security Chief", role: "Mall", quote: "Instant alerts to my phone.", avatar: "https://randomuser.me/api/portraits/men/66.jpg" }],
+    features: [
+      "INT8 Quantized Model Inference",
+      "Offline Functionality",
+      "Weapon & Intrusion Detection",
+      "Privacy-First (No Cloud Video Storage)",
+      "MQTT Alerting Protocol",
+      "Night Vision/IR Compatibility"
+    ],
+    technologies: ["YOLOv8", "NVIDIA TensorRT", "OpenCV", "Edge Impulse", "MQTT"],
+    benefits: ["<15ms Inference Latency", "Bandwidth Savings (99%)", "GDPR Compliant Video Ops", "High Reliability"],
+    useCases: ["Smart Cities", "Remote Asset Monitoring", "School Safety"],
+    stats: ["<10ms Latency", "99.9% Detection", "Runs on 5W Power"],
+    integrations: ["Milestone XProtect", "Telegram Bot", "AWS IoT Core"],
+    testimonials: [
+      {
+        name: "Chief Security Officer",
+        role: "Mall Operations",
+        quote: "The latency is non-existent. We get the alert the millisecond a blacklisted vehicle enters the parking lot.",
+        avatar: "https://randomuser.me/api/portraits/men/66.jpg"
+      }
+    ],
     faqs: [
-      { q: "What hardware is required?", a: "It runs efficiently on NVIDIA Jetson Nano, Raspberry Pi 4, or any standard GPU server." },
-      { q: "Does it work at night?", a: "Yes, our models are trained on IR and night-vision footage." },
-      { q: "Does it need internet?", a: "No, all processing happens locally on the edge device for maximum security." },
-      { q: "Can it detect specific objects?", a: "Yes, we can fine-tune the model to detect custom objects relevant to your business." }
+      {
+        q: "How do you handle false positives?",
+        a: "We implement 'Temporal Consistency' logic. An object must be detected in 5 consecutive frames with >80% confidence before an alert is triggered, drastically reducing noise."
+      },
+      {
+        q: "Does it work in low light?",
+        a: "Yes. The models are trained on datasets containing thermal and infrared imagery, ensuring accuracy in complete darkness."
+      },
+      {
+        q: "Can I update the model remotely?",
+        a: "Yes. We use Over-The-Air (OTA) updates to push new model weights to the edge devices without requiring physical access."
+      },
+      {
+        q: "What is the hardware requirement?",
+        a: "It is optimized for NVIDIA Jetson Nano/Orin, ensuring >30 FPS performance. It can also run on standard x86 servers with minimal CPU usage."
+      }
     ]
   },
   {
     id: "retail-heatmap",
     title: "Retail Heatmap AI",
-    subtitle: "Store Analytics",
-    description: "Tracks customer footfall and dwell time to optimize store layout.",
-    longDescription: "Understand your physical store like a website. \n\nRetail Heatmap AI tracks customer movement, generating heatmaps of high-traffic zones and dead spots. It analyzes dwell time to tell you which products are attracting attention and helps optimize store layout for maximum conversion.",
-    industry: "retail",
-    service: "computer-vision",
+    subtitle: "Spatial Analytics & Pathing Engine",
+    description: "A computer vision solution that transforms CCTV feeds into actionable spatial data, tracking customer dwell times, pathing, and conversion funnels.",
+    longDescription: "Retail Heatmap AI treats physical space like a website landing page. It uses 'Person Re-Identification' (ReID) algorithms to track unique individuals across multiple non-overlapping camera views, creating a complete customer journey map.\n\nThe system generates 'Kinetic Heatmaps' that visualize exactly where customers stop, look, and interact with products. It calculates 'Dwell Time' and 'Pass-by Rate' for specific end-caps or displays. By using Homography mapping, pixel coordinates from 2D camera feeds are translated into a top-down 2D floor plan view, giving store managers a precise understanding of traffic flow bottlenecks and high-value real estate within the store.",
+    industry: "retail-analytics",
+    service: "spatial-intelligence",
     url: "#",
-    category: "Computer Vision",
-    status: "Live",
+    category: "In-Store Analytics",
+    status: "Live Deployment",
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
-    features: ["Heatmap Gen", "Queue Detection", "Demographics"],
-    technologies: ["OpenCV", "TensorFlow"],
-    benefits: ["Optimize layout", "Improve conversion"],
-    useCases: ["Retail Stores", "Malls"],
-    stats: ["Optimize Layouts", "Reduce Wait Times"],
-    integrations: ["CCTV", "POS"],
-    testimonials: [{ name: "Store Mgr", role: "Retail Chain", quote: "Sales doubled after layout change.", avatar: "https://randomuser.me/api/portraits/women/15.jpg" }],
+    features: [
+      "Multi-Camera Person Re-Identification",
+      "Planar Homography Mapping",
+      "Dwell Time Analytics",
+      "Queue Length Monitoring",
+      "Demographic Estimation (Age/Gender)",
+      "Staff Exclusion Logic"
+    ],
+    technologies: ["OpenCV", "DeepSort", "PyTorch", "Grafana (Visualization)"],
+    benefits: ["Optimize Store Layouts", "Increase Conversion Rates", "Staffing Optimization via Traffic Prediction", "A/B Testing Physical Displays"],
+    useCases: ["Big Box Retail", "Shopping Malls", "Museums/Galleries"],
+    stats: ["Optimize Layouts", "Reduce Wait Times", "95% Counting Accuracy"],
+    integrations: ["Existing CCTV (RTSP)", "Tableau", "Salesforce POS"],
+    testimonials: [
+      {
+        name: "Store Manager",
+        role: "Global Fashion Chain",
+        quote: "We moved the denim section to the 'hot zone' identified by the AI, and sales for that category went up 40% in a week.",
+        avatar: "https://randomuser.me/api/portraits/women/15.jpg"
+      }
+    ],
     faqs: [
-      { q: "Do I need new cameras?", a: "No, it works with most existing IP camera feeds via RTSP." },
-      { q: "Is customer identity protected?", a: "Yes, faces are blurred automatically to ensure privacy compliance." },
-      { q: "Can I export data?", a: "Yes, detailed reports and heatmaps can be exported as PDF or CSV." },
-      { q: "Does it count staff?", a: "We can exclude staff from the count using uniform detection or RFID tags." }
+      {
+        q: "How do you distinguish staff from customers?",
+        a: "We train the model to recognize the store uniform or utilize RFID tag integration to filter out employees from the footfall count."
+      },
+      {
+        q: "Is it compliant with privacy laws?",
+        a: "Yes. No video is stored. The system processes the stream in RAM to extract coordinate data and immediately discards the frames. Faces can be automatically blurred in real-time."
+      },
+      {
+        q: "Do I need to install new cameras?",
+        a: "Rarely. The system is compatible with any standard IP camera that outputs an RTSP stream (Real-Time Streaming Protocol)."
+      },
+      {
+        q: "Can it track groups vs individuals?",
+        a: "Yes. The 'Group Detection' logic analyzes proximity and velocity vectors to identify buying groups (families/couples) vs. individual shoppers."
+      }
     ]
   },
   {
     id: "safety-gear-detect",
     title: "Safety Gear AI",
-    subtitle: "PPE Detection",
-    description: "Monitors construction sites to ensure workers are wearing helmets and vests.",
-    longDescription: "Automate workplace safety compliance. \n\nThis AI continuously monitors video feeds from construction sites or factory floors to ensure every worker is wearing the required PPE (Helmets, Vests, Goggles). It instantly triggers alarms or logs violations if safety protocols are breached.",
-    industry: "manufacturing",
-    service: "computer-vision",
+    subtitle: "Industrial PPE Compliance Monitor",
+    description: "An automated safety officer that uses object detection to ensure compliance with Personal Protective Equipment (PPE) regulations in hazardous environments.",
+    longDescription: "Safety Gear AI enforces HSE (Health, Safety, and Environment) protocols autonomously. It utilizes a custom-trained object detection model capable of identifying multiple classes of small objects—Hard Hats, High-Visibility Vests, Safety Goggles, and Steel-Toe Boots—simultaneously on moving workers.\n\nThe system defines 'Danger Zones' within the camera frame. If a worker enters a zone without the requisite gear, the system calculates the Intersection over Union (IoU) of the worker and the missing gear. If a violation is confirmed, it triggers an immediate relay to sound an alarm, flashes a strobe light, or logs the incident with a video snippet to the safety dashboard. This proactive approach shifts safety from audit-based to real-time prevention.",
+    industry: "manufacturing-construction",
+    service: "industrial-iot",
     url: "#",
-    category: "Computer Vision",
-    status: "Pilot",
+    category: "HSE Automation",
+    status: "Pilot / Industrial",
     image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1",
-    features: ["Helmet Detection", "Vest Check", "Alert System"],
-    technologies: ["YOLOv8", "RTSP Stream"],
-    benefits: ["Workplace safety", "Compliance"],
-    useCases: ["Construction", "Factories"],
-    stats: ["Zero Accidents", "Instant Logs"],
-    integrations: ["Safety Dashboards", "Alarms"],
-    testimonials: [{ name: "Safety Officer", role: "Construction", quote: "Compliance is now 100%.", avatar: "https://randomuser.me/api/portraits/men/70.jpg" }],
+    features: [
+      "Multi-Class PPE Detection",
+      "Geofenced Danger Zones",
+      "Real-time Audio/Visual Alarms",
+      "Incident Video Logging",
+      "Shift-based Compliance Reporting",
+      "API Integration with Access Control Gates"
+    ],
+    technologies: ["YOLOv8-Small", "DeepStream SDK", "AWS Kinesis Video Streams", "Twilio (SMS Alerts)"],
+    benefits: ["Zero Accident Vision", "Reduce Insurance Premiums", "100% OSHA Compliance", "Automated Incident Reporting"],
+    useCases: ["Construction Sites", "Oil & Gas Refineries", "Chemical Plants"],
+    stats: ["Zero Accidents", "Instant Logs", "<1s Alert Latency"],
+    integrations: ["Siemens SCADA", "Slack", "Physical Siren/Strobe Relays"],
+    testimonials: [
+      {
+        name: "HSE Officer",
+        role: "Construction Firm",
+        quote: "It's like having a safety officer watching every worker, every second. Compliance went to 100% within a week.",
+        avatar: "https://randomuser.me/api/portraits/men/70.jpg"
+      }
+    ],
     faqs: [
-      { q: "Does it work in rain/dust?", a: "Yes, the model is robust against weather conditions and low visibility." },
-      { q: "Can it detect missing gloves?", a: "Yes, we can train it to detect specific gear like gloves, goggles, or boots." },
-      { q: "How are alerts sent?", a: "Alerts can be sent via SMS, Email, or triggered as an on-site siren." },
-      { q: "Does it record video?", a: "It can record snippets of violations for audit purposes." }
+      {
+        q: "Can it detect specific colors (e.g., visitor vs. staff helmets)?",
+        a: "Yes. The model detects color attributes, allowing you to enforce specific rules (e.g., 'Only White Helmets allowed in Zone A')."
+      },
+      {
+        q: "Does it work in dusty or rainy conditions?",
+        a: "We apply 'Data Augmentation' during training (adding simulated rain, fog, and blur) to ensure the model remains robust in harsh industrial environments."
+      },
+      {
+        q: "Can it integrate with turnstiles?",
+        a: "Yes. The camera at the entrance can prevent the turnstile from unlocking if the worker is not wearing their vest and helmet."
+      },
+      {
+        q: "Is facial recognition required?",
+        a: "No. The system focuses on the gear, not the face. However, facial recognition can be enabled if you need to attribute violations to specific employee IDs."
+      }
     ]
   },
 
   // ==========================================
   // 8. ROBOTICS
   // ==========================================
+  // ==========================================
+  // 8. ROBOTICS (Industry 4.0)
+  // ==========================================
   {
     id: "drone-swarm-ai",
     title: "DroneSwarm AI",
-    subtitle: "Autonomous Drone Coordination",
-    description: "Swarm intelligence algorithms allowing multiple drones to coordinate.",
-    longDescription: "Inspired by nature, DroneSwarm AI enables a fleet of drones to communicate and coordinate their actions without a central controller. \n\nThey can collaboratively map large areas, conduct search and rescue missions, or perform synchronized light shows with collision avoidance built-in.",
-    industry: "manufacturing",
-    service: "custom-model",
+    subtitle: "Decentralized Aerial Hive Mind",
+    description: "A biomimetic swarm intelligence framework enabling large-scale UAV fleets to execute complex, synchronized missions without central command latency.",
+    longDescription: "DroneSwarm AI moves beyond the '1-pilot-1-drone' paradigm to true Level 5 Autonomy.  Inspired by Boids algorithms found in nature, every drone in the fleet acts as an independent node in a mesh network. They share telemetry, LiDAR point clouds, and trajectory intent with their nearest neighbors via low-latency UDP broadcasts.\n\nThis decentralized architecture means there is no single point of failure. If one drone drops out, the swarm instantly reconfigures its geometry to fill the gap. The system utilizes Distributed SLAM (Simultaneous Localization and Mapping) to merge data from 100+ drones into a single, high-fidelity 3D map in real-time. It is ideal for GPS-denied environments like underground mines or dense forests, where on-board edge computing handles all collision avoidance and path planning logic.",
+    industry: "defense-logistics",
+    service: "swarm-robotics",
     url: "https://github.com/USC-ACTLab/crazyswarm",
-    category: "Robotics",
-    status: "Research",
+    category: "Autonomous Swarm Systems",
+    status: "Research / Prototype",
     image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f",
-    features: ["Collision Avoidance", "Path Planning", "Thermal Sync"],
-    technologies: ["ROS2", "Gazebo Sim"],
-    benefits: ["Cover large areas", "Disaster response"],
-    useCases: ["Search & Rescue", "Agri Mapping"],
-    stats: ["100+ Drones", "3D Mapping"],
-    integrations: ["ROS2", "PX4"],
-    testimonials: [{ name: "Researcher", role: "Uni Lab", quote: "Incredible coordination logic.", avatar: "https://randomuser.me/api/portraits/women/40.jpg" }],
+    features: [
+      "Decentralized Mesh Networking",
+      "Distributed SLAM (3D Mapping)",
+      "Boids Flocking Algorithm",
+      "Self-Healing Formation Logic",
+      "GPS-Denied Navigation",
+      "Real-time Obstacle Avoidance"
+    ],
+    technologies: ["ROS2 (Robot Operating System)", "Gazebo Simulator", "Edge Computing (NVIDIA Jetson)", "UWB (Ultra-Wideband)", "Python/C++"],
+    benefits: ["Cover 100 Acres in Minutes", "Zero Single Point of Failure", "High Redundancy", "Autonomous Re-routing"],
+    useCases: ["Search & Rescue", "Precision Agriculture", "Defense Surveillance"],
+    stats: ["Scale to 100+ Drones", "<10ms Latency", "3D Mapping Accuracy"],
+    integrations: ["PX4 Autopilot", "ArduPilot", "QGroundControl"],
+    testimonials: [
+      {
+        name: "Dr. Aris T.",
+        role: "Robotics Lab Lead",
+        quote: "The self-healing logic is flawless. We lost connection to the ground station, and the swarm completed the mapping mission autonomously.",
+        avatar: "https://randomuser.me/api/portraits/women/40.jpg"
+      }
+    ],
     faqs: [
-      { q: "What is the maximum range?", a: "Range depends on the drone hardware, but the swarm logic works as long as drones can communicate." },
-      { q: "Can they avoid obstacles?", a: "Yes, real-time collision avoidance and path planning are built-in." },
-      { q: "How many drones can fly?", a: "Our algorithm scales to support hundreds of drones simultaneously." },
-      { q: "What flight controller is needed?", a: "It is compatible with PX4 and ArduPilot based controllers." }
+      {
+        q: "How does the swarm handle collision avoidance?",
+        a: "We utilize potential field algorithms. Each drone treats neighbors and obstacles as repulsive forces and the target destination as an attractive force, calculating collision-free vectors 100 times per second."
+      },
+      {
+        q: "What happens if the leader drone fails?",
+        a: "There is no leader. The system is leaderless and egalitarian; tasks are dynamically allocated based on battery level and proximity to the objective."
+      },
+      {
+        q: "Is it compatible with custom frames?",
+        a: "Yes, the flight controller stack is hardware-agnostic, supporting quadcopters, hexacopters, and VTOL fixed-wing assets running PX4."
+      },
+      {
+        q: "What is the communication range?",
+        a: "Using LoRaWAN or proprietary mesh radio protocols, the swarm can maintain cohesion over several kilometers, daisy-chaining signals between drones."
+      }
     ]
   },
   {
     id: "warehouse-bot",
     title: "Warehouse Picker Sim",
-    subtitle: "Logistics Robot Brain",
-    description: "Simulation environment for training robots to pick and pack items.",
-    longDescription: "Train robots before they hit the floor. \n\nThis simulation environment uses Reinforcement Learning to teach robotic arms how to grasp objects of various shapes and textures, optimize picking paths in a warehouse, and pack boxes efficiently to minimize space wastage.",
-    industry: "logistics",
-    service: "custom-model",
+    subtitle: "Sim-to-Real Reinforcement Learning",
+    description: "A physics-accurate Digital Twin environment designed to train robotic manipulators using Deep Reinforcement Learning (DRL) before physical deployment.",
+    longDescription: "Training robots in the physical world is slow, expensive, and dangerous. Warehouse Picker Sim solves this via 'Domain Randomization'.  It generates millions of synthetic scenarios—varying lighting, friction coefficients, object textures, and box sizes—inside a physics engine.\n\nThe AI agent uses Proximal Policy Optimization (PPO) to learn the optimal grasping strategy for irregular objects (e.g., a plush toy vs. a shampoo bottle). This 'Sim-to-Real' transfer allows a robot to learn 10,000 hours of picking experience in just 24 hours of GPU simulation time. The system integrates directly with Warehouse Management Systems (WMS) to optimize path planning, ensuring the robot arm minimizes travel distance and maximizes 'Picks Per Hour' (PPH).",
+    industry: "logistics-supply-chain",
+    service: "robotics-simulation",
     url: "#",
-    category: "Robotics",
-    status: "Demo",
+    category: "Industrial Automation",
+    status: "Enterprise Demo",
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d",
-    features: ["Path Optimization", "Grip Logic", "Inventory Sync"],
-    technologies: ["PyBullet", "RL"],
-    benefits: ["Automate packing", "Reduce errors"],
-    useCases: ["E-commerce", "Sorting"],
-    stats: ["99.9% Accuracy", "24/7 Ops"],
-    integrations: ["WMS", "Robot Arms"],
-    testimonials: [{ name: "Logistics Mgr", role: "Warehouse", quote: "Efficiency up by 40%.", avatar: "https://randomuser.me/api/portraits/men/33.jpg" }],
+    features: [
+      "Physics-Grade Grasp Simulation",
+      "Domain Randomization for Generalization",
+      "6-DoF Inverse Kinematics Solver",
+      "Soft-Body Deformation Physics",
+      "Bin Packing Optimization Algo",
+      "Collision-Free Trajectory Planning"
+    ],
+    technologies: ["PyBullet / MuJoCo", "NVIDIA Isaac Sim", "TensorFlow Agents", "ROS MoveIt", "Python"],
+    benefits: ["99.9% Picking Accuracy", "Zero Damage to Goods", "40% Increase in Throughput", "Safe Offline Training"],
+    useCases: ["E-commerce Fulfillment", "Parcel Sorting", "Palletizing"],
+    stats: ["99.9% Grip Success", "24/7 Ops", "10k Training Hours/Day"],
+    integrations: ["SAP EWM", "Oracle WMS", "Universal Robots API"],
+    testimonials: [
+      {
+        name: "Marcus L.",
+        role: "Logistics Director",
+        quote: "We reduced our training time for new SKUs from weeks to hours. The robot figured out how to grip slippery packaging that baffled our human staff.",
+        avatar: "https://randomuser.me/api/portraits/men/33.jpg"
+      }
+    ],
     faqs: [
-      { q: "Which robot arms are supported?", a: "We support major brands like Universal Robots (UR), Kuka, and Fanuc." },
-      { q: "How long does training take?", a: "Simulation training takes a few days, fine-tuning on real robots takes a few hours." },
-      { q: "Can it handle fragile items?", a: "Yes, the grip logic includes force feedback to handle delicate items gently." },
-      { q: "Does it integrate with WMS?", a: "Yes, it syncs inventory status in real-time with your Warehouse Management System." }
+      {
+        q: "Can it handle transparent objects?",
+        a: "Yes, we simulate depth-noise and train on synthetic depth maps of transparent objects, allowing the vision system to infer shape from refraction patterns."
+      },
+      {
+        q: "What hardware is needed to run the sim?",
+        a: "We recommend a multi-GPU workstation (NVIDIA RTX A6000 series) to run high-fidelity physics and rendering in parallel."
+      },
+      {
+        q: "Does it support suction grippers?",
+        a: "Yes, the physics engine accurately models vacuum suction forces, air leaks, and payload weight limits."
+      },
+      {
+        q: "Is it compatible with Cobots?",
+        a: "Absolutely. We support the URdf (Unified Robot Description Format) for all major Cobot brands like Universal Robots and Techman."
+      }
     ]
   },
   {
     id: "agri-bot-arm",
     title: "Harvest Bot Arm",
-    subtitle: "Fruit Picking AI",
-    description: "Computer vision guided robotic arm for gentle fruit harvesting.",
-    longDescription: "Automate harvest without damaging the produce. \n\nUsing 3D depth cameras and soft-grip technology, this robotic arm identifies ripe fruits on the vine and gently picks them. It works day and night during harvest season, solving labor shortage issues in agriculture.",
-    industry: "agriculture",
-    service: "custom-model",
+    subtitle: "Computer Vision Ag-Robotics",
+    description: "A soft-robotics manipulator guided by stereoscopic vision to identify, grade, and harvest delicate produce without bruising.",
+    longDescription: "Harvest Bot Arm addresses the critical labor shortage in agriculture. It combines an RGB-D (Depth) camera with a custom-trained Mask R-CNN model to segment fruits from foliage in real-time.  \n\nThe system calculates the ripeness level based on colorimetric analysis and size. Once a target is selected, the arm utilizes 6-Axis motion planning to approach the fruit without tangling in branches. The end-effector uses soft pneumatic actuators (silicone fingers) with force-feedback sensors to apply the exact pressure needed to detach the fruit without damaging the skin. It operates autonomously day and night, utilizing floodlights and multispectral imaging to harvest at peak efficiency.",
+    industry: "agtech",
+    service: "automated-harvesting",
     url: "#",
-    category: "Robotics",
-    status: "Prototype",
+    category: "Agricultural Robotics",
+    status: "Prototype Field Testing",
     image: "https://images.unsplash.com/photo-1625246333195-09d9b63bd71a",
-    features: ["Ripeness Detection", "Soft Grip", "3D Depth Cam"],
-    technologies: ["ROS", "OpenCV"],
-    benefits: ["Automate harvest", "Reduce waste"],
-    useCases: ["Orchards", "Greenhouses"],
-    stats: ["Damage-Free", "24/7 Harvest"],
-    integrations: ["Mobile Platforms"],
-    testimonials: [{ name: "Farmer Joe", role: "Orchard Owner", quote: "Solves my labor issue.", avatar: "https://randomuser.me/api/portraits/men/52.jpg" }],
+    features: [
+      "Real-time Fruit Segmentation (Mask R-CNN)",
+      "Soft Pneumatic Grippers",
+      "Force-Feedback Control Loop",
+      "Occlusion Handling (Leaves/Branches)",
+      "Colorimetric Ripeness Grading",
+      "Night-Time Harvesting Capability"
+    ],
+    technologies: ["ROS Noetic", "OpenCV", "Intel RealSense Depth Cams", "Pytorch", "NVIDIA Jetson Edge AI"],
+    benefits: ["Zero Bruising", "24/7 Operation", "Reduce Labor Costs by 60%", "Real-time Yield Analytics"],
+    useCases: ["Apple Orchards", "Tomato Greenhouses", "Strawberry Fields"],
+    stats: ["98% Picking Success", "5s Per Fruit", "Zero Labor Dependency"],
+    integrations: ["Autonomous Mobile Robots (AMR)", "Farm Management Software"],
+    testimonials: [
+      {
+        name: "Joe D.",
+        role: "Orchard Owner",
+        quote: "It treats the apples better than my seasonal crew does. The ability to harvest at night when temperatures are cooler is a game changer for shelf life.",
+        avatar: "https://randomuser.me/api/portraits/men/52.jpg"
+      }
+    ],
     faqs: [
-      { q: "What fruits can it pick?", a: "Currently optimized for apples, tomatoes, and strawberries." },
-      { q: "Does it damage the fruit?", a: "No, soft grippers ensure bruise-free harvesting." },
-      { q: "How fast is it?", a: "It picks approximately one fruit every 5 seconds, working 24/7." },
-      { q: "What is the battery life?", a: "It can run for 8-10 hours on a single charge." }
+      {
+        q: "How does it distinguish ripe fruit?",
+        a: "The vision model analyzes the HSV color space and surface texture. You can set custom thresholds (e.g., '90% red') to determine pick-readiness."
+      },
+      {
+        q: "Does it work in wind?",
+        a: "Yes, the visual servoing loop runs at 60Hz, adjusting the arm's trajectory in real-time to compensate for moving targets."
+      },
+      {
+        q: "What prevents the arm from hitting branches?",
+        a: "We use OctoMap to build a real-time voxel map of the tree structure, treating branches as collision objects in the motion planner."
+      },
+      {
+        q: "Can the gripper be changed?",
+        a: "Yes, the end-effector is modular. You can swap grippers for different crop types (e.g., suction for peppers, fingers for apples)."
+      }
     ]
   },
 
   // ==========================================
-  // 9. GENERATIVE AI
+  // 9. GENERATIVE AI (Enterprise)
   // ==========================================
   {
     id: "doc-brain-rag",
     title: "Enterprise DocBrain",
-    subtitle: "Private RAG Search",
-    description: "Secure RAG system. Chat with millions of private PDFs and docs.",
-    longDescription: "Unlocks the knowledge buried in your documents. \n\nDocBrain indexes all your internal PDFs, Word docs, and Wikis into a vector database. Employees can then chat with this data ('What is our travel policy?') and get instant, cited answers without the data ever leaving your secure private cloud.",
-    industry: "tech",
-    service: "ai-solutions",
+    subtitle: "Air-Gapped RAG Knowledge Engine",
+    description: "A secure Retrieval-Augmented Generation (RAG) platform that vectorizes institutional knowledge to provide cited, hallucination-free answers.",
+    longDescription: "DocBrain solves the 'Corporate Amnesia' problem. It ingests unstructured data—PDFs, SharePoint sites, Jira tickets, and emails—and chunks them into semantic segments. These chunks are embedded into a high-dimensional vector space using models like OpenAI's `text-embedding-3`.  \n\nWhen an employee asks a question, the system performs a cosine similarity search to retrieve the most relevant context blocks. These blocks are then fed into a Large Language Model (LLM) which synthesizes an answer based *only* on that retrieved context. Crucially, the system supports Role-Based Access Control (RBAC), ensuring a junior engineer cannot query sensitive HR documents. Deployment can be fully air-gapped using open-source models (Llama-3, Mistral) for maximum data sovereignty.",
+    industry: "knowledge-management",
+    service: "rag-implementation",
     url: "https://github.com/zylon-ai/private-gpt",
-    category: "Generative AI",
+    category: "Enterprise Generative AI",
     status: "Live Platform",
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3",
-    features: ["Citation Backing", "Vector Search", "Role-Based Access"],
-    technologies: ["Pinecone", "LangChain"],
-    benefits: ["Knowledge Access", "Data Privacy"],
-    useCases: ["Legal Research", "Internal Wiki"],
-    stats: ["1M+ Docs", "Instant Answers"],
-    integrations: ["SharePoint", "Slack"],
-    testimonials: [{ name: "Amanda B.", role: "Legal", quote: "Saves hours of research.", avatar: "https://randomuser.me/api/portraits/women/29.jpg" }],
+    features: [
+      "Vector Semantic Search",
+      "Source Citation & Page Linking",
+      "Role-Based Access Control (RBAC)",
+      "Hybrid Search (Keyword + Vector)",
+      "Air-Gapped On-Prem Deployment",
+      "Automated Document Chunking"
+    ],
+    technologies: ["Pinecone / Milvus (Vector DB)", "LangChain", "LlamaIndex", "Docker", "React"],
+    benefits: ["90% Faster Information Retrieval", "Total Data Privacy", "Hallucination-Free Answers", "Preserve Institutional Knowledge"],
+    useCases: ["Legal Contract Analysis", "Technical Support Copilot", "HR Policy FAQ"],
+    stats: ["Index 1M+ Docs", "<2s Latency", "Enterprise Ready"],
+    integrations: ["Microsoft SharePoint", "Confluence", "Google Drive", "Slack"],
+    testimonials: [
+      {
+        name: "Amanda B.",
+        role: "General Counsel",
+        quote: "I can ask 'What is the indemnity clause in the Project X contract?' and it gives me the exact paragraph instantly. It saves hours of discovery.",
+        avatar: "https://randomuser.me/api/portraits/women/29.jpg"
+      }
+    ],
     faqs: [
-      { q: "Is my data private?", a: "Yes, we support local LLM deployment so data never leaves your server." },
-      { q: "What file types are supported?", a: "PDF, Docx, TXT, CSV, and Markdown." },
-      { q: "Does it hallucinate?", a: "RAG architecture minimizes hallucinations by grounding answers in your data." },
-      { q: "Can I limit access?", a: "Yes, role-based access control ensures users only see docs they are permitted to." }
+      {
+        q: "Does our data train the public model?",
+        a: "Never. We use the LLM only for inference. If you opt for the on-premise version, no data ever leaves your VPC."
+      },
+      {
+        q: "How does it handle updated documents?",
+        a: "We implement an event-driven pipeline. When a doc is updated in SharePoint, a webhook triggers re-indexing of only the changed chunks."
+      },
+      {
+        q: "Can it read scanned PDFs?",
+        a: "Yes, we integrate OCR (Tesseract/Adobe API) to extract text from scanned images before vectorization."
+      },
+      {
+        q: "What is the maximum context window?",
+        a: "Depending on the model selected (e.g., Claude 3 or GPT-4 Turbo), we support up to 128k tokens of context."
+      }
     ]
   },
   {
     id: "code-refactor-ai",
     title: "Legacy Code Refactor",
-    subtitle: "COBOL to Python",
-    description: "Translates and optimizes legacy codebases into modern languages.",
-    longDescription: "Modernize your tech stack without the rewrite nightmare. \n\nThis AI agent understands legacy languages like COBOL or Fortran and translates them into modern, clean Python or Java code. It even generates unit tests and documentation, ensuring the new code is maintainable and bug-free.",
-    industry: "tech",
-    service: "legacy-upgrade",
+    subtitle: "Automated Mainframe Modernization",
+    description: "A specialized LLM agent pipeline designed to transpile, refactor, and document legacy code (COBOL/Fortran) into modern languages (Python/Go).",
+    longDescription: "Modernizing legacy stacks is usually a multi-year, high-risk endeavor. This AI accelerates the process by treating code migration as a translation task with strict syntax validation.  \n\nThe system parses the legacy code into an Abstract Syntax Tree (AST) to understand the underlying logic flow, rather than just line-by-line translation. It then prompts a code-specialized LLM (like StarCoder) to generate equivalent Python/Java code. Beyond translation, it generates comprehensive Unit Tests (PyTest/JUnit) to verify that the output of the new code matches the legacy code for identical inputs. It also generates docstrings and architectural diagrams, turning 'spaghetti code' into maintainable software.",
+    industry: "software-engineering",
+    service: "legacy-migration",
     url: "#",
-    category: "Generative AI",
-    status: "Beta",
+    category: "Code Generative AI",
+    status: "Beta / Enterprise",
     image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd",
-    features: ["Syntax Translation", "Unit Test Gen", "Doc Gen"],
-    technologies: ["StarCoder", "LLM"],
-    benefits: ["Modernize stack", "Remove debt"],
-    useCases: ["Banking", "Mainframes"],
-    stats: ["80% Faster", "Auto-Tests"],
-    integrations: ["GitHub", "Jira"],
-    testimonials: [{ name: "CTO", role: "Bank", quote: "Migration accelerated by months.", avatar: "https://randomuser.me/api/portraits/men/44.jpg" }],
+    features: [
+      "AST-Based Logic Extraction",
+      "Automated Unit Test Generation",
+      "Code Documentation Generator",
+      "Dependency Graph Mapping",
+      "Strict Type Hinting Injection",
+      "Idempotency Verification"
+    ],
+    technologies: ["StarCoder / CodeLlama", "Python AST module", "ANTLR (Parser)", "Docker"],
+    benefits: ["Reduce Migration Costs by 70%", "Eliminate Technical Debt", "Preserve Business Logic", "Automated QA"],
+    useCases: ["Banking Mainframe Offloading", "GovTech Modernization", "Y2K-era Code Upgrades"],
+    stats: ["80% Faster Migration", "95% Logic Accuracy", "Auto-Generated Docs"],
+    integrations: ["GitHub Enterprise", "Jira", "Jenkins CI/CD", "SonarQube"],
+    testimonials: [
+      {
+        name: "David K.",
+        role: "Bank CTO",
+        quote: "We moved 50,000 lines of COBOL to Java in three months. The auto-generated unit tests gave us the confidence to flip the switch.",
+        avatar: "https://randomuser.me/api/portraits/men/44.jpg"
+      }
+    ],
     faqs: [
-      { q: "Which languages are supported?", a: "COBOL, Fortran, Java 6/7, converting to Python, Go, or Modern Java." },
-      { q: "Does it produce working code?", a: "It produces 90% accurate code; human review is recommended for final sign-off." },
-      { q: "Does it generate tests?", a: "Yes, it automatically generates unit tests to verify the new code's logic." },
-      { q: "Is it secure?", a: "Yes, code processing can happen on-premise." }
+      {
+        q: "Does it handle GOTO statements?",
+        a: "Yes, the AST parser identifies unstructured control flow (GOTO) and refactors it into modern loops and function calls."
+      },
+      {
+        q: "Is the code human-readable?",
+        a: "Yes, the prompt engineering specifically instructs the model to use clean coding standards (PEP8) and meaningful variable names."
+      },
+      {
+        q: "What about database connections?",
+        a: "The agent identifies SQL embedded in legacy code and converts it to modern ORM (Object-Relational Mapping) calls like SQLAlchemy or Hibernate."
+      },
+      {
+        q: "Is it secure to upload code?",
+        a: "We offer an on-premise container that runs entirely offline within your firewall, ensuring your IP never leaks."
+      }
     ]
   },
   {
     id: "video-summarizer",
     title: "Video Summarizer",
-    subtitle: "Meeting to Notes",
-    description: "Converts long videos into text summaries and action items.",
-    longDescription: "Stop re-watching hour-long meetings. \n\nVideo Summarizer transcribes the audio, identifies different speakers, and uses LLMs to extract key decisions, action items, and summaries. It turns video content into searchable, actionable text data.",
-    industry: "tech",
-    service: "nlp-chatbot",
+    subtitle: "Intelligent Meeting Analytics",
+    description: "A multi-modal pipeline that transcribes video, diarizes speakers, and extracts structured data like action items and sentiment.",
+    longDescription: "Video Summarizer turns ephemeral video content into a searchable knowledge base. The pipeline begins with extracting the audio track and processing it through a Whisper-large model for near-perfect transcription. \n\nSimultaneously, 'Speaker Diarization' algorithms analyze audio fingerprints to distinguish between participants (e.g., Speaker A = CEO, Speaker B = Engineer). The transcript is then fed into an LLM with specific prompts to extract 'Decisions Made', 'Action Items with Owners', and 'Deadlines'. It also performs sentiment analysis on the tone of the meeting. The output is a structured JSON object and a formatted summary pushed directly to your CRM or project management tool.",
+    industry: "productivity-tech",
+    service: "nlp-transcription",
     url: "#",
-    category: "Generative AI",
-    status: "Live",
+    category: "Meeting Intelligence",
+    status: "Live Service",
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113",
-    features: ["Speaker Diarization", "Action Items", "Multi-lang"],
-    technologies: ["Whisper", "GPT-4"],
-    benefits: ["Save time", "Searchable video"],
-    useCases: ["Meetings", "Webinars"],
-    stats: ["1hr -> 2min Read", "Searchable"],
-    integrations: ["Zoom", "YouTube"],
-    testimonials: [{ name: "Manager", role: "Remote Team", quote: "No more taking notes.", avatar: "https://randomuser.me/api/portraits/women/33.jpg" }],
+    features: [
+      "High-Fidelity Transcription (Whisper)",
+      "Speaker Diarization & ID",
+      "Action Item Extraction",
+      "Topic Segmentation",
+      "Sentiment & Tone Analysis",
+      "Global Search across Video Library"
+    ],
+    technologies: ["OpenAI Whisper", "Pyannote.audio (Diarization)", "GPT-4", "FFmpeg"],
+    benefits: ["Save 10+ Hours/Week", "Never Miss an Action Item", "Searchable Video Archive", "Automated CRM Entry"],
+    useCases: ["Board Meetings", "User Research Interviews", "Webinar Recaps"],
+    stats: ["1hr Video -> 2min Read", "99% Word Accuracy", "Auto-Chaptering"],
+    integrations: ["Zoom API", "Google Meet", "Notion", "Slack"],
+    testimonials: [
+      {
+        name: "Sarah M.",
+        role: "Product Manager",
+        quote: "I stopped taking notes during user interviews. The AI captures the feedback, assigns it to a feature request, and even captures the user's sentiment.",
+        avatar: "https://randomuser.me/api/portraits/women/33.jpg"
+      }
+    ],
     faqs: [
-      { q: "What video formats are supported?", a: "MP4, MOV, AVI, and direct YouTube links." },
-      { q: "How long can the video be?", a: "We support videos up to 4 hours in length." },
-      { q: "Does it identify speakers?", a: "Yes, speaker diarization labels who said what." },
-      { q: "Can I export the summary?", a: "Yes, to Notion, Google Docs, or PDF." }
+      {
+        q: "Does it work with accents?",
+        a: "Yes, the Whisper model is trained on 680,000 hours of diverse multi-lingual audio and handles heavy accents exceptionally well."
+      },
+      {
+        q: "Can I edit the transcript?",
+        a: "Yes, the interface provides a text-editor synced with the video player. Clicking a word in the text jumps the video to that exact timestamp."
+      },
+      {
+        q: "How secure is the processing?",
+        a: "Data is encrypted in transit and at rest. We offer zero-retention policies where data is deleted immediately after processing."
+      },
+      {
+        q: "Does it support custom vocabulary?",
+        a: "Yes, you can upload a dictionary of company-specific acronyms or product names to ensure correct transcription."
+      }
     ]
   },
 
   // ==========================================
-  // 10. VOICE AI
+  // 10. VOICE AI (Synthesis & Analysis)
   // ==========================================
   {
     id: "voice-clone-studio",
     title: "VoiceClone Studio",
-    subtitle: "Zero-Shot Voice Cloning",
-    description: "Real-time voice cloning from just 3 seconds of audio.",
-    longDescription: "Create lifelike digital voices instantly. \n\nVoiceClone Studio allows you to clone any voice with just a few seconds of sample audio. Ideal for creating personalized marketing messages, dubbing content into other languages while keeping the original actor's voice, or creating consistent brand voices.",
-    industry: "tech",
-    service: "ai-solutions",
+    subtitle: "Zero-Shot Voice Synthesis Engine",
+    description: "A generative audio engine capable of cloning unique vocal timbres and prosody from as little as 3 seconds of reference audio.",
+    longDescription: "VoiceClone Studio leverages state-of-the-art Diffusion Probabilistic Models to perform 'Zero-Shot' Text-to-Speech (TTS).  Unlike traditional TTS that requires hours of studio recording to train a model, this system encodes the speaker's vocal characteristics (pitch, tone, accent) into a latent vector embedding instantly.\n\nThis embedding conditions the diffusion model to generate new speech that is indistinguishable from the original speaker. Users can control fine-grained attributes such as emotion (happy, sad, whisper), pacing, and intonation. The technology includes an imperceptible audio watermark to prevent deepfake misuse, ensuring ethical deployment for content creators and game developers.",
+    industry: "digital-media",
+    service: "generative-audio",
     url: "https://github.com/myshell-ai/OpenVoice",
-    category: "Voice AI",
-    status: "Demo",
+    category: "Voice Cloning",
+    status: "Demo / API",
     image: "https://images.unsplash.com/photo-1589254065878-42c9da997008",
-    features: ["3s Voice Cloning", "Emotion Control", "Multi-lingual"],
-    technologies: ["Coqui TTS", "Wav2Vec"],
-    benefits: ["Content creation", "Localization"],
-    useCases: ["Audiobooks", "Games"],
-    stats: ["Instant Clone", "High Fidelity"],
-    integrations: ["Unity", "Unreal"],
-    testimonials: [{ name: "Chris P.", role: "Game Dev", quote: "Great for NPCs.", avatar: "https://randomuser.me/api/portraits/men/33.jpg" }],
+    features: [
+      "3-Second Voice Cloning",
+      "Emotional Speech Synthesis",
+      "Cross-Lingual Cloning",
+      "Low-Latency Streaming API",
+      "Audio Watermarking (Safety)",
+      "Prosody Control"
+    ],
+    technologies: ["Diffusion Models", "VITS (Variational Inference)", "HiFi-GAN Vocoder", "Python"],
+    benefits: ["Scale Audio Content Production", "Personalized Customer Experience", "Localization without Re-casting", "Dynamic Game Dialogue"],
+    useCases: ["Audiobook Narration", "Dynamic NPC Dialogue in Games", "Personalized Marketing Videos"],
+    stats: ["Instant Clone", "44.1kHz High Fidelity", "<200ms Latency"],
+    integrations: ["Unity Engine", "Unreal Engine 5", "Audacity Plugin"],
+    testimonials: [
+      {
+        name: "Chris P.",
+        role: "Indie Game Dev",
+        quote: "I voiced 50 unique NPCs in my game using just my own voice and this tool. The emotional range is incredible.",
+        avatar: "https://randomuser.me/api/portraits/men/33.jpg"
+      }
+    ],
     faqs: [
-      { q: "Is this technology legal?", a: "Yes, but we enforce voice verification to prevent misuse." },
-      { q: "How much audio do I need?", a: "As little as 3 seconds, but 1 minute gives better results." },
-      { q: "Can I control emotions?", a: "Yes, you can direct the voice to sound happy, sad, angry, etc." },
-      { q: "Does it support multiple languages?", a: "Yes, clone a voice in English and make it speak French or Spanish." }
+      {
+        q: "How do you prevent fraud?",
+        a: "We require 'Voice Verification'. The user must speak a specific generated phrase to prove they own the voice they are cloning."
+      },
+      {
+        q: "Does it sound robotic?",
+        a: "No. The use of HiFi-GAN vocoders ensures the output has natural breath pauses and realistic intonation, avoiding the 'metallic' sound of old TTS."
+      },
+      {
+        q: "Can I change the accent?",
+        a: "Yes. You can clone a British voice and have it speak with an American accent, or vice versa, by decoupling content from timbre."
+      },
+      {
+        q: "Who owns the rights to the voice?",
+        a: "You retain full commercial rights to any audio generated using your cloned voice models."
+      }
     ]
   },
   {
     id: "podcast-dubber",
     title: "Podcast Auto-Dub",
-    subtitle: "Language Translation",
-    description: "Translates podcasts into 20+ languages preserving original voice.",
-    longDescription: "Go global with your audio content. \n\nPodcast Auto-Dub transcribes your podcast, translates the text, and then re-synthesizes the speech in the target language using the original speaker's voice print. It even syncs lip movements for video podcasts.",
-    industry: "tech",
-    service: "ai-solutions",
+    subtitle: "AI Dubbing & Lip Sync",
+    description: "A localization pipeline that translates audio content while preserving the original speaker's voice identity and synchronizing video lip movements.",
+    longDescription: "Podcast Auto-Dub enables creators to go global effortlessly. The system performs three complex tasks: 1) Transcription and Translation, 2) Cross-Lingual Voice Conversion (CLVC), and 3) Video Lip Synchronization.\n\nThe CLVC engine ensures that when you translate a podcast from English to Spanish, the Spanish output still sounds like *you*, not a generic stock voice. For video podcasts, the system uses a GAN (Generative Adversarial Network) to alter the pixels around the speaker's mouth, syncing the lip movements to the new Spanish phonemes. This creates a seamless viewing experience that eliminates the 'uncanny valley' effect of traditional dubbing.",
+    industry: "media-localization",
+    service: "video-translation",
     url: "#",
-    category: "Voice AI",
-    status: "Service",
+    category: "AI Localization",
+    status: "Live Service",
     image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc",
-    features: ["Voice Preservation", "Lip Sync", "Translation"],
-    technologies: ["ElevenLabs", "DeepFake"],
-    benefits: ["Global reach", "Native experience"],
-    useCases: ["Podcasts", "Education"],
-    stats: ["20+ Languages", "Auto-Sync"],
-    integrations: ["Spotify", "YouTube"],
-    testimonials: [{ name: "Podcaster", role: "Media", quote: "Reached new audiences.", avatar: "https://randomuser.me/api/portraits/women/11.jpg" }],
+    features: [
+      "Voice-Preserving Translation",
+      "Video Lip-Sync (Wav2Lip)",
+      "Background Noise Separation",
+      "Multi-Speaker Support",
+      "SRT/VTT Subtitle Generation",
+      "20+ Target Languages"
+    ],
+    technologies: ["Wav2Lip GAN", "Hubert (Speech Model)", "Demucs (Source Separation)", "ElevenLabs"],
+    benefits: ["Expand Audience 10x", "Native Viewer Experience", "Automated Post-Production", "SEO for Multiple Languages"],
+    useCases: ["Educational Courses", "YouTube Content", "Corporate Training Videos"],
+    stats: ["20+ Languages", "95% Voice Match", "Auto-Sync"],
+    integrations: ["YouTube Studio", "Spotify for Podcasters", "Vimeo"],
+    testimonials: [
+      {
+        name: "Maria G.",
+        role: "YouTuber",
+        quote: "My Spanish channel grew from 0 to 100k subs in a month because the dubbing is so good people think I'm fluent.",
+        avatar: "https://randomuser.me/api/portraits/women/11.jpg"
+      }
+    ],
     faqs: [
-      { q: "Does it keep background music?", a: "Yes, voice and music tracks are separated and re-mixed." },
-      { q: "How accurate is the translation?", a: "We use top-tier translation models, but manual review is available." },
-      { q: "What is the turnaround time?", a: "A 1-hour podcast typically takes about 30 minutes to dub." },
-      { q: "Does it support video lip-sync?", a: "Yes, we offer experimental video lip-sync for YouTube." }
+      {
+        q: "Does it handle background music?",
+        a: "Yes. We use 'Demucs' to separate the vocal track from the music/SFX. We process the vocals and then re-mix them with the original background track."
+      },
+      {
+        q: "How accurate is the translation?",
+        a: "We use context-aware translation models (like GPT-4). We also provide a specialized editor for you to correct specific terminology before audio synthesis."
+      },
+      {
+        q: "Does the lip-sync look natural?",
+        a: "Yes. The model regenerates the lower face pixels to match the phonemes of the target language, maintaining lighting and skin texture consistency."
+      },
+      {
+        q: "How long does it take?",
+        a: "Processing is approximately 2x real-time. A 30-minute video takes about an hour to fully dub and sync."
+      }
     ]
   },
   {
     id: "meeting-minutes",
     title: "Minute Taker AI",
-    subtitle: "Corporate Audio Tool",
-    description: "Listens to meetings and drafts official minutes.",
-    longDescription: "The automated secretary for your boardroom. \n\nIt listens to meetings securely, distinguishes between speakers, and drafts formal minutes in real-time. It highlights motions passed, action items assigned, and deadlines set, ensuring accurate official records.",
-    industry: "tech",
-    service: "nlp-chatbot",
+    subtitle: "Automated Corporate Secretary",
+    description: "A secure audio intelligence tool that joins meetings, identifies speakers via biometrics, and generates legally compliant minutes and summaries.",
+    longDescription: "Minute Taker AI is designed for high-stakes environments like boardrooms and legal depositions. It utilizes 'Beamforming' algorithms (when using supported hardware) to isolate voices in a crowded room. The audio stream is processed to extract not just text, but 'Named Entities' (people, companies, dates) and 'Intent'.\n\nThe AI is fine-tuned on legal and corporate datasets to distinguish between a casual suggestion and a formal motion. It auto-formats the output into industry-standard templates (Robert's Rules of Order), highlighting attendance, agenda items, motions passed, and assigned action items. It integrates with Outlook/Google Calendar to email the minutes to all attendees immediately after the call.",
+    industry: "corporate-governance",
+    service: "audio-intelligence",
     url: "#",
-    category: "Voice AI",
-    status: "Live",
+    category: "Speech-to-Text Ops",
+    status: "Live Enterprise",
     image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf",
-    features: ["Legal Formatting", "Confidential Mode", "Cloud Sync"],
-    technologies: ["Azure Speech", "LLM"],
-    benefits: ["Accuracy", "Compliance"],
-    useCases: ["Legal", "Board Rooms"],
-    stats: ["Legal Grade", "Secure"],
-    integrations: ["Teams", "Zoom"],
-    testimonials: [{ name: "Secretary", role: "Corp", quote: "Saves me hours.", avatar: "https://randomuser.me/api/portraits/women/88.jpg" }],
+    features: [
+      "Speaker Identification (Biometrics)",
+      "Robert's Rules Formatting",
+      "Motion & Vote Tracking",
+      "Confidential/Redaction Mode",
+      "CRM/ERP Integration",
+      "Multi-language Transcription"
+    ],
+    technologies: ["Azure Cognitive Speech", "NVIDIA NeMo", "Spacy (NLP)", "TLS 1.3 Encryption"],
+    benefits: ["100% Accurate Records", "Legal Compliance", "Immediate Post-Meeting Distribution", "Searchable Audio Vault"],
+    useCases: ["Board of Directors Meetings", "Legal Depositions", "City Council Hearings"],
+    stats: ["Legal Grade", "SOC2 Compliant", "99% Speaker ID"],
+    integrations: ["Microsoft Teams", "Zoom", "Cisco Webex", "Clio (Legal Software)"],
+    testimonials: [
+      {
+        name: "James H.",
+        role: "Board Secretary",
+        quote: "It captures the nuance of our board votes perfectly. The ability to click a sentence and hear the original audio is crucial for disputes.",
+        avatar: "https://randomuser.me/api/portraits/men/88.jpg"
+      }
+    ],
     faqs: [
-      { q: "Is the audio stored securely?", a: "Yes, enterprise-grade encryption is used for storage and transmission." },
-      { q: "Does it integrate with Zoom?", a: "Yes, it can join Zoom, Teams, and Meet calls automatically." },
-      { q: "Can it distinguish speakers?", a: "Yes, it identifies who said what in the transcript." },
-      { q: "Is it suitable for legal use?", a: "Yes, it produces transcripts suitable for legal review." }
+      {
+        q: "Is the data used for training?",
+        a: "No. For enterprise clients, we offer a 'Zero Data Retention' guarantee where audio is processed in RAM and never written to disk."
+      },
+      {
+        q: "Can it handle shouting or over-talking?",
+        a: "We use 'Source Separation' AI to disentangle overlapping speech, though heavy cross-talk is flagged in the transcript for manual review."
+      },
+      {
+        q: "Does it join automatically?",
+        a: "Yes, you can add the bot's email to the calendar invite, and it will dial in automatically at the start time."
+      },
+      {
+        q: "Can I redact sensitive info?",
+        a: "Yes, an 'Off the Record' voice command or post-meeting manual redaction tool allows you to scrub sensitive topics before distribution."
+      }
     ]
   },
 
   // ==========================================
-  // 11. FINTECH (Extra)
+  // 11. FINTECH (High Frequency & DeFi)
   // ==========================================
   {
     id: "quant-trader-bot",
     title: "QuantTrader X",
-    subtitle: "HFT Crypto Trading Bot",
-    description: "High-frequency trading bot using RL for arbitrage.",
-    longDescription: "An institutional-grade trading bot accessible to everyone. \n\nIt scans multiple exchanges simultaneously to find price discrepancies (arbitrage opportunities) and executes trades in milliseconds to capture profit before the market corrects, using advanced risk management strategies to protect capital.",
-    industry: "fintech",
-    service: "custom-model",
+    subtitle: "High-Frequency Arbitrage Bot",
+    description: "An institutional-grade algorithmic trading engine that executes triangular arbitrage strategies across centralized and decentralized exchanges in milliseconds.",
+    longDescription: "QuantTrader X brings hedge-fund capabilities to retail traders. It continuously monitors the order books of 20+ exchanges via WebSocket feeds.  \n\nThe bot detects 'Triangular Arbitrage' opportunities (e.g., Buy BTC with USD -> Sell BTC for ETH -> Sell ETH for USD) where price discrepancies exist. It executes these multi-leg trades atomically. If the profit margin (after fees and slippage) exceeds the configured threshold, the bot fires the orders. It features a 'Smart Order Router' to split large orders to minimize market impact. The system runs locally or on a cloud VPS to ensure minimum latency to exchange servers.",
+    industry: "fintech-crypto",
+    service: "algorithmic-trading",
     url: "https://github.com/hummingbot/hummingbot",
-    category: "FinTech",
+    category: "Quantitative Finance",
     status: "Live Bot",
     image: "https://images.unsplash.com/photo-1611974765270-ca1258634369",
-    features: ["Arbitrage", "Flash Loans", "Risk Mgmt"],
-    technologies: ["Hummingbot", "Solidity"],
-    benefits: ["Automated trading", "ROI"],
-    useCases: ["Crypto", "Market Making"],
-    stats: ["ms Speed", "24/7"],
-    integrations: ["Binance", "DeFi"],
-    testimonials: [{ name: "Trader", role: "Crypto", quote: "Consistent profits.", avatar: "https://randomuser.me/api/portraits/men/88.jpg" }],
+    features: [
+      "Triangular & Spatial Arbitrage",
+      "Flash Loan Integration (Aave/dYdX)",
+      "Smart Order Routing (SOR)",
+      "Stop-Loss & Trailing-Stop Logic",
+      "Paper Trading Mode",
+      "Portfolio Rebalancing"
+    ],
+    technologies: ["Python (Hummingbot)", "Solidity", "WebSockets", "Docker", "Redis"],
+    benefits: ["Passive Income Generation", "Market Neutral Strategy", "24/7 Automation", "Zero-Emotion Trading"],
+    useCases: ["Crypto Market Making", "DEX/CEX Arbitrage", "Liquidity Provision"],
+    stats: ["<50ms Execution", "24/7 Uptime", "Risk-Managed"],
+    integrations: ["Binance API", "Coinbase Pro", "Uniswap", "DyDx"],
+    testimonials: [
+      {
+        name: "Alex R.",
+        role: "Quant Trader",
+        quote: "The flash loan integration is killer. I can execute arbitrage without holding the capital, leveraging the protocol's liquidity.",
+        avatar: "https://randomuser.me/api/portraits/men/88.jpg"
+      }
+    ],
     faqs: [
-      { q: "What is the minimum capital?", a: "We recommend starting with at least $1000 for effective arbitrage." },
-      { q: "Is it safe?", a: "It runs locally on your machine; your API keys are never shared." },
-      { q: "Which exchanges are supported?", a: "Binance, Coinbase, Kraken, and major DEXs like Uniswap." },
-      { q: "Does it work in a bear market?", a: "Yes, arbitrage strategies work on volatility, regardless of market direction." }
+      {
+        q: "What is the risk of loss?",
+        a: "Arbitrage is market-neutral, but risks include 'Execution Risk' (price changes before trade completes) and 'Exchange Risk' (withdrawal halts)."
+      },
+      {
+        q: "Do I need coding skills?",
+        a: "No, we provide pre-built strategies. However, Python knowledge allows you to customize the logic and indicators."
+      },
+      {
+        q: "Does it support Flash Loans?",
+        a: "Yes, on supported DeFi protocols, allowing you to borrow capital for the duration of the transaction to maximize arbitrage size."
+      },
+      {
+        q: "How fast is it?",
+        a: "On a proper VPS setup near the exchange servers, the internal processing time is under 5 milliseconds."
+      }
     ]
   },
   {
     id: "defi-sniper",
     title: "DeFi Liquidity Sniper",
-    subtitle: "Token Launch Bot",
-    description: "Monitors mempool for new liquidity pairs and buys instantly.",
-    longDescription: "For the advanced DeFi trader. \n\nThis bot watches the blockchain mempool for pending transactions that add liquidity to new token pairs. It constructs a buy transaction in the same block, ensuring you get in at the earliest possible price point.",
-    industry: "fintech",
-    service: "custom-model",
+    subtitle: "Mempool Monitoring & Front-Running",
+    description: "A specialized bot that monitors the blockchain mempool for new liquidity pair additions and executes buy transactions in the same block.",
+    longDescription: "In DeFi, being first is everything. The DeFi Liquidity Sniper connects directly to an Ethereum/BSC node to watch the 'Mempool' (pending transaction pool). It filters for specific function calls like `addLiquidityETH`. \n\nWhen a target token launch is detected, the bot constructs a buy transaction with a higher gas price (bribe) to ensure miners prioritize it in the same block, often immediately after the liquidity is added. This allows the user to buy at the absolute listing price ('Block 0'). It includes safety checks like 'Honeypot Detection' (simulating a sell tx) to ensure the token isn't a scam before buying.",
+    industry: "fintech-defi",
+    service: "mev-bot",
     url: "#",
-    category: "FinTech",
-    status: "Tool",
+    category: "MEV / Sniping",
+    status: "Private Tool",
     image: "https://images.unsplash.com/photo-1620321023374-d1a68fbc720d",
-    features: ["Mempool Watch", "Gas Opt", "Rug Check"],
-    technologies: ["Web3.js", "Rust"],
-    benefits: ["First mover", "Anti-Scam"],
-    useCases: ["Launches", "Liquidity"],
-    stats: ["Block-0", "Automated"],
-    integrations: ["ETH Node", "BSC"],
-    testimonials: [{ name: "Degen", role: "Trader", quote: "Got me in early.", avatar: "https://randomuser.me/api/portraits/men/10.jpg" }],
+    features: [
+      "Mempool Scanning",
+      "Block-0 Entry Logic",
+      "Anti-Rug Pull Simulation",
+      "Gas War Optimization",
+      "Auto-Sell Targets",
+      "Multi-Wallet Support"
+    ],
+    technologies: ["Rust", "Web3.js", "Geth (Go-Ethereum)", "Smart Contracts"],
+    benefits: ["Entry at Listing Price", "Automated Profit Taking", "Scam Avoidance Logic", "Beat Manual Traders"],
+    useCases: ["IDO/Fair Launches", "DEX Listings", "Trend Trading"],
+    stats: ["Block-0 Execution", "<2s Reaction", "Gas Optimized"],
+    integrations: ["Ethereum", "Binance Smart Chain", "Avalanche", "Polygon"],
+    testimonials: [
+      {
+        name: "CryptoDegen",
+        role: "Trader",
+        quote: "I manually tried to buy launches for months and failed. This bot gets me in every time. The rug checker saved me twice.",
+        avatar: "https://randomuser.me/api/portraits/men/10.jpg"
+      }
+    ],
     faqs: [
-      { q: "Is this risky?", a: "Yes, sniping high-volatility tokens carries significant financial risk." },
-      { q: "Does it detect rug pulls?", a: "It performs basic contract checks, but cannot guarantee 100% safety." },
-      { q: "What networks are supported?", a: "Ethereum, BSC, Polygon, and Avalanche." },
-      { q: "How fast is it?", a: "It executes in the same block as liquidity addition." }
+      {
+        q: "Is front-running legal?",
+        a: "It is a gray area. In DeFi, 'MEV' (Maximal Extractable Value) is a standard feature of how miners order transactions. You are competing on gas price."
+      },
+      {
+        q: "Can I get 'sandwiched'?",
+        a: "Yes, sophisticated MEV bots can attack you. Our bot includes 'Slippage Protection' to revert the transaction if the price impact is too high."
+      },
+      {
+        q: "What prevents me from buying a scam?",
+        a: "The bot runs a local simulation of a buy-and-sell transaction. If the sell fails (honeypot), the bot aborts the real buy."
+      },
+      {
+        q: "How much gas does it use?",
+        a: "It depends on network congestion. You can set a 'Max Gas Price' limit to avoid overpaying for failed transactions."
+      }
     ]
   },
   {
     id: "stock-sentiment",
     title: "Market Sentiment AI",
-    subtitle: "News Analyzer",
-    description: "Aggregates news and Twitter to predict market movements.",
-    longDescription: "Trade based on the global mood. \n\nThis AI ingests millions of data points from financial news, Twitter, Reddit, and earnings calls. It analyzes sentiment to predict short-term market movements, alerting you to bullish or bearish trends before they show up on the charts.",
-    industry: "fintech",
-    service: "ai-solutions",
+    subtitle: "Alternative Data Signal Generator",
+    description: "A predictive analytics platform that correlates financial news, social media velocity, and earnings call sentiment with stock price movements.",
+    longDescription: "Market prices are driven by psychology as much as fundamentals. Market Sentiment AI ingests the 'Twitter Firehose', Reddit (WallStreetBets), and global news feeds (Bloomberg/Reuters) in real-time. \n\nUsing 'FinBERT' (a financial NLP model), it scores the sentiment of millions of posts from -1 (Bearish) to +1 (Bullish). It specifically looks for 'divergence'—where price is dropping but sentiment is turning bullish (a buy signal). The system also parses Earnings Call transcripts, detecting subtle cues in a CEO's voice or phrasing that indicate hesitation or confidence, often predicting post-earnings volatility.",
+    industry: "fintech-analytics",
+    service: "predictive-modeling",
     url: "#",
-    category: "FinTech",
-    status: "Dashboard",
+    category: "Financial NLP",
+    status: "Data Dashboard",
     image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f",
-    features: ["Twitter Firehose", "News API", "Trend Prediction"],
-    technologies: ["NLP", "Python"],
-    benefits: ["Insights", "Early signals"],
-    useCases: ["Trading", "Brand Monitoring"],
-    stats: ["1M+ Tweets", "Real-time"],
-    integrations: ["Bloomberg", "Twitter"],
-    testimonials: [{ name: "Analyst", role: "Fund", quote: "Good signal.", avatar: "https://randomuser.me/api/portraits/women/50.jpg" }],
+    features: [
+      "Real-time Social Sentiment Scoring",
+      "Earnings Call Tone Analysis",
+      "News Volume Anomaly Detection",
+      "Influencer Tracking",
+      "Price/Sentiment Correlation Charts",
+      "API for Algo-Trading"
+    ],
+    technologies: ["BERT (NLP)", "Kafka", "ElasticSearch", "Python Scipy", "Tableau"],
+    benefits: ["Predict Retail Trends", "Identify Short Squeezes", "Data-Driven Trading", "Brand Reputation Monitoring"],
+    useCases: ["Hedge Funds", "Retail Trading", "Corporate IR"],
+    stats: ["Analyze 1M+ Tweets/Day", "85% Trend Correlation", "Real-time"],
+    integrations: ["Bloomberg Terminal", "Twitter API", "Reddit API", "Interactive Brokers"],
+    testimonials: [
+      {
+        name: "Sarah L.",
+        role: "Fund Analyst",
+        quote: "The 'Hype Index' alerted us to the short squeeze two days before the price exploded. It's an essential part of our alpha.",
+        avatar: "https://randomuser.me/api/portraits/women/50.jpg"
+      }
+    ],
     faqs: [
-      { q: "What data sources are used?", a: "Twitter, Reddit (WSB), Bloomberg, Reuters, and earnings call transcripts." },
-      { q: "How accurate is the sentiment?", a: "Our NLP model achieves 85% accuracy in classifying financial sentiment." },
-      { q: "Is there an API?", a: "Yes, we offer a REST API for algorithmic trading integration." },
-      { q: "Does it cover crypto?", a: "Yes, it tracks sentiment for major cryptocurrencies as well." }
+      {
+        q: "Does it filter out bots?",
+        a: "Yes, we have a robust 'Bot Detection' layer that ignores spam accounts to ensure the sentiment score reflects real human opinion."
+      },
+      {
+        q: "Can I trade directly from the dashboard?",
+        a: "No, this is an analytics tool. However, you can use our webhooks to trigger trades in your own execution system."
+      },
+      {
+        q: "How fast is the news ingestion?",
+        a: "We ingest headlines via low-latency APIs within 500ms of publication."
+      },
+      {
+        q: "Does it work for Crypto?",
+        a: "Yes, we have specific models trained on crypto-slang (e.g., 'HODL', 'Moon', 'FUD') to accurately parse crypto sentiment."
+      }
     ]
   },
 
   // ==========================================
-  // 12. CYBERSECURITY
+  // 12. CYBERSECURITY (AI-Driven)
   // ==========================================
   {
     id: "fraud-sentinel",
     title: "FraudSentinel Graph",
-    subtitle: "Graph-Based Fraud Detection",
-    description: "Uses Knowledge Graphs to detect fraud rings.",
-    longDescription: "Uncover hidden fraud networks. \n\nUnlike traditional rules-based systems, FraudSentinel builds a graph of relationships between users, devices, and transactions. It easily spots complex money laundering rings and synthetic identities by analyzing the connections and patterns within the data.",
-    industry: "fintech",
-    service: "ai-audit",
+    subtitle: "Graph Neural Network Fraud Detection",
+    description: "A next-gen fraud detection system that utilizes Knowledge Graphs to identify complex money laundering rings and synthetic identities.",
+    longDescription: "Traditional fraud rules (e.g., 'flag transactions > $10k') fail against organized crime. FraudSentinel represents data as a Graph, where nodes are users, IPs, devices, and cards.  \n\nIt applies algorithms like 'Louvain Modularity' and 'PageRank' to detect communities. If User A is connected to User B (fraudster) via a shared device ID 3 hops away, the system flags it. Graph Neural Networks (GNN) learn these structural patterns to predict risk scores in real-time. This is highly effective against 'Synthetic Identity Fraud' where criminals splice real and fake data to create new personas.",
+    industry: "cybersecurity",
+    service: "fraud-prevention",
     url: "https://github.com/neo4j-examples/fraud-detection-graph-data-science",
-    category: "Cybersecurity",
-    status: "Enterprise",
+    category: "Graph Data Science",
+    status: "Enterprise Deployment",
     image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f",
-    features: ["Graph NN", "Link Analysis", "Scoring"],
-    technologies: ["Neo4j", "GraphSAGE"],
-    benefits: ["Detect Rings", "Less False Positives"],
-    useCases: ["AML", "Card Fraud"],
-    stats: ["Instant Detect", "Explainable"],
-    integrations: ["Neo4j", "Banking"],
-    testimonials: [{ name: "Fraud Mgr", role: "Bank", quote: "Caught a ring instantly.", avatar: "https://randomuser.me/api/portraits/men/70.jpg" }],
+    features: [
+      "Link Analysis & Community Detection",
+      "Graph Neural Networks (GraphSAGE)",
+      "Real-time Transaction Scoring",
+      "Synthetic Identity Detection",
+      "Visual Forensics Dashboard",
+      "Explainable AI (Whitebox)"
+    ],
+    technologies: ["Neo4j Graph DB", "Python NetworkX", "TensorFlow GNN", "Cypher Query Language"],
+    benefits: ["Detect Organized Crime Rings", "Reduce False Positives by 40%", "Real-time Blocking", "Visual Investigation"],
+    useCases: ["Anti-Money Laundering (AML)", "Credit Card Fraud", "Insurance Claims"],
+    stats: ["<100ms Scoring", "Detects 30% More Fraud", "Scalable to Billions of Nodes"],
+    integrations: ["Splunk", "Nice Actimize", "Core Banking Systems"],
+    testimonials: [
+      {
+        name: "Risk Manager",
+        role: "Global Bank",
+        quote: "We found a money laundering ring involving 50 accounts that looked normal individually but were clearly linked when viewed as a graph.",
+        avatar: "https://randomuser.me/api/portraits/men/70.jpg"
+      }
+    ],
     faqs: [
-      { q: "How does graph detection differ?", a: "It looks at connections between entities, spotting rings that linear models miss." },
-      { q: "Can it handle large volumes?", a: "Yes, built on Neo4j to handle millions of transactions." },
-      { q: "Is it real-time?", a: "Scoring happens in milliseconds during the transaction." },
-      { q: "Does it require data migration?", a: "No, it can sit on top of your existing data lake." }
+      {
+        q: "Is it hard to integrate with SQL databases?",
+        a: "No, we use ETL pipelines to sync data from your SQL tables into the Graph model continuously."
+      },
+      {
+        q: "How fast is the inference?",
+        a: "For real-time payments, we use sub-graph sampling to generate a risk score in under 100 milliseconds."
+      },
+      {
+        q: "Can I visualize the connections?",
+        a: "Yes, the dashboard provides an interactive node-link diagram for investigators to explore the relationships."
+      },
+      {
+        q: "Does it explain why a transaction was blocked?",
+        a: "Yes, unlike 'Black Box' AI, our system highlights the specific path or connection (e.g., 'Linked to known fraudster via Device ID') that triggered the alert."
+      }
     ]
   },
   {
     id: "phish-guard",
     title: "PhishGuard Email",
-    subtitle: "Anti-Phishing Bot",
-    description: "Scans emails for malicious links and linguistic traps.",
-    longDescription: "Your first line of defense against social engineering. \n\nPhishGuard analyzes email content for subtle linguistic cues that indicate urgency or deception (CEO Fraud). It also sandboxes links and attachments to check for malware before they ever reach the user's inbox.",
-    industry: "tech",
-    service: "ai-audit",
+    subtitle: "NLU-Based Anti-Phishing Defense",
+    description: "An API-based email security gateway that uses Natural Language Understanding to detect Business Email Compromise (BEC) and social engineering attacks.",
+    longDescription: "PhishGuard goes beyond simple blacklist checking. It analyzes the *intent* and *context* of an email. Using NLU, it detects linguistic urgency ('Transfer funds now!'), authority impersonation (CEO Fraud), and subtle domain spoofing (homograph attacks). \n\nAttachments and URLs are detonated in a cloud-based Sandbox environment to observe their behavior before they reach the user. If an email is suspicious but not confirmed malicious, it inserts a dynamic warning banner: 'This email appears to be from the CEO but originated outside the organization'. It integrates via API (Graph API) rather than MX records, making it invisible to attackers.",
+    industry: "cybersecurity",
+    service: "email-security",
     url: "#",
-    category: "Cybersecurity",
-    status: "Live",
+    category: "Inbound Threat Defense",
+    status: "Live Service",
     image: "https://images.unsplash.com/photo-1563206767-5b1d972d9ce3",
-    features: ["Link Sandbox", "NLP", "OCR"],
-    technologies: ["Python", "TensorFlow"],
-    benefits: ["Security", "Prevention"],
-    useCases: ["Corporate Email", "Training"],
-    stats: ["99% Block", "Real-time"],
-    integrations: ["O365", "Gmail"],
-    testimonials: [{ name: "CISO", role: "Corp", quote: "Stopped a CEO fraud attempt.", avatar: "https://randomuser.me/api/portraits/women/60.jpg" }],
+    features: [
+      "Natural Language Understanding (NLU)",
+      "Deep Learning OCR for Images",
+      "File Sandboxing & Detonation",
+      "Homograph/Typosquatting Detection",
+      "Dynamic Warning Banners",
+      "Post-Delivery Remediation"
+    ],
+    technologies: ["BERT (NLP)", "Computer Vision", "Docker (Sandboxing)", "Python"],
+    benefits: ["Stop Zero-Day Phishing", "Prevent CEO Fraud", "Reduce IT Ticket Volume", "Seamless UX"],
+    useCases: ["Corporate Email Security", "Credential Theft Prevention", "Ransomware Blocking"],
+    stats: ["99.9% Catch Rate", "0.01% False Positives", "API-Based"],
+    integrations: ["Microsoft 365 (Graph API)", "Google Workspace", "Slack"],
+    testimonials: [
+      {
+        name: "CISO",
+        role: "Healthcare Org",
+        quote: "It caught a vendor invoice fraud attempt that bypassed our legacy secure email gateway. The NLP picked up on the unusual payment terms.",
+        avatar: "https://randomuser.me/api/portraits/women/60.jpg"
+      }
+    ],
     faqs: [
-      { q: "Does it block internal emails?", a: "No, it whitelists internal domains automatically." },
-      { q: "What is the false positive rate?", a: "Less than 0.1% due to contextual analysis." },
-      { q: "Does it scan attachments?", a: "Yes, it sandboxes PDFs and Office docs to check for malware." },
-      { q: "How is it deployed?", a: "API integration with Office 365 or Google Workspace." }
+      {
+        q: "Does it delay email delivery?",
+        a: "The API analysis adds only 1-2 seconds of latency, which is imperceptible to the user."
+      },
+      {
+        q: "What if an email is flagged after delivery?",
+        a: "Our 'Post-Delivery Remediation' feature can automatically retract (delete) a malicious email from all user inboxes instantly."
+      },
+      {
+        q: "Can it read text inside images?",
+        a: "Yes, it uses Deep Learning OCR to read text in screenshots or invoices, detecting phishing attempts that try to bypass text filters."
+      },
+      {
+        q: "Does it block internal-to-internal threats?",
+        a: "Yes, it scans internal traffic to detect compromised accounts trying to spread lateral movement attacks."
+      }
     ]
   },
   {
     id: "pentest-bot",
     title: "AutoPenTest",
-    subtitle: "Vulnerability Scanner",
-    description: "Automated penetration testing for APIs.",
-    longDescription: "Continuous security testing for your apps. \n\nAutoPenTest aggressively probes your APIs and web applications for common vulnerabilities like SQL Injection, XSS, and broken authentication. It generates a detailed remediation report for your developers to fix issues before hackers find them.",
-    industry: "tech",
-    service: "ai-audit",
+    subtitle: "Continuous DAST Vulnerability Scanner",
+    description: "An automated penetration testing agent that continuously probes web applications and APIs for OWASP Top 10 vulnerabilities using AI-driven fuzzing.",
+    longDescription: "Security should not be a once-a-year activity. AutoPenTest integrates into your CI/CD pipeline to perform Dynamic Application Security Testing (DAST) on every build. \n\nIt utilizes a crawler to map the application structure and then employs an AI fuzzer to inject payloads (SQLi, XSS, Command Injection) into input fields and API endpoints. Unlike standard scanners, it understands logic flow—it can authenticate, maintain sessions, and navigate complex wizards. When a vulnerability is found, it generates a 'Replay Script' (cURL) for the developer to reproduce the bug and validates the fix automatically once the patch is deployed.",
+    industry: "devsecops",
+    service: "automated-security-testing",
     url: "#",
-    category: "Cybersecurity",
-    status: "Tool",
+    category: "Vulnerability Management",
+    status: "Live Tool",
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
-    features: ["SQLi Test", "XSS Scan", "Reports"],
-    technologies: ["OWASP ZAP", "Python"],
-    benefits: ["Audit", "Vulnerability finding"],
-    useCases: ["DevSecOps", "Compliance"],
-    stats: ["Auto-Exploit", "Detailed"],
-    integrations: ["Jenkins", "GitHub"],
-    testimonials: [{ name: "Dev", role: "Startup", quote: "Found bugs before launch.", avatar: "https://randomuser.me/api/portraits/men/20.jpg" }],
+    features: [
+      "AI-Driven Payload Fuzzing",
+      "OWASP Top 10 Coverage",
+      "Authenticated Scanning",
+      "API Schema Parsing (Swagger/OpenAPI)",
+      "False Positive Reduction Engine",
+      "Auto-Generated Fix Recommendations"
+    ],
+    technologies: ["OWASP ZAP", "Burp Suite Engine", "Python", "Selenium", "Docker"],
+    benefits: ["Shift Security Left", "Find Bugs Before Production", "Compliance Evidence (ISO/SOC2)", "Reduce Penetration Testing Costs"],
+    useCases: ["SaaS Web Apps", "REST/GraphQL APIs", "Microservices Security"],
+    stats: ["Scan 1000+ Endpoints/Hr", "Zero Config", "Developer Friendly"],
+    integrations: ["Jenkins", "GitHub Actions", "Jira", "Slack"],
+    testimonials: [
+      {
+        name: "DevOps Lead",
+        role: "Fintech Startup",
+        quote: "It blocked a deployment because it found a Critical SQL Injection in a new endpoint. Saved us from a potential disaster.",
+        avatar: "https://randomuser.me/api/portraits/men/20.jpg"
+      }
+    ],
     faqs: [
-      { q: "Is it safe for production?", a: "It has a 'safe mode' for production, but full scans are recommended for staging." },
-      { q: "How often should I scan?", a: "We recommend continuous scanning in your CI/CD pipeline." },
-      { q: "Does it generate reports?", a: "Yes, detailed PDF and HTML reports for developers and compliance." },
-      { q: "What vulnerabilities does it check?", a: "OWASP Top 10 including Injection, XSS, and Broken Auth." }
+      {
+        q: "Is it safe to run on production?",
+        a: "We have a 'Safe Mode' that performs non-destructive reading tests. However, full active scanning is recommended for Staging/QA environments only."
+      },
+      {
+        q: "Can it scan Single Page Apps (SPAs)?",
+        a: "Yes, it uses a headless browser (Chromium) to execute JavaScript and render the DOM, ensuring it sees the app exactly as a user does."
+      },
+      {
+        q: "Does it support GraphQL?",
+        a: "Yes, it parses the Introspection schema to understand the graph and constructs valid queries to test for authorization flaws."
+      },
+      {
+        q: "How does it reduce false positives?",
+        a: "It verifies the exploitability. For example, if it suspects SQL Injection, it attempts to extract a benign piece of data (like version number) to confirm the flaw exists."
+      }
     ]
   },
 
+
   // ==========================================
-  // 13. INDUSTRIAL IOT
+  // 13. INDUSTRIAL IOT (IIoT 4.0)
   // ==========================================
   {
     id: "factory-iot-twin",
     title: "Factory Digital Twin",
-    subtitle: "Predictive Maintenance",
-    description: "Real-time 3D replica predicting machine failures.",
-    longDescription: "A virtual replica of your physical factory. \n\nIt connects to IoT sensors on your machines to monitor vibration, temperature, and output in real-time. Using predictive models, it alerts maintenance teams about potential failures weeks in advance, preventing costly unplanned downtime.",
-    industry: "manufacturing",
-    service: "custom-model",
+    subtitle: "Predictive Maintenance & Telemetry",
+    description: "A synchronized virtual replica of physical assets utilizing real-time telemetry and physics-based modeling to predict component failure.",
+    longDescription: "The Factory Digital Twin is the cornerstone of Industry 4.0. It establishes a bidirectional link between physical assets (CNC machines, turbines, conveyor belts) and their digital counterparts.  \n\nData is ingested via Edge Gateways supporting industrial protocols like OPC UA, Modbus, and MQTT. This high-frequency time-series data (vibration, acoustics, thermal gradients) feeds into a Recurrent Neural Network (RNN) trained on historical failure modes. The system calculates the 'Remaining Useful Life' (RUL) of critical components, allowing maintenance teams to shift from reactive repairs to condition-based maintenance strategies. The 3D visualization layer, built on WebGL, allows remote operators to inspect machine status and simulate operational changes in a risk-free virtual environment before applying them to the physical floor.",
+    industry: "manufacturing-iiot",
+    service: "predictive-maintenance",
     url: "https://github.com/thingsboard/thingsboard",
     category: "Industrial IoT",
-    status: "Pilot",
+    status: "Pilot Deployment",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-    features: ["Vibration Analysis", "3D Viz", "MQTT"],
-    technologies: ["Digital Twin", "TensorFlow"],
-    benefits: ["Zero Downtime", "Remote Ops"],
-    useCases: ["Factories", "Refineries"],
-    stats: ["20% Energy Save", "Predictive"],
-    integrations: ["Siemens", "AWS IoT"],
-    testimonials: [{ name: "Plant Mgr", role: "Mfg", quote: "Saved us millions.", avatar: "https://randomuser.me/api/portraits/men/76.jpg" }],
+    features: [
+      "Real-time Telemetry Ingestion (100ms latency)",
+      "Physics-Informed Neural Networks (PINNs)",
+      "3D Asset Visualization",
+      "Anomaly Detection (Vibration/Thermal)",
+      "Remote SCADA Control",
+      "OPC UA / Modbus Bridge"
+    ],
+    technologies: ["Apache Kafka", "TensorFlow", "Three.js (3D)", "InfluxDB (Time Series)", "Kubernetes"],
+    benefits: ["Eliminate Unplanned Downtime", "Extend Asset Lifespan", "Remote Operational Visibility", "Reduce Maintenance Costs by 30%"],
+    useCases: ["Automotive Assembly Lines", "Oil Refineries", "Semiconductor Fabs"],
+    stats: ["20% Energy Save", "90% Fault Prediction", "300% ROI"],
+    integrations: ["Siemens Mindsphere", "AWS IoT Core", "Azure Digital Twins", "SAP PM"],
+    testimonials: [
+      {
+        name: "Plant Manager",
+        role: "Auto Manufacturer",
+        quote: "The vibration analysis caught a bearing failure on the main turbine two weeks before it would have seized. That saved us $2M in lost production.",
+        avatar: "https://randomuser.me/api/portraits/men/76.jpg"
+      }
+    ],
     faqs: [
-      { q: "What sensors are supported?", a: "Any sensor supporting MQTT, CoAP, or HTTP protocols." },
-      { q: "Do I need a 3D model?", a: "We can build a basic 3D model, or import your CAD files." },
-      { q: "Is it cloud or on-prem?", a: "Both deployment options are available." },
-      { q: "How accurate is failure prediction?", a: "Typically 85-90% accuracy with 2 weeks lead time." }
+      {
+        q: "How does it handle intermittent connectivity?",
+        a: "We utilize Edge Computing nodes that buffer data locally during network outages and sync with the cloud twin once connectivity is restored."
+      },
+      {
+        q: "Can it simulate production changes?",
+        a: "Yes. You can run 'What-If' scenarios in the digital twin (e.g., increasing line speed by 10%) to see the impact on engine temperature without risking the real machine."
+      },
+      {
+        q: "What protocols are supported?",
+        a: "Native support for MQTT, CoAP, HTTP, OPC UA, BACnet, and Modbus TCP."
+      },
+      {
+        q: "Is the model custom per machine?",
+        a: "We start with a generic physics model for the asset class and fine-tune it using Transfer Learning based on the specific machine's historical data."
+      }
     ]
   },
   {
     id: "energy-optimizer",
     title: "Energy Optima",
-    subtitle: "HVAC AI Controller",
-    description: "Optimizes HVAC based on occupancy and weather.",
-    longDescription: "Smart energy management for large buildings. \n\nEnergy Optima learns the thermal patterns of your facility and correlates them with weather forecasts and occupancy schedules. It adjusts HVAC and lighting systems proactively to maintain comfort while minimizing energy waste.",
-    industry: "manufacturing",
-    service: "custom-model",
+    subtitle: "AI-Driven HVAC & BMS Controller",
+    description: "A reinforcement learning agent that optimizes Building Management Systems (BMS) to minimize carbon footprint and energy costs without compromising occupant comfort.",
+    longDescription: "Energy Optima transforms static buildings into cognitive environments. It bypasses rigid, rule-based HVAC schedules in favor of Deep Reinforcement Learning (DRL). The agent ingests hyper-local weather data, real-time occupancy heatmaps from WiFi access points, and thermal inertia characteristics of the building structure.\n\nIt predicts thermal loads hours in advance (e.g., 'pre-cooling' a conference room before a 9 AM meeting) to utilize energy when rates are lowest (Time-of-Use optimization). It continuously balances the 'Comfort Index' (PMV/PPD) against energy consumption targets, making micro-adjustments to damper positions, chiller setpoints, and lighting zones every minute.",
+    industry: "smart-infrastructure",
+    service: "energy-management",
     url: "#",
-    category: "Industrial IoT",
-    status: "Live",
+    category: "Sustainable IoT",
+    status: "Live Production",
     image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e",
-    features: ["Cost Saving", "Carbon Track", "Smart Thermostat"],
-    technologies: ["IoT", "RL"],
-    benefits: ["Lower bills", "Sustainability"],
-    useCases: ["Warehouses", "Offices"],
-    stats: ["25% Reduction", "Auto-Pilot"],
-    integrations: ["BMS", "Smart Meters"],
-    testimonials: [{ name: "Facility Mgr", role: "Office", quote: "Bills went down significantly.", avatar: "https://randomuser.me/api/portraits/women/44.jpg" }],
+    features: [
+      "Deep Reinforcement Learning Control Loop",
+      "Occupancy-Based HVAC Zoning",
+      "Peak Load Shedding",
+      "Carbon Emission Tracking",
+      "Automated Demand Response (ADR)",
+      "Predictive Pre-Cooling/Heating"
+    ],
+    technologies: ["Python (PyTorch)", "BacNet IP", "LoRaWAN Sensors", "InfluxDB"],
+    benefits: ["25-40% Reduction in HVAC Costs", "LEED Certification Points", "Extended Equipment Life", "Automated Compliance Reporting"],
+    useCases: ["Commercial Skyscrapers", "Cold Storage Warehouses", "University Campuses"],
+    stats: ["25% Energy Reduction", "Auto-Pilot", "Net Zero Support"],
+    integrations: ["Honeywell BMS", "Johnson Controls", "Smart Metering Infrastructure"],
+    testimonials: [
+      {
+        name: "Facility Director",
+        role: "Tech Campus",
+        quote: "It automatically ramped down the AC during the grid peak hours, earning us demand response credits while keeping the office cool.",
+        avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+      }
+    ],
     faqs: [
-      { q: "What is the ROI?", a: "Most clients see ROI within 6 to 9 months." },
-      { q: "Does it integrate with BMS?", a: "Yes, integrates with BacNet and Modbus systems." },
-      { q: "Can I override settings?", a: "Yes, manual override is always available." },
-      { q: "Does it compromise comfort?", a: "No, it maintains temperature within your defined comfort bands." }
-    ]
-  },
-  {
-    id: "supply-chain-track",
-    title: "Logistics Live",
-    subtitle: "Real-time Tracker",
-    description: "End-to-end supply chain visibility.",
-    longDescription: "Total visibility for your supply chain. \n\nTrack shipments in real-time across land, sea, and air. The system predicts delays caused by weather or port congestion and suggests alternative routes or inventory adjustments to keep your production line running smoothly.",
-    industry: "logistics",
-    service: "data-pipeline",
-    url: "#",
-    category: "Industrial IoT",
-    status: "Dashboard",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d",
-    features: ["GPS Sync", "Delay Pred", "Alerts"],
-    technologies: ["Kafka", "React"],
-    benefits: ["Visibility", "Mgmt"],
-    useCases: ["Logistics", "Cold Chain"],
-    stats: ["Real-time ETA", "Route Opt"],
-    integrations: ["SAP", "FedEx"],
-    testimonials: [{ name: "Ops Lead", role: "Logistics", quote: "We know where everything is.", avatar: "https://randomuser.me/api/portraits/men/55.jpg" }],
-    faqs: [
-      { q: "Does it work globally?", a: "Yes, supports global tracking across sea, air, and land." },
-      { q: "How accurate are ETAs?", a: "Our AI predicts ETAs with +/- 4 hours accuracy for international shipments." },
-      { q: "Does it track temperature?", a: "Yes, for cold chain logistics via IoT loggers." },
-      { q: "Can I share with customers?", a: "Yes, generate tracking links for end customers." }
+      {
+        q: "Does it require replacing existing HVAC?",
+        a: "No. It acts as a supervisory layer, sending setpoint adjustments to your existing BMS via BACnet or Modbus overlay."
+      },
+      {
+        q: "How does it measure comfort?",
+        a: "We use the Fanger PMV (Predicted Mean Vote) model, incorporating temperature, humidity, and air velocity sensors."
+      },
+      {
+        q: "Is it secure from cyber attacks?",
+        a: "The gateway uses a unidirectional diode for data egress and requires VPN tunneling with MFA for any control command ingress."
+      },
+      {
+        q: "Does it work with solar integration?",
+        a: "Yes, it optimizes consumption to align with peak solar generation periods to maximize self-consumption."
+      }
     ]
   },
 
   // ==========================================
-  // 14. HEALTHTECH
+  // 14. HEALTHTECH (MedTech & Bio)
   // ==========================================
   {
     id: "medi-scan-ai",
     title: "MediScan AI",
-    subtitle: "Radiology Assistant",
-    description: "99% accuracy in detecting early-stage tumors in MRI/CT scans.",
-    longDescription: "An AI co-pilot for radiologists. \n\nMediScan analyzes medical images (X-rays, MRIs, CTs) to highlight potential anomalies like tumors, fractures, or lesions. It prioritizes urgent cases for doctor review, ensuring that critical patients get treated faster.",
-    industry: "healthcare",
-    service: "computer-vision",
+    subtitle: "Radiological Computer Vision Assistant",
+    description: "A regulatory-compliant diagnostic aid utilizing 3D Convolutional Neural Networks (CNNs) to detect pathologies in volumetric medical imaging.",
+    longDescription: "MediScan acts as a high-precision triage engine for radiology departments. It ingests DICOM files (MRI, CT, PET scans) and processes them through a U-Net architecture optimized for 3D volumetric segmentation.  \n\nThe system identifies and bounds regions of interest (ROI) such as pulmonary nodules, intracranial hemorrhages, or micro-fractures with pixel-level precision. It assigns a 'Severity Score' to each scan, re-ordering the radiologist's worklist to ensure life-threatening conditions are reviewed first. The AI output includes visual heatmaps overlaid on the original scan and an automated preliminary report, significantly reducing the cognitive load on physicians.",
+    industry: "healthcare-diagnostics",
+    service: "medical-imaging",
     url: "https://github.com/Project-MONAI/MONAI",
-    category: "HealthTech",
-    status: "Research",
+    category: "AI Diagnostics",
+    status: "Clinical Research / 510(k) Pending",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d",
-    features: ["Segmentation", "3D Recon", "Reporting"],
-    technologies: ["U-Net", "Python"],
-    benefits: ["Early detection", "Accuracy"],
-    useCases: ["Cancer Screen", "ER Triage"],
-    stats: ["99% Acc", "FDA Compliant"],
-    integrations: ["PACS", "EHR"],
-    testimonials: [{ name: "Dr. Gupta", role: "Radiologist", quote: "A second pair of eyes.", avatar: "https://randomuser.me/api/portraits/men/60.jpg" }],
+    features: [
+      "3D Volumetric Segmentation",
+      "Automated Triage & Worklist Prioritization",
+      "Longitudinal Tumor Tracking",
+      "Incidental Finding Detection",
+      "DICOM/PACS Interoperability",
+      "False Positive Reduction Layer"
+    ],
+    technologies: ["MONAI Framework", "PyTorch", "NVIDIA Clara", "DICOM Standard"],
+    benefits: ["Reduce Diagnosis Time by 40%", "99% Sensitivity for Nodule Detection", "Minimize Radiologist Burnout", "Standardized Reporting"],
+    useCases: ["Oncology Screening", "Emergency Room Triage", "Neurology"],
+    stats: ["99% Accuracy", "HIPAA Compliant", "40% Faster Reporting"],
+    integrations: ["GE Healthcare PACS", "Epic EHR", "Nuance PowerScribe"],
+    testimonials: [
+      {
+        name: "Dr. Gupta",
+        role: "Chief of Radiology",
+        quote: "It flagged a subtle brain bleed in a trauma patient that was easily missable during a busy night shift. It saves lives.",
+        avatar: "https://randomuser.me/api/portraits/men/60.jpg"
+      }
+    ],
     faqs: [
-      { q: "Is it FDA approved?", a: "It is currently pending FDA 510(k) clearance." },
-      { q: "Does it replace radiologists?", a: "No, it assists them by prioritizing cases and highlighting regions of interest." },
-      { q: "What formats does it support?", a: "Standard DICOM and NIfTI formats." },
-      { q: "Is patient data safe?", a: "Yes, data is anonymized and processed on secure, HIPAA-compliant servers." }
-    ]
-  },
-  {
-    id: "virtual-nurse",
-    title: "Virtual Nurse Bot",
-    subtitle: "Patient Triage",
-    description: "Chatbot for symptom checking and appointment booking.",
-    longDescription: "Ease the burden on healthcare staff. \n\nVirtual Nurse acts as the first point of contact for patients, asking standard triage questions to assess symptom severity. It can book appointments, provide home-care advice for minor issues, or escalate emergencies to human doctors immediately.",
-    industry: "healthcare",
-    service: "nlp-chatbot",
-    url: "#",
-    category: "HealthTech",
-    status: "Live",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118",
-    features: ["Symptom Check", "Booking", "Reminders"],
-    technologies: ["Dialogflow", "FHIR"],
-    benefits: ["Reduce waiting", "24/7 care"],
-    useCases: ["Hospitals", "Telehealth"],
-    stats: ["Reduce ER Load", "Multi-lang"],
-    integrations: ["Epic", "Cerner"],
-    testimonials: [{ name: "Nurse Betty", role: "Head Nurse", quote: "Patients are better informed.", avatar: "https://randomuser.me/api/portraits/women/90.jpg" }],
-    faqs: [
-      { q: "Is it a medical device?", a: "It is an information tool, not a diagnostic device." },
-      { q: "Does it integrate with EHR?", a: "Yes, it writes notes directly to Epic and Cerner." },
-      { q: "What if it's an emergency?", a: "It immediately directs the patient to call emergency services (911)." },
-      { q: "Can it book appointments?", a: "Yes, it accesses the hospital's scheduling system in real-time." }
+      {
+        q: "Does the data leave the hospital?",
+        a: "No. We deploy via Federated Learning or on-premise Edge Servers, ensuring patient data (PHI) never leaves the hospital firewall."
+      },
+      {
+        q: "How does it handle artifacts in scans?",
+        a: "The model is trained with data augmentation (noise, motion blur) to be robust against low-quality or artifact-heavy scans."
+      },
+      {
+        q: "Does it explain its decision?",
+        a: "Yes, we use Grad-CAM (Gradient-weighted Class Activation Mapping) to visualize exactly which pixels influenced the AI's prediction."
+      },
+      {
+        q: "Can it compare against prior scans?",
+        a: "Yes, it performs image registration to align current and past scans, automatically calculating tumor growth or shrinkage rates."
+      }
     ]
   },
   {
     id: "drug-discovery",
     title: "Drug Discovery AI",
-    subtitle: "Molecule Generator",
-    description: "Simulates chemical reactions to find new drugs.",
-    longDescription: "Accelerating the path to new cures. \n\nThis AI models protein structures and simulates millions of chemical interactions to identify promising drug candidates. It drastically shortens the initial phase of drug discovery, saving years of lab work and millions in funding.",
-    industry: "healthcare",
-    service: "custom-model",
+    subtitle: "Generative Molecular Design Engine",
+    description: "An in-silico platform utilizing geometric deep learning to predict protein folding and generate novel small molecule candidates.",
+    longDescription: "Drug Discovery AI shifts the paradigm from 'discovery' to 'design'. Using AlphaFold-derived models, it predicts the 3D structure of target proteins with atomic accuracy.  \n\nThe Generative Chemistry module then employs Graph Neural Networks (GNNs) to hallucinate millions of novel molecular structures, optimizing for binding affinity, solubility (LogP), and toxicity (ADMET properties). This computational funnel screens billions of compounds in the cloud, narrowing the field to a few dozen high-probability candidates for wet-lab synthesis. This process compresses the 'Hit-to-Lead' timeline from years to months.",
+    industry: "biotech-pharma",
+    service: "computational-biology",
     url: "#",
-    category: "HealthTech",
-    status: "Research",
+    category: "De Novo Drug Design",
+    status: "Research / Enterprise",
     image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69",
-    features: ["Protein Folding", "Simulations", "Data Mining"],
-    technologies: ["AlphaFold", "Python"],
-    benefits: ["Faster discovery", "Lower cost"],
-    useCases: ["Pharma", "Biotech"],
-    stats: ["1M+ Compounds", "Novel Discovery"],
-    integrations: ["Lab Equipment"],
-    testimonials: [{ name: "Scientist", role: "Pharma", quote: "Accelerated our pipeline.", avatar: "https://randomuser.me/api/portraits/men/15.jpg" }],
+    features: [
+      "Protein Structure Prediction (Folding)",
+      "Ligand-Protein Docking Simulation",
+      "ADMET Property Prediction",
+      "De Novo Molecule Generation",
+      "High-Throughput Virtual Screening",
+      "Synthetic Feasibility Scoring"
+    ],
+    technologies: ["AlphaFold 2", "PyTorch Geometric", "RDKit", "GROMACS (Simulation)"],
+    benefits: ["Reduce Hit-to-Lead Time by 70%", "Lower R&D Costs", "Optimize Bioavailability In-Silico", "Minimize Animal Testing"],
+    useCases: ["Oncology", "Rare Diseases", "Antibiotic Resistance"],
+    stats: ["Screen 1B+ Compounds", "90% Cost Reduction", "Novel IP Generation"],
+    integrations: ["Laboratory Information Management Systems (LIMS)", "Schrödinger Suite"],
+    testimonials: [
+      {
+        name: "Dr. Aris",
+        role: "Lead Researcher",
+        quote: "We identified a potent inhibitor for a previously 'undruggable' target in 3 months. The traditional method would have taken 2 years.",
+        avatar: "https://randomuser.me/api/portraits/men/15.jpg"
+      }
+    ],
     faqs: [
-      { q: "How accurate are predictions?", a: "Highly accurate for protein folding, reducing wet lab failures." },
-      { q: "Does it replace lab testing?", a: "No, it filters candidates so you only test the most promising ones." },
-      { q: "What is the computation cost?", a: "It requires significant GPU resources, which we provide via cloud." },
-      { q: "Can it design novel proteins?", a: "Yes, de novo protein design is a key feature." }
+      {
+        q: "How accurate is the binding affinity prediction?",
+        a: "Our models achieve a correlation coefficient (R²) of >0.8 against experimental data for known kinase targets."
+      },
+      {
+        q: "Does it account for synthesis difficulty?",
+        a: "Yes, it includes a 'Synthetic Accessibility Score' (SAS) to ensure generated molecules can actually be manufactured in a lab."
+      },
+      {
+        q: "What is the compute requirement?",
+        a: "The platform runs on High-Performance Computing (HPC) clusters utilizing hundreds of NVIDIA A100 GPUs for parallel simulation."
+      },
+      {
+        q: "Can it repurpose existing drugs?",
+        a: "Yes, it can screen FDA-approved libraries against new targets to identify off-label usage potential."
+      }
     ]
   },
 
   // ==========================================
-  // 15. LEGALTECH
+  // 15. LEGALTECH (RegTech)
   // ==========================================
   {
     id: "legal-contract-ai",
     title: "LegalEagle AI",
-    subtitle: "Contract Review",
-    description: "LLM agent to review NDAs and contracts.",
-    longDescription: "Review contracts in minutes, not hours. \n\nLegalEagle scans uploaded contracts to highlight risky clauses, missing terms, or non-standard language. It suggests edits based on your company's playbook and ensures you never sign a bad deal due to fatigue or oversight.",
-    industry: "legal",
-    service: "nlp-chatbot",
+    subtitle: "Automated Contract Review & Redlining",
+    description: "A specialized NLP agent that reviews legal documents against a corporate playbook, identifying risks and suggesting redlines in seconds.",
+    longDescription: "LegalEagle AI acts as a force multiplier for legal teams. It ingests contracts (NDAs, MSAs, SaaS Agreements) and decomposes them into clauses using Semantic Segmentation. It compares these clauses against your organization's 'Golden Playbook'—a set of preferred terms and risk tolerances. \n\nIf a counterparty's indemnity clause is too broad or the jurisdiction is unfavorable, the AI flags it as 'High Risk' and suggests specific redline language to mitigate that risk. It can handle complex logic, such as cross-referencing definitions across a 100-page document, ensuring consistency that human review might miss due to fatigue.",
+    industry: "legal-tech",
+    service: "contract-lifecycle-management",
     url: "https://github.com/StanGirard/quivr",
-    category: "LegalTech",
-    status: "Live Demo",
+    category: "Contract AI",
+    status: "Live Enterprise",
     image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73",
-    features: ["Risk Highlight", "Redlining", "Clause Sug"],
-    technologies: ["GPT-4", "OCR"],
-    benefits: ["Fast review", "Risk mitigation"],
-    useCases: ["NDA", "Vendor Contracts"],
-    stats: ["80% Faster", "Playbook Comp"],
-    integrations: ["DocuSign", "Clio"],
-    testimonials: [{ name: "Lawyer", role: "Firm", quote: "Catching risks I missed.", avatar: "https://randomuser.me/api/portraits/men/33.jpg" }],
+    features: [
+      "Playbook-Based Risk Scoring",
+      "Automated Redlining (Track Changes)",
+      "Missing Clause Detection",
+      "Multi-Jurisdictional Logic",
+      "Semantic Clause Comparison",
+      "Legacy Contract Metadata Extraction"
+    ],
+    technologies: ["GPT-4 (Fine-tuned)", "Spacy (NLP)", "OCR (Tesseract)", "Vector Embeddings"],
+    benefits: ["80% Faster Contract Turnaround", "Standardized Risk Posture", "Reduce Outside Counsel Spend", "Eliminate Human Error"],
+    useCases: ["Procurement Contracts", "Sales MSAs", "M&A Due Diligence"],
+    stats: ["Review 50 Pages/Min", "95% Accuracy", "ISO 27001 Certified"],
+    integrations: ["DocuSign CLM", "Salesforce", "Clio", "Microsoft Word Add-in"],
+    testimonials: [
+      {
+        name: "General Counsel",
+        role: "SaaS Firm",
+        quote: "It cleared our NDA backlog in a day. My team now focuses on complex negotiations instead of proofreading standard clauses.",
+        avatar: "https://randomuser.me/api/portraits/men/33.jpg"
+      }
+    ],
     faqs: [
-      { q: "Is client data secure?", a: "Yes, we use zero-retention policies for sensitive documents." },
-      { q: "Can I customize the playbook?", a: "Yes, upload your standard clauses and it will check against them." },
-      { q: "Does it support multiple languages?", a: "Currently supports English, French, and German." },
-      { q: "Can it redline documents?", a: "Yes, it provides a Word doc with tracked changes." }
-    ]
-  },
-  {
-    id: "patent-search",
-    title: "Patent Search Pro",
-    subtitle: "IP Protection",
-    description: "Finds similar patents instantly.",
-    longDescription: "Semantic search for intellectual property. \n\nInstead of keyword matching, this tool understands the concept of your invention and finds existing patents that are conceptually similar. It helps inventors and lawyers assess patentability quickly and avoid infringement.",
-    industry: "legal",
-    service: "data-pipeline",
-    url: "#",
-    category: "LegalTech",
-    status: "Tool",
-    image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744",
-    features: ["Similarity Search", "Global DB"],
-    technologies: ["Vector DB", "NLP"],
-    benefits: ["IP Safety", "Validation"],
-    useCases: ["Law Firms", "R&D"],
-    stats: ["Global DB", "Concept Search"],
-    integrations: ["USPTO", "WIPO"],
-    testimonials: [{ name: "Inventor", role: "Indie", quote: "Saved me legal fees.", avatar: "https://randomuser.me/api/portraits/women/22.jpg" }],
-    faqs: [
-      { q: "Which databases are covered?", a: "USPTO, EPO, WIPO, and major Asian patent offices." },
-      { q: "Is it keyword based?", a: "No, it uses semantic search to find conceptual similarities." },
-      { q: "Can I export results?", a: "Yes, comprehensive PDF reports with claim analysis." },
-      { q: "How fast is the search?", a: "Millions of patents are searched in under 2 seconds." }
-    ]
-  },
-  {
-    id: "gdpr-compliance",
-    title: "GDPR Shield",
-    subtitle: "Compliance Auditor",
-    description: "Scans docs for GDPR compliance.",
-    longDescription: "Automated privacy governance. \n\nGDPR Shield scans your document repositories and databases to ensure personal data is handled according to GDPR regulations. It flags non-compliant data retention, identifies unsecured PII, and generates reports for data protection officers.",
-    industry: "legal",
-    service: "ethical-ai",
-    url: "#",
-    category: "LegalTech",
-    status: "Tool",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85",
-    features: ["Auto-Audit", "Risk Report"],
-    technologies: ["RegTech", "Python"],
-    benefits: ["Compliance", "Protection"],
-    useCases: ["Corp Compliance", "Audits"],
-    stats: ["Auto-Discovery", "Risk Dash"],
-    integrations: ["SharePoint", "G-Drive"],
-    testimonials: [{ name: "DPO", role: "Tech", quote: "Automated our compliance.", avatar: "https://randomuser.me/api/portraits/men/40.jpg" }],
-    faqs: [
-      { q: "What regulations are supported?", a: "GDPR, CCPA, HIPAA, and LGPD." },
-      { q: "Does it scan emails?", a: "Yes, it can scan email archives for PII." },
-      { q: "Can it delete data?", a: "It can flag data for deletion, but requires admin approval." },
-      { q: "Is the report audit-ready?", a: "Yes, generates standard reports for regulatory bodies." }
+      {
+        q: "Does it learn from my edits?",
+        a: "Yes, it utilizes Reinforcement Learning from Human Feedback (RLHF). If you reject a suggestion, the model updates its weights to align better with your preferences."
+      },
+      {
+        q: "Is the data used to train public models?",
+        a: "No. We offer private model instances where training data is siloed strictly within your tenant."
+      },
+      {
+        q: "Can it handle scanned PDFs?",
+        a: "Yes, integrated OCR converts scanned images into machine-readable text before analysis."
+      },
+      {
+        q: "Does it replace lawyers?",
+        a: "No, it is a 'Human-in-the-Loop' system. It handles the initial review and triage, but final sign-off remains with the attorney."
+      }
     ]
   },
 
   // ==========================================
-  // 16. HR TECH
+  // 16. HR TECH (People Operations)
   // ==========================================
   {
     id: "hr-screening-bot",
     title: "TalentFlow Bot",
-    subtitle: "Automated Interviewer",
-    description: "Voice-enabled AI for candidate screening.",
-    longDescription: "Scale your hiring without scaling your recruiting team. \n\nTalentFlow Bot conducts the initial phone screen with candidates. It asks about experience, salary expectations, and technical concepts, then transcribes the call and grades the candidate based on your criteria, presenting you with only the best matches.",
-    industry: "tech",
-    service: "nlp-chatbot",
+    subtitle: "Conversational AI Recruiter",
+    description: "A voice-enabled, autonomous screening agent that conducts structured initial interviews, assesses soft skills, and reduces time-to-hire.",
+    longDescription: "TalentFlow Bot automates the high-volume top-of-funnel recruiting process. It initiates phone calls or video chats with candidates, conducting a structured interview based on the role's requirements. Using state-of-the-art Speech-to-Text (STT) and NLU, it parses candidate responses for key technical competencies, experience levels, and communication clarity.\n\nThe system evaluates soft skills through sentiment and tone analysis, generating a comprehensive 'Candidate Scorecard'. It helps eliminate unconscious bias by asking standardized questions and evaluating purely on content, ensuring a fair screening process across all demographics. Only qualified candidates are pushed to human recruiters for the final rounds.",
+    industry: "hr-tech",
+    service: "automated-recruiting",
     url: "https://github.com/livekit/agents",
-    category: "HR Tech",
-    status: "v1.0",
+    category: "Talent Acquisition AI",
+    status: "v2.0 Production",
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0",
-    features: ["Voice Screen", "Grading", "Personality"],
-    technologies: ["Twilio", "Whisper"],
-    benefits: ["Save time", "Remove bias"],
-    useCases: ["Hiring", "Screening"],
-    stats: ["1000s Candidates", "Consistent"],
-    integrations: ["Greenhouse", "Lever"],
-    testimonials: [{ name: "Recruiter", role: "Agency", quote: "Filters best candidates.", avatar: "https://randomuser.me/api/portraits/women/55.jpg" }],
+    features: [
+      "Real-time Voice Conversational AI",
+      "Competency-Based Scoring",
+      "Soft-Skill & Sentiment Analysis",
+      "Bias-Reduction Algorithms",
+      "Automated Scheduling",
+      "Fraud Detection (Voice Biometrics)"
+    ],
+    technologies: ["OpenAI Whisper", "Twilio Voice API", "LangChain", "Vector DB"],
+    benefits: ["Reduce Time-to-Hire by 50%", "24/7 Interview Availability", "Standardized Screening Process", "Bias Mitigation"],
+    useCases: ["High-Volume Retail Hiring", "Customer Support Staffing", "Graduate Program Screening"],
+    stats: ["Screen 1000s/Day", "90% CSAT", "Zero Bias"],
+    integrations: ["Greenhouse", "Lever", "Workday", "Calendly"],
+    testimonials: [
+      {
+        name: "Head of Talent",
+        role: "Retail Chain",
+        quote: "We scaled from 100 to 1,000 hires for the holiday season without adding a single recruiter. The bot handled 5,000 screens.",
+        avatar: "https://randomuser.me/api/portraits/women/55.jpg"
+      }
+    ],
     faqs: [
-      { q: "Is it legal to use AI interviewers?", a: "Yes, provided candidates are informed they are speaking to an AI." },
-      { q: "Can it detect cheating?", a: "It flags suspicious pauses or background typing noises." },
-      { q: "Does it work for non-tech roles?", a: "Yes, custom interview scripts can be created for sales, support, etc." },
-      { q: "How does it grade?", a: "It compares answers against a rubric provided by your hiring manager." }
+      {
+        q: "How does it reduce bias?",
+        a: "The AI is blind to gender, accent, and name. It evaluates solely based on the semantic content of the answer mapped against the job competency framework."
+      },
+      {
+        q: "Can candidates trick the AI?",
+        a: "It includes proctoring features that flag suspicious behaviors, such as long pauses suggesting looking up answers or detection of another voice in the room."
+      },
+      {
+        q: "Does it work for technical roles?",
+        a: "Yes, it can ask coding theory questions or scenario-based technical questions and evaluate the logic of the response."
+      },
+      {
+        q: "Is it compliant with employment laws?",
+        a: "Yes, it provides full transcripts for audit trails and complies with EEOC and GDPR regulations regarding automated decision-making."
+      }
     ]
   },
-  {
-    id: "retention-ai",
-    title: "Retention Predictor",
-    subtitle: "Employee Churn AI",
-    description: "Predicts employee churn risk.",
-    longDescription: "Keep your best talent. \n\nRetention Predictor analyzes anonymous data points like engagement surveys, attendance, and work patterns to identify signs of burnout or disengagement. It alerts HR leaders to high-risk teams so they can intervene with support before employees resign.",
-    industry: "tech",
-    service: "ai-solutions",
-    url: "#",
-    category: "HR Tech",
-    status: "Internal",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df",
-    features: ["Burnout Detect", "Engagement"],
-    technologies: ["ML", "Python"],
-    benefits: ["Retain talent", "Culture"],
-    useCases: ["Enterprise", "Remote"],
-    stats: ["Predict Churn", "Privacy First"],
-    integrations: ["Workday", "Slack"],
-    testimonials: [{ name: "HR Dir", role: "Corp", quote: "Saved key talent.", avatar: "https://randomuser.me/api/portraits/men/66.jpg" }],
-    faqs: [
-      { q: "Is employee data private?", a: "Yes, analysis is done on anonymized/aggregated data." },
-      { q: "What signals does it use?", a: "Email sentiment, calendar load, and survey responses." },
-      { q: "How accurate is it?", a: "80%+ accuracy in predicting resignation within 3 months." },
-      { q: "Does it integrate with HRIS?", a: "Yes, connects with Workday, BambooHR, and others." }
-    ]
-  },
-  {
-    id: "culture-fit",
-    title: "Culture Fit Analyzer",
-    subtitle: "Soft Skill Scan",
-    description: "Analyzes interviews for culture fit.",
-    longDescription: "Hire for the long term. \n\nThis tool analyzes interview transcripts to assess a candidate's soft skills, communication style, and values alignment with your company culture. It provides objective data to support gut feelings about 'culture fit'.",
-    industry: "tech",
-    service: "ai-audit",
-    url: "#",
-    category: "HR Tech",
-    status: "Beta",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
-    features: ["Sentiment", "Tone Check"],
-    technologies: ["NLP", "React"],
-    benefits: ["Better hiring", "Team fit"],
-    useCases: ["Hiring", "Team Building"],
-    stats: ["Objective", "Behavioral"],
-    integrations: ["Zoom", "Teams"],
-    testimonials: [{ name: "Founder", role: "Startup", quote: "Built a cohesive team.", avatar: "https://randomuser.me/api/portraits/women/12.jpg" }],
-    faqs: [
-      { q: "How do you define culture?", a: "We map candidates against your company's core values framework." },
-      { q: "Is this biased?", a: "We audit algorithms to ensure no bias against accents or dialects." },
-      { q: "Does it need a video?", a: "It works on audio/text transcripts primarily." },
-      { q: "Can it analyze teams?", a: "Yes, it can analyze team communication to improve cohesion." }
-    ]
-  },
-
+  
   // ==========================================
-  // 17. MARKETING AI
+  // 17. MARKETING AI (Generative Content)
   // ==========================================
   {
     id: "brand-voice-genie",
     title: "Brand Voice Genie",
-    subtitle: "Generative Marketing",
-    description: "Creates on-brand content tailored to trends.",
-    longDescription: "Your brand's AI copywriter. \n\nFeed it your brand guidelines and previous successful posts, and it generates new content that sounds exactly like you. It can repurpose a single blog post into tweets, LinkedIn articles, and Instagram captions instantly.",
-    industry: "retail",
-    service: "ai-solutions",
+    subtitle: "Style-Transfer Content Engine",
+    description: "A generative AI platform that learns your unique brand voice and creates omni-channel marketing assets that are indistinguishable from human-written copy.",
+    longDescription: "Generic AI copy sounds robotic. Brand Voice Genie solves this by fine-tuning LLMs on your specific brand assets—past high-performing blogs, whitepapers, and social posts. It creates a 'Brand Vector Embedding' that captures your tone, vocabulary, and sentence structure.\n\nMarketers can input a single product feature, and the Genie generates a cohesive campaign: a long-form blog post, a punchy Twitter thread, a professional LinkedIn article, and an Instagram caption, all maintaining consistent messaging. It automatically optimizes content for SEO, inserting keywords naturally while maintaining readability.",
+    industry: "martech",
+    service: "generative-content",
     url: "https://github.com/danielmiessler/fabric",
-    category: "Marketing AI",
+    category: "Content Automation",
     status: "Live Platform",
     image: "https://images.unsplash.com/photo-1557838923-2985c318be48",
-    features: ["Trend Analysis", "Content Gen", "SEO"],
-    technologies: ["GANs", "SEO AI"],
-    benefits: ["Consistent voice", "Scale"],
-    useCases: ["Social Media", "Blogs"],
-    stats: ["10x Output", "SEO Optimized"],
-    integrations: ["HubSpot", "WordPress"],
-    testimonials: [{ name: "Marketer", role: "Agency", quote: "My secret weapon.", avatar: "https://randomuser.me/api/portraits/men/30.jpg" }],
+    features: [
+      "Few-Shot Style Transfer",
+      "Omni-Channel Repurposing",
+      "SEO Keyword Injection",
+      "Plagiarism & Hallucination Check",
+      "Multi-Language Localization",
+      "DALL-E 3 Image Generation"
+    ],
+    technologies: ["GPT-4-Turbo", "Fine-Tuned Llama 3", "Vector Databases", "Stable Diffusion"],
+    benefits: ["10x Content Output", "Consistent Brand Identity", "Faster Go-to-Market", "Global Localization"],
+    useCases: ["Social Media Management", "Content Marketing", "Email Drip Campaigns"],
+    stats: ["10x Output", "SEO Ranked", "15+ Languages"],
+    integrations: ["HubSpot", "WordPress", "Sprout Social", "Google Analytics"],
+    testimonials: [
+      {
+        name: "CMO",
+        role: "Tech Startup",
+        quote: "It's like cloning my best copywriter. We produce a month's worth of content in an afternoon, and the engagement rates are actually higher.",
+        avatar: "https://randomuser.me/api/portraits/men/30.jpg"
+      }
+    ],
     faqs: [
-      { q: "Is the content original?", a: "Yes, every piece is generated uniquely and checks for plagiarism." },
-      { q: "Can I train it on my blog?", a: "Yes, upload your past content to train the style engine." },
-      { q: "Does it do images?", a: "Yes, it can generate matching DALL-E images for posts." },
-      { q: "How many languages?", a: "Supports 15+ languages for global marketing." }
-    ]
-  },
-  {
-    id: "seo-writer",
-    title: "SEO Auto-Writer",
-    subtitle: "Blog Generator",
-    description: "Generates SEO-optimized blogs.",
-    longDescription: "Dominate search rankings. \n\nSEO Auto-Writer researches a topic, analyzes top-ranking competitors, and writes comprehensive, keyword-rich articles. It handles formatting, meta tags, and even suggests internal links, streamlining your content SEO strategy.",
-    industry: "retail",
-    service: "ai-solutions",
-    url: "#",
-    category: "Marketing AI",
-    status: "Live",
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a",
-    features: ["Keyword Injection", "HTML"],
-    technologies: ["GPT-4", "Unsplash"],
-    benefits: ["Rank higher", "Traffic"],
-    useCases: ["Affiliate", "Corp Blog"],
-    stats: ["Rank #1", "Auto-Publish"],
-    integrations: ["WordPress", "Semrush"],
-    testimonials: [{ name: "Blogger", role: "Indie", quote: "Traffic exploded.", avatar: "https://randomuser.me/api/portraits/women/40.jpg" }],
-    faqs: [
-      { q: "Does it pass AI detection?", a: "It aims for human-like flow, but we recommend human editing." },
-      { q: "Does it do keyword research?", a: "Yes, it integrates with Semrush data to find low-competition keywords." },
-      { q: "Can it post to WordPress?", a: "Yes, it drafts directly into your CMS." },
-      { q: "What length are articles?", a: "Adjustable from 500 to 3000+ words." }
-    ]
-  },
-  {
-    id: "ad-creative",
-    title: "Ad Creative Gen",
-    subtitle: "Visual Ads AI",
-    description: "Generates high-converting ad images.",
-    longDescription: "Stop guessing what works in ads. \n\nThis tool generates hundreds of ad variations—images and copy—optimized for conversion. It uses data from successful campaigns to predict which designs will get the highest Click-Through Rate (CTR).",
-    industry: "retail",
-    service: "computer-vision",
-    url: "#",
-    category: "Marketing AI",
-    status: "Tool",
-    image: "https://images.unsplash.com/photo-1542744094-24638eff58bb",
-    features: ["A/B Testing", "Image Gen"],
-    technologies: ["Stable Diffusion", "Python"],
-    benefits: ["High CTR", "Lower CPA"],
-    useCases: ["FB Ads", "Google Ads"],
-    stats: ["Higher CTR", "Brand Safe"],
-    integrations: ["FB Ads", "Google Ads"],
-    testimonials: [{ name: "Media Buyer", role: "Agency", quote: "CPA dropped 30%.", avatar: "https://randomuser.me/api/portraits/men/50.jpg" }],
-    faqs: [
-      { q: "Are the images copyright free?", a: "Yes, you own full commercial rights to generated images." },
-      { q: "Does it write headlines?", a: "Yes, it generates matching ad copy and headlines." },
-      { q: "Does it know ad specs?", a: "Yes, it exports in all standard social media sizes." },
-      { q: "Can I upload my logo?", a: "Yes, it auto-places logos and brand colors." }
+      {
+        q: "Will Google penalize AI content?",
+        a: "Our content focuses on 'Helpful Content' guidelines. It is structured to provide value and can be human-edited to ensure it passes quality thresholds."
+      },
+      {
+        q: "Can it handle technical jargon?",
+        a: "Yes, uploading technical documentation helps the model understand and correctly use industry-specific terminology."
+      },
+      {
+        q: "Does it know current events?",
+        a: "Yes, it has web-browsing capabilities to reference real-time trends and news in the generated content."
+      },
+      {
+        q: "Who owns the copyright?",
+        a: "You retain full ownership of all generated text and images."
+      }
     ]
   },
 
   // ==========================================
-  // 18. AGRITECH
+  // 18. AGRITECH (Precision Farming)
   // ==========================================
   {
     id: "agri-vision",
     title: "AgriVision Bot",
-    subtitle: "Precision Ag Agent",
-    description: "Drone analysis for crop health.",
-    longDescription: "Smart farming from the sky. \n\nAgriVision processes multispectral imagery from drones to assess plant health. It identifies specific areas needing water or pesticide, allowing farmers to treat only the affected spots rather than spraying the whole field, saving costs and the environment.",
-    industry: "agriculture",
-    service: "computer-vision",
+    subtitle: "Multispectral Crop Intelligence",
+    description: "A computer vision pipeline that processes drone and satellite imagery to generate prescription maps for precision agriculture.",
+    longDescription: "AgriVision brings big data to the field. It ingests multispectral imagery (NDVI, NDRE) from UAVs and satellites to assess crop health at a sub-meter resolution.  \n\nThe AI detects stress signals invisible to the naked eye—early-stage fungal infections, nutrient deficiencies, or water stress. It generates 'Variable Rate Application' (VRA) maps that integrate with smart tractors. Instead of spraying an entire field uniformly, the VRA map instructs the sprayer to apply chemicals *only* where needed, reducing input costs by up to 30% and minimizing environmental runoff.",
+    industry: "agtech",
+    service: "remote-sensing",
     url: "https://github.com/microsoft/farmvibes-ai",
-    category: "AgriTech",
-    status: "Pilot",
+    category: "Precision Agriculture",
+    status: "Pilot Deployment",
     image: "https://images.unsplash.com/photo-1625246333195-09d9b63bd71a",
-    features: ["Soil Health", "Yield Forecast"],
-    technologies: ["CV", "Satellite"],
-    benefits: ["Higher yield", "Save resources"],
-    useCases: ["Farming", "Vineyards"],
-    stats: ["Reduce Chems", "Early Warning"],
-    integrations: ["DJI", "Farm ERP"],
-    testimonials: [{ name: "Farmer", role: "Corn", quote: "Saved my harvest.", avatar: "https://randomuser.me/api/portraits/men/60.jpg" }],
+    features: [
+      "NDVI/NDRE Health Indexing",
+      "Weed vs. Crop Segmentation",
+      "Variable Rate Application (VRA) Maps",
+      "Yield Forecasting Models",
+      "Soil Moisture Analysis",
+      "Pest Infestation Heatmaps"
+    ],
+    technologies: ["Computer Vision (CNN)", "Satellite Imagery (Sentinel-2)", "Edge Inference", "Python Geospatial"],
+    benefits: ["30% Reduction in Fertilizer/Pesticide", "Maximize Crop Yield", "Early Disease Detection", "Sustainable Farming"],
+    useCases: ["Large Scale Cereal Farming", "Vineyard Management", "Orchard Monitoring"],
+    stats: ["Reduce Inputs 30%", "95% Weed Detection", "Sub-meter Accuracy"],
+    integrations: ["John Deere Operations Center", "DJI Terra", "Climate FieldView"],
+    testimonials: [
+      {
+        name: "Farm Operator",
+        role: "Corn Grower",
+        quote: "We spotted a nitrogen deficiency in the north acre weeks before it showed on the leaves. We treated just that spot and saved the harvest.",
+        avatar: "https://randomuser.me/api/portraits/men/60.jpg"
+      }
+    ],
     faqs: [
-      { q: "Which drones are supported?", a: "DJI, Parrot, and most multispectral drones." },
-      { q: "Does it work without internet?", a: "Yes, data can be processed on a local field laptop." },
-      { q: "Can it detect pests?", a: "Yes, it identifies common pest infestations patterns." },
-      { q: "How fast is processing?", a: "A 100-acre field map is ready in under 30 minutes." }
+      {
+        q: "Does it work with any drone?",
+        a: "It works best with drones equipped with Multispectral cameras (MicaSense, DJI Phantom 4 Multispectral) but can derive basic indices from standard RGB drones."
+      },
+      {
+        q: "How long does processing take?",
+        a: "Edge processing on a field laptop can stitch and analyze a 100-acre field in under 30 minutes without internet."
+      },
+      {
+        q: "Can it estimate yield?",
+        a: "Yes, by analyzing canopy cover and plant height, the model provides a yield forecast with +/- 10% accuracy."
+      },
+      {
+        q: "Is it weather dependent?",
+        a: "Drone flights require clear weather, but our satellite integration provides continuous (though lower resolution) coverage."
+      }
     ]
   },
-  {
-    id: "smart-irrigation",
-    title: "AquaSmart",
-    subtitle: "Irrigation Controller",
-    description: "Optimizes water usage.",
-    longDescription: "Water crops with precision. \n\nConnected to soil moisture sensors and local weather forecasts, AquaSmart automates irrigation valves. It ensures crops get exactly the water they need—no more, no less—preventing root rot and conserving precious water resources.",
-    industry: "agriculture",
-    service: "custom-model",
-    url: "#",
-    category: "AgriTech",
-    status: "Live",
-    image: "https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0",
-    features: ["Water Save", "Weather Sync"],
-    technologies: ["IoT", "LoRaWAN"],
-    benefits: ["Save water", "Healthy crops"],
-    useCases: ["Greenhouse", "Orchards"],
-    stats: ["Save 30%", "Remote"],
-    integrations: ["IoT Valves", "Weather"],
-    testimonials: [{ name: "Grower", role: "Berries", quote: "Better fruit quality.", avatar: "https://randomuser.me/api/portraits/women/70.jpg" }],
-    faqs: [
-      { q: "Does it need Wi-Fi?", a: "No, it uses LoRaWAN for long-range, low-power connectivity." },
-      { q: "Can I control it from phone?", a: "Yes, via our mobile app." },
-      { q: "Does it detect leaks?", a: "Yes, it alerts you if water flow is abnormal." },
-      { q: "What power source?", a: "Solar powered with battery backup." }
-    ]
-  },
-  {
-    id: "livestock-monitor",
-    title: "Cattle Health Monitor",
-    subtitle: "Livestock Wearable",
-    description: "Tracks livestock health.",
-    longDescription: "Fitbit for cows. \n\nThese smart collars track the movement, eating habits, and temperature of livestock. AI algorithms analyze this data to detect signs of illness, calving, or distress early, allowing farmers to provide veterinary care immediately.",
-    industry: "agriculture",
-    service: "custom-model",
-    url: "#",
-    category: "AgriTech",
-    status: "Pilot",
-    image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a",
-    features: ["GPS", "Health Track"],
-    technologies: ["IoT", "App"],
-    benefits: ["Health", "Location"],
-    useCases: ["Dairy", "Ranching"],
-    stats: ["Reduce Mortality", "Anti-Theft"],
-    integrations: ["Farm Apps", "SMS"],
-    testimonials: [{ name: "Rancher", role: "Texas", quote: "Found lost cattle.", avatar: "https://randomuser.me/api/portraits/men/80.jpg" }],
-    faqs: [
-      { q: "What is the battery life?", a: "Up to 3 years on a single battery." },
-      { q: "Does it detect calving?", a: "Yes, it alerts when labor signs are detected." },
-      { q: "Is it waterproof?", a: "Yes, rugged IP67 rated for harsh conditions." },
-      { q: "Range?", a: "Up to 5km with base station." }
-    ]
-  },
-
-  // ==========================================
-  // 19. CUSTOMER SUPPORT
-  // ==========================================
-  {
-    id: "voice-xperience",
-    title: "VoiceXperience",
-    subtitle: "AI Call Center",
-    description: "Replaces IVR with conversational AI.",
-    longDescription: "End the frustration of 'Press 1 for Support'. \n\nVoiceXperience talks to your customers like a human. It understands interruptions, multiple intents, and accents. It can resolve complex queries, authenticate users, and update records without ever involving a human agent.",
-    industry: "tech",
-    service: "nlp-chatbot",
-    url: "https://github.com/pipecat-ai/pipecat",
-    category: "Customer Support",
-    status: "Live Platform",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
-    features: ["Emotion Detect", "Resolution"],
-    technologies: ["Voice AI", "Conv AI"],
-    benefits: ["Better CX", "Lower Cost"],
-    useCases: ["Banks", "Telco"],
-    stats: ["Zero Wait", "High CSAT"],
-    integrations: ["Genesys", "Salesforce"],
-    testimonials: [{ name: "CX Head", role: "Telco", quote: "Customers prefer it.", avatar: "https://randomuser.me/api/portraits/women/55.jpg" }],
-    faqs: [
-      { q: "Does it sound robotic?", a: "No, we use ultra-realistic neural voice engines." },
-      { q: "Can it transfer to humans?", a: "Yes, with full context handover." },
-      { q: "How many concurrent calls?", a: "Unlimited scaling in the cloud." },
-      { q: "Does it integrate with CRM?", a: "Yes, Salesforce, Zendesk, and HubSpot." }
-    ]
-  },
-  {
-    id: "ticket-resolver",
-    title: "Auto-Resolve Bot",
-    subtitle: "L1 Support Agent",
-    description: "Solves common tickets automatically.",
-    longDescription: "Clear your support queue instantly. \n\nThis bot integrates with your ticketing system (like Zendesk) to identify and resolve repetitive tickets automatically. It can reset passwords, process refunds within policy, and answer FAQs, leaving your human agents to handle complex issues.",
-    industry: "tech",
-    service: "nlp-chatbot",
-    url: "#",
-    category: "Customer Support",
-    status: "Live",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-    features: ["KB Search", "API Actions"],
-    technologies: ["RAG", "Python"],
-    benefits: ["Zero backlog", "Instant"],
-    useCases: ["SaaS", "E-com"],
-    stats: ["Resolve 40%", "24/7"],
-    integrations: ["Zendesk", "Jira"],
-    testimonials: [{ name: "Support Lead", role: "SaaS", quote: "Backlog gone.", avatar: "https://randomuser.me/api/portraits/men/44.jpg" }],
-    faqs: [
-      { q: "What tickets can it solve?", a: "Password resets, refund status, and how-to questions." },
-      { q: "How does it learn?", a: "It ingests your knowledge base and past ticket history." },
-      { q: "Is setup difficult?", a: "No, one-click integration with Zendesk." },
-      { q: "What is the accuracy?", a: "Typically 90%+ for L1 queries." }
-    ]
-  },
-  {
-    id: "sentiment-router",
-    title: "Sentiment Router",
-    subtitle: "Call Routing AI",
-    description: "Routes angry customers to senior agents.",
-    longDescription: "Don't let angry customers churn. \n\nSentiment Router listens to the tone and words of incoming support calls/chats. If it detects frustration or anger, it bypasses standard queues and routes the customer directly to a senior retention specialist for white-glove service.",
-    industry: "tech",
-    service: "ai-audit",
-    url: "#",
-    category: "Customer Support",
-    status: "Tool",
-    image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61",
-    features: ["Tone Analysis", "Routing"],
-    technologies: ["Audio AI", "Twilio"],
-    benefits: ["Churn prevention", "Care"],
-    useCases: ["Call Centers", "Chat"],
-    stats: ["Reduce Churn", "Real-time"],
-    integrations: ["Twilio", "Nice"],
-    testimonials: [{ name: "Agent", role: "Support", quote: "Helps me prep.", avatar: "https://randomuser.me/api/portraits/women/33.jpg" }],
-    faqs: [
-      { q: "Does it work on live calls?", a: "Yes, analyzes audio stream in real-time." },
-      { q: "What languages?", a: "English, Spanish, French, and German." },
-      { q: "Can it alert supervisors?", a: "Yes, sends dashboard alerts for 'Red' calls." },
-      { q: "Does it record calls?", a: "It can, or just process the stream without storage." }
-    ]
-  },
-  // ==========================================
-  // 20. EDUCATION (Industry: education)
-  // ==========================================
-  {
-    id: "edubot",
-    title: "EduBot AI Tutor",
-    subtitle: "Personalized Learning",
-    description: "24/7 AI tutor helping students.",
-    longDescription: "A personal tutor for every student. \n\nEduBot understands the curriculum and answers student questions instantly. It adapts its explanation style based on the student's age and learning pace, ensuring no child is left behind.",
-    industry: "education",
-    service: "nlp-chatbot",
-    url: "#",
-    category: "EdTech",
-    status: "Live",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
-    features: ["Instant Q&A", "Quiz Gen"],
-    technologies: ["NLP", "LLM"],
-    benefits: ["Support", "Grades"],
-    useCases: ["Schools", "Online Courses"],
-    stats: ["High Engagement", "24/7"],
-    integrations: ["Canvas", "Blackboard"],
-    testimonials: [{ name: "Teacher", role: "K-12", quote: "Great supplement.", avatar: "https://randomuser.me/api/portraits/men/99.jpg" }],
-    faqs: [
-      { q: "Does it know the curriculum?", a: "Yes, upload your syllabus and textbooks." },
-      { q: "Is it safe for kids?", a: "Yes, strict guardrails prevent inappropriate content." },
-      { q: "Can it grade essays?", a: "Yes, it provides feedback on grammar and structure." },
-      { q: "Does it solve math?", a: "Yes, with step-by-step explanations." }
-    ]
-  },
-  // ==========================================
-  // 21. REAL ESTATE (Industry: real-estate)
-  // ==========================================
-  {
-    id: "prop-valuation",
-    title: "Property Valuation Engine",
-    subtitle: "Accurate Price Prediction",
-    description: "AI model that estimates property value.",
-    longDescription: "Data-driven real estate appraisal. \n\nThis AI model estimates property value based on thousands of data points including location, amenities, market trends, and recent sales, providing instant and accurate valuations.",
-    industry: "real-estate",
-    service: "custom-model",
-    url: "#",
-    category: "PropTech",
-    status: "Live",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
-    features: ["Price Est", "Trend Analysis"],
-    technologies: ["ML", "Big Data"],
-    benefits: ["Data-driven", "Faster deals"],
-    useCases: ["Agencies", "Investors"],
-    stats: ["95% Accuracy", "Instant"],
-    integrations: ["Zillow API", "MLS"],
-    testimonials: [{ name: "Agent", role: "Realtor", quote: "Clients trust the data.", avatar: "https://randomuser.me/api/portraits/women/22.jpg" }],
-    faqs: [
-      { q: "What data points are used?", a: "Sq ft, location, recent sales, and local amenities." },
-      { q: "How often is it updated?", a: "Daily with new market data." },
-      { q: "Can it predict future value?", a: "Yes, based on historical appreciation trends." },
-      { q: "Does it cover commercial?", a: "Yes, supports residential and commercial." }
-    ]
-  },
-  // ==========================================
-  // 22. LOGISTICS (Industry: logistics)
-  // ==========================================
-  {
-    id: "route-optimizer",
-    title: "Smart Route Optimizer",
-    subtitle: "Fleet Management",
-    description: "Calculates most efficient routes.",
-    longDescription: "Optimize your fleet's efficiency. \n\nThis tool calculates the most efficient delivery routes based on real-time traffic, weather conditions, and vehicle load capacity, saving fuel and ensuring on-time deliveries.",
-    industry: "logistics",
-    service: "data-pipeline",
-    url: "#",
-    category: "Logistics AI",
-    status: "Live",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d",
-    features: ["Dynamic Routing", "Fuel Save"],
-    technologies: ["Graph Algo", "GPS"],
-    benefits: ["Save Fuel", "Fast Delivery"],
-    useCases: ["Trucking", "Delivery"],
-    stats: ["Save 20% Fuel", "On-time"],
-    integrations: ["Telematics", "ERP"],
-    testimonials: [{ name: "Fleet Mgr", role: "Logistics", quote: "Huge cost savings.", avatar: "https://randomuser.me/api/portraits/men/55.jpg" }],
-    faqs: [
-      { q: "Does it handle multi-stop?", a: "Yes, optimizes for 100+ stops per route." },
-      { q: "Does it consider vehicle size?", a: "Yes, avoids low bridges for trucks." },
-      { q: "Is it real-time?", a: "Yes, reroutes based on traffic jams." },
-      { q: "Driver app included?", a: "Yes, drivers get turn-by-turn navigation." }
-    ]
-  },
+  
   // ==========================================
   // 23. MISC / Ethical AI
   // ==========================================
   {
     id: "ethical-ai-guard",
     title: "Ethical AI Guard",
-    subtitle: "Bias Detection",
-    description: "Scans AI models for bias.",
-    longDescription: "Ensure your AI is fair and compliant. \n\nThis tool scans your AI models and datasets to detect hidden biases related to gender, race, or age before deployment, helping you build trust and avoid regulatory fines.",
-    industry: "tech",
-    service: "ethical-ai",
+    subtitle: "Algorithmic Bias & Fairness Auditor",
+    description: "A governance toolkit that scans Machine Learning models for hidden biases and explainability issues, ensuring compliance with AI regulations.",
+    longDescription: "As AI adoption grows, so does the risk of algorithmic bias. Ethical AI Guard acts as a firewall for your models. It performs 'Stress Testing' on your datasets and trained models to detect disparate impacts across protected groups (Race, Gender, Age).  \n\nIt calculates key fairness metrics like 'Demographic Parity' and 'Equalized Odds'. If a credit scoring model rejects 20% more applicants from a specific demographic despite similar credentials, the tool flags the bias and identifies the specific features causing it using SHAP (Shapley Additive explanations) values. It generates comprehensive audit reports required for compliance with the EU AI Act and NYC AEDT law.",
+    industry: "ai-governance",
+    service: "model-auditing",
     url: "#",
-    category: "AI Governance",
-    status: "Tool",
+    category: "Responsible AI",
+    status: "Enterprise Tool",
     image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
-    features: ["Bias Score", "Fairness"],
-    technologies: ["XAI", "Python"],
-    benefits: ["Fairness", "Trust"],
-    useCases: ["Model Audit", "Compliance"],
-    stats: ["Bias Report", "Compliance"],
-    integrations: ["MLflow", "TensorBoard"],
-    testimonials: [{ name: "Ethicist", role: "NGO", quote: "Crucial for fair AI.", avatar: "https://randomuser.me/api/portraits/women/88.jpg" }],
+    features: [
+      "Automated Bias Detection (Disparate Impact)",
+      "Explainable AI (XAI) Dashboard",
+      "Adversarial Attack Robustness Test",
+      "Regulatory Compliance Reporting",
+      "Data Drift Monitoring",
+      "Fairness Constraint Optimization"
+    ],
+    technologies: ["Python (Fairlearn)", "SHAP/LIME", "MLflow", "Docker"],
+    benefits: ["Mitigate Reputational Risk", "Ensure Regulatory Compliance", "Build Trust in AI Decisions", "Transparent Model Governance"],
+    useCases: ["Credit Scoring Models", "Hiring Algorithms", "Healthcare Triage"],
+    stats: ["Detect 15+ Bias Types", "Audit Ready", "Ensure <5% Variance"],
+    integrations: ["Seldon Core", "AWS SageMaker", "Azure ML", "TensorBoard"],
+    testimonials: [
+      {
+        name: "Chief Ethics Officer",
+        role: "Fintech",
+        quote: "It revealed a proxy bias in our zip code data that we hadn't noticed. We fixed the model before deployment, avoiding a potential PR disaster.",
+        avatar: "https://randomuser.me/api/portraits/women/88.jpg"
+      }
+    ],
     faqs: [
-      { q: "What biases does it check?", a: "Gender, race, age, and socioeconomic bias." },
-      { q: "Does it fix the model?", a: "It highlights issues; re-training is up to you." },
-      { q: "Is it open source?", a: "We use open methodologies but provide enterprise support." },
-      { q: "What format does it accept?", a: "Pickle files, ONNX, and CSV datasets." }
+      {
+        q: "How does it define fairness?",
+        a: "It allows you to select the fairness definition (e.g., Equal Opportunity vs. Demographic Parity) relevant to your specific use case and legal requirements."
+      },
+      {
+        q: "Does it fix the model automatically?",
+        a: "It provides 'Mitigation Algorithms' (like re-weighing data) that you can apply, but the final decision on trade-offs between accuracy and fairness is human-led."
+      },
+      {
+        q: "Can it explain deep learning models?",
+        a: "Yes, it uses model-agnostic techniques like SHAP and LIME to interpret even complex 'black box' neural networks."
+      },
+      {
+        q: "What data formats are supported?",
+        a: "It supports structured tabular data (CSV, Parquet) and is expanding to NLP and Computer Vision datasets."
+      }
     ]
   }
 ];

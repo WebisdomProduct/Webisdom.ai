@@ -14,7 +14,6 @@ const Footer = () => {
                 alt="Webisdom AI Solutions"
                 className="h-20 sm:h-20 w-56 brightness-0 invert"
               />
-              {/* <span className="text-lg font-bold">Webisdom AI</span> */}
             </div>
             <p className="text-primary-foreground/80 text-sm">
               Building domain-specific AI solutions that deliver measurable
@@ -43,6 +42,8 @@ const Footer = () => {
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@webisdom.ai"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Email Webisdom"
+                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
                 <Mail size={20} />
               </a>
@@ -63,10 +64,26 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/products"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Products
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/services"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/industries"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Industries
                 </Link>
               </li>
               <li>
@@ -85,28 +102,12 @@ const Footer = () => {
                   Contact
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/products"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/industries"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                  Industries
-                </Link>
-              </li>
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Featured Products & Services */}
           <div>
-            <h3 className="font-semibold mb-4">Services</h3>
+            <h3 className="font-semibold mb-4">Featured Solutions</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
@@ -120,117 +121,158 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services"
+                  to="/products/ai-pms"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  AI PMS
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/products/restaurant-agent"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Restaurant AI Agent
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services?section=ai-audit"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   AI Audit Service
                 </Link>
               </li>
               <li>
-               <Link
-                  to="/services"
+                <Link
+                  to="/products/loan-agent"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
-                 Fintech
+                  Loan Processing AI
                 </Link>
               </li>
               <li>
-                 <Link
-                  to="/industries?section=hospitality"
+                <Link
+                  to="/products/dev-auto-gpt"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
-                 Hospitality solutions
+                  DevAutoGPT
                 </Link>
               </li>
-              <li>
-                 <Link
-                  to="/industries?section=revenue"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                 Renenue solutions
-                </Link>
-              </li>
-              <li>
-                 <Link
-                  to="/industries?section=healthcare"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                 Healthcare solutions
-                </Link>
-              </li>
-              <li>
-                 <Link
-                  to="/industries?section=fintech"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                Fintech solutions
-                </Link>
-              </li>
-              <li>
-                 <Link
-                  to="/industries?section=coworking"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                 Coworking solutions
-                </Link>
-              </li>
-              
-            
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Industries & Contact Info */}
           <div>
-            <h3 className="font-semibold mb-4">Contact</h3>
-            <div className="space-y-2 text-sm">
+            <h3 className="font-semibold mb-4">Industries We Serve</h3>
+            <ul className="space-y-2 text-sm mb-6">
+              <li>
+                <Link
+                  to="/industries?section=hospitality"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Hospitality
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/industries?section=fintech"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Fintech & Banking
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/industries?section=healthcare"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Healthcare
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/industries?section=revenue"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Revenue Management
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/industries?section=coworking"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Coworking Spaces
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/industries?section=manufacturing"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Manufacturing 4.0
+                </Link>
+              </li>
+            </ul>
+
+            <h3 className="font-semibold mb-4 mt-6">Contact</h3>
+            <div className="space-y-3 text-sm">
               <div className="flex items-start space-x-2">
-                <Mail size={16} className="mt-0.5 text-primary-foreground/80" />
+                <Mail size={16} className="mt-0.5 text-primary-foreground/80 flex-shrink-0" />
                 <div className="flex flex-col gap-1">
                   <a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@webisdom.ai"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     contact@webisdom.ai
                   </a>
                   <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=atharv.kumar@webisdom.ai
-"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=atharv.kumar@webisdom.ai"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     atharv.kumar@webisdom.ai
                   </a>
-                   <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=Atharv.kumar@webisdom.com
-"
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=Atharv.kumar@webisdom.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
-                   Atharv.kumar@webisdom.com
+                    atharv.kumar@webisdom.com
                   </a>
                 </div>
               </div>
               <div className="flex items-start space-x-2">
                 <Phone
                   size={16}
-                  className="mt-0.5 text-primary-foreground/80"
+                  className="mt-0.5 text-primary-foreground/80 flex-shrink-0"
                 />
-                <span className="text-primary-foreground/80 text-sm">
-                  Phone: +91 9569394675
-                </span>
+                <a 
+                  href="tel:+919569394675"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  +91 9569394675
+                </a>
               </div>
               <div className="flex items-start space-x-2">
                 <MapPin
-                  size={30}
-                  className="mt-0.5 text-primary-foreground/80"
+                  size={20}
+                  className="mt-0.5 text-primary-foreground/80 flex-shrink-0"
                 />
-                <span className="text-primary-foreground/80">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=8/78+Dentedge+Janpath+Connaught+Place+New+Delhi+110001"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
                   First Floor, 8/78, Dentedge, Janpath, Connaught Place, New
                   Delhi, Delhi, 110001
-                </span>
+                </a>
               </div>
             </div>
           </div>
@@ -238,7 +280,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <p className="text-primary-foreground/80 text-sm">
-            © 2024 Webisdom AI Solutions. All rights reserved.
+            © {new Date().getFullYear()} Webisdom AI Solutions. All rights reserved.
           </p>
         </div>
       </div>

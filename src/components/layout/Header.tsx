@@ -7,7 +7,7 @@ import { AuditRequestDialog } from "@/components/forms/AuditRequestDialog";
 
 // --- MEGA MENU DATA ---
 const navigationData = {
-  // 1. PRODUCTS (No Changes)
+  // 1. PRODUCTS
   products: [
     {
       category: "Hospitality & Services",
@@ -41,7 +41,7 @@ const navigationData = {
     }
   ],
 
-  // 2. SERVICES (No Changes)
+  // 2. SERVICES
   services: [
     {
       category: "Core Offerings",
@@ -65,34 +65,34 @@ const navigationData = {
     }
   ],
 
-  // 3. INDUSTRIES (UPDATED LINKS to /industry/:id)
+  // 3. INDUSTRIES
   industries: [
     {
       category: "Service & Lifestyle",
       items: [
-        { name: "Hospitality", href: "/industry/hospitality" },
-        { name: "Healthcare", href: "/industry/healthcare" },
-        { name: "Education (EdTech)", href: "/industry/education" },
-        { name: "Coworking Spaces", href: "/industry/coworking" },
+        { name: "Hospitality", href: "/industries?section=hospitality" },
+        { name: "Healthcare", href: "/industries?section=healthcare" },
+        { name: "Education (EdTech)", href: "/industries?section=education" },
+        { name: "Coworking Spaces", href: "/industries?section=coworking" },
       ]
     },
     {
       category: "Finance & Professional",
       items: [
-        { name: "Fintech & Banking", href: "/industry/fintech" },
-        { name: "Revenue Management", href: "/industry/revenue" },
-        { name: "Real Estate", href: "/industry/real-estate" },
-        { name: "LegalTech", href: "/industry/legal" },
+        { name: "Fintech & Banking", href: "/industries?section=fintech" },
+        { name: "Revenue Management", href: "/industries?section=revenue" },
+        { name: "Real Estate", href: "/industries?section=real-estate" },
+        { name: "LegalTech", href: "/industries?section=legal" },
       ]
     },
     {
       category: "Industrial & Tech",
       items: [
-        { name: "Manufacturing 4.0", href: "/industry/manufacturing" },
-        { name: "Retail & E-commerce", href: "/industry/retail" },
-        { name: "Logistics", href: "/industry/logistics" },
-        { name: "AgriTech", href: "/industry/agriculture" },
-        { name: "Technology & SaaS", href: "/industry/tech" },
+        { name: "Manufacturing 4.0", href: "/industries?section=manufacturing" },
+        { name: "Retail & E-commerce", href: "/industries?section=retail" },
+        { name: "Logistics", href: "/industries?section=logistics" },
+        { name: "AgriTech", href: "/industries?section=agriculture" },
+        { name: "Technology & SaaS", href: "/industries?section=tech" },
       ]
     }
   ]
@@ -138,37 +138,40 @@ const Header = () => {
               Home
             </Link>
 
-            {/* 1. PRODUCTS */}
+            {/* 1. PRODUCTS - Clickable with Hover Menu */}
             <div className="relative h-full flex items-center" onMouseEnter={() => handleMouseEnter('products')}>
-              <button 
-                className={`flex items-center text-sm font-medium transition-colors duration-200 focus:outline-none ${
-                   activeMenu === 'products' ? "text-primary" : "text-muted-foreground hover:text-foreground"
+              <Link
+                to="/products"
+                className={`flex items-center text-sm font-medium transition-colors duration-200 ${
+                  isActive("/products") || activeMenu === 'products' ? "text-primary" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 Products <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeMenu === 'products' ? 'rotate-180' : ''}`} />
-              </button>
+              </Link>
             </div>
 
-            {/* 2. SERVICES */}
+            {/* 2. SERVICES - Clickable with Hover Menu */}
             <div className="relative h-full flex items-center" onMouseEnter={() => handleMouseEnter('services')}>
-              <button 
-                className={`flex items-center text-sm font-medium transition-colors duration-200 focus:outline-none ${
-                   activeMenu === 'services' ? "text-primary" : "text-muted-foreground hover:text-foreground"
+              <Link
+                to="/services"
+                className={`flex items-center text-sm font-medium transition-colors duration-200 ${
+                  isActive("/services") || activeMenu === 'services' ? "text-primary" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 Services <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeMenu === 'services' ? 'rotate-180' : ''}`} />
-              </button>
+              </Link>
             </div>
 
-            {/* 3. INDUSTRIES */}
+            {/* 3. INDUSTRIES - Clickable with Hover Menu */}
             <div className="relative h-full flex items-center" onMouseEnter={() => handleMouseEnter('industries')}>
-              <button 
-                className={`flex items-center text-sm font-medium transition-colors duration-200 focus:outline-none ${
-                   activeMenu === 'industries' ? "text-primary" : "text-muted-foreground hover:text-foreground"
+              <Link
+                to="/industries"
+                className={`flex items-center text-sm font-medium transition-colors duration-200 ${
+                  isActive("/industries") || activeMenu === 'industries' ? "text-primary" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 Industries <ChevronDown className={`ml-1 w-4 h-4 transition-transform ${activeMenu === 'industries' ? 'rotate-180' : ''}`} />
-              </button>
+              </Link>
             </div>
 
             <Link to="/about" className={`text-sm font-medium transition-colors duration-200 ${isActive("/about") ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}>
@@ -251,22 +254,29 @@ const Header = () => {
             
             <Link to="/" onClick={() => setIsMenuOpen(false)} className="block text-base font-medium text-foreground py-2 border-b border-border/50">Home</Link>
             
+            {/* Mobile - Main Category Links */}
             {['products', 'services', 'industries'].map((menuKey) => (
                <div key={menuKey} className="py-2 border-b border-border/50">
-                  <p className="text-sm text-muted-foreground mb-3 font-semibold uppercase">{menuKey}</p>
+                  <Link 
+                    to={`/${menuKey}`} 
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-sm text-muted-foreground mb-3 font-semibold uppercase hover:text-primary transition-colors flex items-center"
+                  >
+                    {menuKey} <ChevronRight className="ml-2 w-4 h-4" />
+                  </Link>
                   {navigationData[menuKey].map(g => (
-                      <div key={g.category} className="mb-4">
+                      <div key={g.category} className="mb-4 mt-3">
                           <p className="text-xs text-primary mb-2 font-bold pl-2">{g.category}</p>
                           {g.items.map(i => (
-                              <Link key={i.name} to={i.href} onClick={() => setIsMenuOpen(false)} className="block py-2 pl-4 text-sm text-foreground/80">{i.name}</Link>
+                              <Link key={i.name} to={i.href} onClick={() => setIsMenuOpen(false)} className="block py-2 pl-4 text-sm text-foreground/80 hover:text-primary transition-colors">{i.name}</Link>
                           ))}
                       </div>
                   ))}
                </div>
             ))}
 
-            <Link to="/about" onClick={() => setIsMenuOpen(false)} className="block text-base font-medium text-foreground py-2">About</Link>
-            <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="block text-base font-medium text-foreground py-2">Contact</Link>
+            <Link to="/about" onClick={() => setIsMenuOpen(false)} className="block text-base font-medium text-foreground py-2 border-b border-border/50">About</Link>
+            <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="block text-base font-medium text-foreground py-2 border-b border-border/50">Contact</Link>
 
             <div className="pt-6 space-y-3">
               <Button variant="ghost" className="w-full justify-start" onClick={() => { setIsDemoDialogOpen(true); setIsMenuOpen(false); }}>
